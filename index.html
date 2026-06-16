@@ -72,86 +72,135 @@
             </div>
 
             <nav class="sidebar-nav" id="sidebarNav">
-                <!-- KTMT Tree -->
+                <!-- KTMT - Theo đề cương -->
                 <div class="sb-subject" data-subject="ktmt">
                     <button class="sb-subject-title" onclick="toggleSbSubject(this)">
                         <span class="sb-icon">🖥️</span>
                         <span>KTMT - Kiến Trúc Máy Tính</span>
                         <span class="sb-caret">▾</span>
                     </button>
-                    <ul class="sb-tree">
+                    <ul class="sb-tree sb-tree-flat">
                         <li>
-                            <a href="#ktmt-ch1" class="sb-chapter">Chương 1: Số Học Máy Tính</a>
+                            <a href="#sec-ktmt-1-2" class="sb-topic">
+                                <span class="sb-topic-num">1</span>
+                                <span>Biểu diễn số nguyên, số thực trong máy tính</span>
+                            </a>
                             <ul>
-                                <li><a href="#sec-ktmt-1-1">1.1 Hệ Nhị Phân & Cơ Số 16</a></li>
-                                <li><a href="#sec-ktmt-1-2">1.2 Biểu Diễn Số Nguyên</a></li>
-                                <li><a href="#sec-ktmt-1-3">1.3 Số Thực (IEEE 754)</a></li>
-                                <li><a href="#sec-ktmt-1-4">1.4 Mã Phát Hiện Lỗi</a></li>
+                                <li><a href="#sec-ktmt-1-1">↳ Hệ nhị phân & cơ số 16</a></li>
+                                <li><a href="#sec-ktmt-1-2">↳ Số nguyên (bù 1, bù 2)</a></li>
+                                <li><a href="#sec-ktmt-1-3">↳ Số thực (IEEE 754)</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#ktmt-ch2" class="sb-chapter">Chương 2: Tổng Quan Máy Tính</a>
+                            <a href="#sec-ktmt-1-4" class="sb-topic">
+                                <span class="sb-topic-num">2</span>
+                                <span>Các mã phát hiện lỗi: Parity; CRC</span>
+                            </a>
                             <ul>
-                                <li><a href="#sec-ktmt-2-1">2.1 Sơ Đồ Tổng Quát</a></li>
-                                <li><a href="#sec-ktmt-2-2">2.2 Von Neumann</a></li>
-                                <li><a href="#sec-ktmt-2-3">2.3 Phân Loại Flynn</a></li>
-                                <li><a href="#sec-ktmt-2-4">2.4 Bus Hệ Thống</a></li>
-                                <li><a href="#sec-ktmt-2-5">2.5 Lịch Sử PT</a></li>
+                                <li><a href="#sec-ktmt-1-4">↳ Parity (VRC/LRC)</a></li>
+                                <li><a href="#sec-ktmt-1-4">↳ Mã CRC</a></li>
+                                <li><a href="#sec-ktmt-1-4">↳ Mã Hamming</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#ktmt-ch3" class="sb-chapter">Chương 3: Vi Xử Lý 8088</a>
+                            <a href="#sec-ktmt-2-1" class="sb-topic">
+                                <span class="sb-topic-num">3</span>
+                                <span>Sơ đồ tổng quát máy tính - Các khối chức năng</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#sec-ktmt-2-2" class="sb-topic">
+                                <span class="sb-topic-num">4</span>
+                                <span>Sơ đồ máy tính & nguyên lý Von Neumann</span>
+                            </a>
                             <ul>
-                                <li><a href="#sec-ktmt-3-1">3.1 Sơ Đồ Cấu Trúc 8088</a></li>
-                                <li><a href="#sec-ktmt-3-2">3.2 Các Thanh Ghi</a></li>
-                                <li><a href="#sec-ktmt-3-3">3.3 Chế Độ Địa Chỉ</a></li>
-                                <li><a href="#sec-ktmt-3-4">3.4 Tập Lệnh 8088</a></li>
+                                <li><a href="#sec-ktmt-2-3">↳ Phân loại kiến trúc (Flynn)</a></li>
+                                <li><a href="#sec-ktmt-2-4">↳ Bus hệ thống</a></li>
+                                <li><a href="#sec-ktmt-2-5">↳ Lịch sử phát triển</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#ktmt-ch4" class="sb-chapter">Chương 4: Ống Dẫn & Bộ Nhớ</a>
+                            <a href="#sec-ktmt-3-1" class="sb-topic">
+                                <span class="sb-topic-num">5</span>
+                                <span>Sơ đồ cấu trúc VXL 8088 - Các khối BIU, EU</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#sec-ktmt-3-2" class="sb-topic">
+                                <span class="sb-topic-num">6</span>
+                                <span>Các thanh ghi (đa năng, đoạn)</span>
+                            </a>
                             <ul>
-                                <li><a href="#sec-ktmt-4-1">4.1 Kỹ Thuật Pipeline</a></li>
-                                <li><a href="#sec-ktmt-4-2">4.2 Bộ Nhớ Cache</a></li>
-                                <li><a href="#sec-ktmt-4-3">4.3 Bộ Nhớ ROM & RAM</a></li>
+                                <li><a href="#sec-ktmt-3-3">↳ Chế độ địa chỉ</a></li>
+                                <li><a href="#sec-ktmt-3-4">↳ Tập lệnh 8088</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#sec-ktmt-4-1" class="sb-topic">
+                                <span class="sb-topic-num">7</span>
+                                <span>Kỹ thuật ống dẫn (Pipeline)</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#sec-ktmt-4-2" class="sb-topic">
+                                <span class="sb-topic-num">8</span>
+                                <span>Tổ chức bộ nhớ trong / Bộ nhớ Cache</span>
+                            </a>
+                            <ul>
+                                <li><a href="#sec-ktmt-4-2">↳ Bộ nhớ Cache</a></li>
+                                <li><a href="#sec-ktmt-4-3">↳ Bộ nhớ ROM & RAM</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
 
-                <!-- BTMT Tree -->
+                <!-- BTMT - Theo đề cương -->
                 <div class="sb-subject" data-subject="btmt">
                     <button class="sb-subject-title" onclick="toggleSbSubject(this)">
                         <span class="sb-icon">🔧</span>
                         <span>BTMT - Bảo Trì Máy Tính</span>
                         <span class="sb-caret">▾</span>
                     </button>
-                    <ul class="sb-tree">
+                    <ul class="sb-tree sb-tree-flat">
                         <li>
-                            <a href="#btmt-ch1" class="sb-chapter">Phần 1: Cấu Tạo Máy</a>
+                            <a href="#sec-btmt-2-1" class="sb-topic sb-topic-main">
+                                <span class="sb-topic-num">★</span>
+                                <span>Tính tương thích / Phù hợp nhu cầu thiết bị</span>
+                            </a>
                             <ul>
-                                <li><a href="#sec-btmt-1-1">1.1 Mainboard</a></li>
-                                <li><a href="#sec-btmt-1-2">1.2 CPU</a></li>
-                                <li><a href="#sec-btmt-1-3">1.3 RAM</a></li>
-                                <li><a href="#sec-btmt-1-4">1.4 PSU (Nguồn)</a></li>
-                                <li><a href="#sec-btmt-1-5">1.5 Bộ Nhớ Ngoài</a></li>
+                                <li><a href="#sec-btmt-2-1">↳ Cho sẵn thiết bị - đánh giá tương thích</a></li>
+                                <li><a href="#sec-btmt-2-1">↳ Xây dựng máy tính phù hợp nhu cầu</a></li>
+                                <li><a href="#sec-btmt-2-2">↳ Quy trình lắp ráp</a></li>
+                                <li><a href="#sec-btmt-2-3">↳ Lưu ý quan trọng khi lắp</a></li>
                             </ul>
                         </li>
+
+                        <!-- Nhóm phụ: Cấu tạo máy vi tính -->
                         <li>
-                            <a href="#btmt-ch2" class="sb-chapter">Phần 2: Lắp Ráp & Tương Thích</a>
+                            <a href="#btmt-ch1" class="sb-topic sb-topic-sub">
+                                <span class="sb-topic-num">+</span>
+                                <span>Cấu tạo máy vi tính (bổ sung)</span>
+                            </a>
                             <ul>
-                                <li><a href="#sec-btmt-2-1">2.1 Tính Tương Thích</a></li>
-                                <li><a href="#sec-btmt-2-2">2.2 Quy Trình Lắp Ráp</a></li>
-                                <li><a href="#sec-btmt-2-3">2.3 Lưu Ý Quan Trọng</a></li>
+                                <li><a href="#sec-btmt-1-1">↳ Mainboard</a></li>
+                                <li><a href="#sec-btmt-1-2">↳ CPU</a></li>
+                                <li><a href="#sec-btmt-1-3">↳ RAM</a></li>
+                                <li><a href="#sec-btmt-1-4">↳ PSU (Nguồn)</a></li>
+                                <li><a href="#sec-btmt-1-5">↳ Bộ nhớ ngoài</a></li>
                             </ul>
                         </li>
+
+                        <!-- Nhóm phụ: Bảo trì -->
                         <li>
-                            <a href="#btmt-ch3" class="sb-chapter">Phần 3: Bảo Trì</a>
+                            <a href="#btmt-ch3" class="sb-topic sb-topic-sub">
+                                <span class="sb-topic-num">+</span>
+                                <span>Bảo trì máy tính (bổ sung)</span>
+                            </a>
                             <ul>
-                                <li><a href="#sec-btmt-3-1">3.1 Kế Hoạch Bảo Dưỡng</a></li>
-                                <li><a href="#sec-btmt-3-2">3.2 Sao Lưu Dữ Liệu</a></li>
-                                <li><a href="#sec-btmt-3-3">3.3 Phòng Chống Virus</a></li>
-                                <li><a href="#sec-btmt-3-4">3.4 Khắc Phục Sự Cố</a></li>
+                                <li><a href="#sec-btmt-3-1">↳ Kế hoạch bảo dưỡng</a></li>
+                                <li><a href="#sec-btmt-3-2">↳ Sao lưu dữ liệu</a></li>
+                                <li><a href="#sec-btmt-3-3">↳ Phòng chống virus</a></li>
+                                <li><a href="#sec-btmt-3-4">↳ Khắc phục sự cố</a></li>
                             </ul>
                         </li>
                     </ul>

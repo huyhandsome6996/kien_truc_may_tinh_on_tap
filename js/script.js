@@ -664,7 +664,8 @@ function setupSidebar() {
                 const chapters = subject.querySelectorAll('.sb-tree > li');
 
                 chapters.forEach(chap => {
-                    const chapLink = chap.querySelector('.sb-chapter');
+                    // Hỗ trợ cả .sb-chapter (cũ) và .sb-topic (mới)
+                    const chapLink = chap.querySelector('.sb-topic') || chap.querySelector('.sb-chapter');
                     const subLinks = chap.querySelectorAll('ul li a');
 
                     const chapText = chapLink ? chapLink.textContent.toLowerCase() : '';
