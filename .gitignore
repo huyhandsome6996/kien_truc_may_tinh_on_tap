@@ -1,27 +1,18 @@
-# Dependencies
-node_modules/
-
-# Build output
-.next/
-dist/
-build/
-
-# Environment files
-.env
-.env.local
-.env.*.local
+# OS files
+.DS_Store
+Thumbs.db
 
 # IDE
 .idea/
 .vscode/
-
-# OS
-.DS_Store
-Thumbs.db
+*.swp
 
 # Logs
 *.log
-npm-debug.log*
 
-# Test coverage
-coverage/
+# Node.js (nếu có dùng server dev)
+node_modules/
+
+# Build output (nếu có)
+dist/
+build/

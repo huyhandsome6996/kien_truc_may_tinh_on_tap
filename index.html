@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ôn Tập KTMT & BTMT - Kiến Trúc Máy Tính & Bảo Trì Máy Tính</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1>Ôn Tập KTMT & BTMT</h1>
+                    <p>Kiến trúc Máy tính & Bảo trì Máy tính</p>
+                </div>
+            </div>
+
+            <nav class="nav-tabs">
+                <button class="nav-btn active" data-tab="ktmt">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="4" y="4" width="16" height="16" rx="2"/>
+                        <rect x="9" y="9" width="6" height="6"/>
+                        <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/>
+                    </svg>
+                    <span>KTMT</span>
+                </button>
+                <button class="nav-btn" data-tab="btmt">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                    </svg>
+                    <span>BTMT</span>
+                </button>
+            </nav>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container main-content">
+        <!-- KTMT Section -->
+        <section id="ktmt-section" class="subject-section active">
+            <div class="hero-banner ktmt-hero">
+                <h2>Kiến Trúc Máy Tính (KTMT)</h2>
+                <p>Ôn tập cuối kỳ · 4 tín chỉ · Được sử dụng tài liệu</p>
+            </div>
+
+            <!-- Quick Navigation -->
+            <div class="quick-nav">
+                <a href="#ktmt-ch1" class="quick-nav-item">
+                    <span class="num">1</span>
+                    <span>Số học máy tính</span>
+                </a>
+                <a href="#ktmt-ch2" class="quick-nav-item">
+                    <span class="num">2</span>
+                    <span>Tổng quan máy tính</span>
+                </a>
+                <a href="#ktmt-ch3" class="quick-nav-item">
+                    <span class="num">3</span>
+                    <span>Vi xử lý 8088</span>
+                </a>
+                <a href="#ktmt-ch4" class="quick-nav-item">
+                    <span class="num">4</span>
+                    <span>Ống dẫn & Bộ nhớ</span>
+                </a>
+            </div>
+
+            <!-- Chương 1 -->
+            <article id="ktmt-ch1" class="chapter">
+                <header class="chapter-header" onclick="toggleChapter(this)">
+                    <div class="chapter-icon binary-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </div>
+                    <h3>Chương 1: Số Học Máy Tính</h3>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="chapter-content">
+                    <!-- 1.1 Hệ nhị phân -->
+                    <section class="sub-section">
+                        <h4>1.1 Hệ Nhị Phân & Hệ Cơ Số 16</h4>
+                        <div class="content-grid two-col">
+                            <div>
+                                <h5>Khái niệm cơ bản</h5>
+                                <ul>
+                                    <li><strong>Hệ nhị phân (Binary):</strong> Chỉ dùng 2 chữ số 0 và 1</li>
+                                    <li><strong>Hệ thập lục phân (Hex):</strong> 16 chữ số: 0-9, A, B, C, D, E, F</li>
+                                    <li><strong>Quy đổi:</strong> 4 bit nhị phân = 1 chữ số hex</li>
+                                    <li><strong>Cơ số 8 (Octal):</strong> 8 chữ số: 0-7</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>Ví dụ chuyển đổi</h5>
+                                <div class="formula">AC1BH = 1010 1100 0001 1011 B</div>
+                                <div class="formula">1011 1011 B = BBH</div>
+                                <div class="formula">AC1BH = 10×16³ + 12×16² + 1×16¹ + 11×16⁰ = 44059</div>
+                            </div>
+                        </div>
+
+                        <div class="calculator-card">
+                            <h5>🧮 Công cụ chuyển đổi số</h5>
+                            <div class="calc-grid three-col">
+                                <div class="calc-input">
+                                    <label>Thập phân:</label>
+                                    <input type="text" id="decInput" value="42" placeholder="VD: 42">
+                                    <div class="result-box">
+                                        <div><span class="badge info">Bin 8bit</span> <code id="decToBin8"></code></div>
+                                        <div><span class="badge success">Bin 16bit</span> <code id="decToBin16"></code></div>
+                                        <div><span class="badge warning">Hex</span> <code id="decToHex"></code></div>
+                                    </div>
+                                </div>
+                                <div class="calc-input">
+                                    <label>Nhị phân:</label>
+                                    <input type="text" id="binInput" value="101010" placeholder="VD: 101010">
+                                    <div class="result-box">
+                                        <div><span class="badge info">Decimal</span> <code id="binToDec"></code></div>
+                                        <div><span class="badge warning">Hex</span> <code id="binToHex"></code></div>
+                                    </div>
+                                </div>
+                                <div class="calc-input">
+                                    <label>Hex:</label>
+                                    <input type="text" id="hexInput" value="2A" placeholder="VD: 2A">
+                                    <div class="result-box">
+                                        <div><span class="badge info">Decimal</span> <code id="hexToDec"></code></div>
+                                        <div><span class="badge success">Binary</span> <code id="hexToBin"></code></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 1.2 Số nguyên -->
+                    <section class="sub-section">
+                        <h4>1.2 Biểu Diễn Số Nguyên</h4>
+                        <div class="content-grid two-col">
+                            <div>
+                                <h5>Số không dấu</h5>
+                                <table class="data-table">
+                                    <thead>
+                                        <tr><th>Số bit</th><th>Khoảng giá trị</th><th>Tên</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>8 bit</td><td>0 đến 255</td><td>Byte</td></tr>
+                                        <tr><td>16 bit</td><td>0 đến 65.535</td><td>Word</td></tr>
+                                        <tr><td>32 bit</td><td>0 đến 4.294.967.295</td><td>DWord</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div>
+                                <h5>Số có dấu</h5>
+                                <table class="data-table">
+                                    <thead>
+                                        <tr><th>Số bit</th><th>Khoảng giá trị</th><th>Tên</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>8 bit</td><td>-128 đến 127</td><td>Short int</td></tr>
+                                        <tr><td>16 bit</td><td>-32.768 đến 32.767</td><td>Integer</td></tr>
+                                        <tr><td>32 bit</td><td>-2³¹ đến 2³¹-1</td><td>Long int</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>🔢 Số bù 2 (Two's Complement)</h5>
+                            <p><strong>Cách tính số bù 2 của một số dương:</strong></p>
+                            <ol>
+                                <li><strong>Bù 1:</strong> Đảo tất cả các bit (0→1, 1→0)</li>
+                                <li><strong>Bù 2:</strong> Lấy bù 1 cộng thêm 1</li>
+                            </ol>
+                            <div class="formula">
+                                5 = 00000101 B<br>
+                                Bù 1: 11111010 B<br>
+                                Bù 2: 11111011 B = -5
+                            </div>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🔄 Big Endian vs Little Endian</h5>
+                            <p> Khi dữ liệu lớn hơn 1 byte, thứ tự lưu byte trong bộ nhớ:</p>
+                            <ul>
+                                <li><strong>Big Endian:</strong> Byte cao nhất (MSB) lưu ở địa chỉ nhỏ nhất</li>
+                                <li><strong>Little Endian:</strong> Byte thấp nhất (LSB) lưu ở địa chỉ nhỏ nhất</li>
+                            </ul>
+                            <p>Ví dụ số 0x12345678:</p>
+                            <div class="formula">
+                                Big Endian:    12 34 56 78 (địa chỉ tăng dần)<br>
+                                Little Endian: 78 56 34 12 (địa chỉ tăng dần)
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 1.3 Số thực -->
+                    <section class="sub-section">
+                        <h4>1.3 Biểu Diễn Số Thực (IEEE 754-1985)</h4>
+                        <p>Dạng tổng quát:</p>
+                        <div class="formula">X = (-1)^S × 2^(E-B) × 1.F</div>
+                        <p>Trong đó: S = bit dấu, E = số mũ, F = phần định trị, B = bias</p>
+
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Loại</th><th>S (bit)</th><th>E (bit)</th><th>F (bit)</th><th>Bias</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Single (32 bit)</td><td>1</td><td>8</td><td>23</td><td>127</td></tr>
+                                <tr><td>Double (64 bit)</td><td>1</td><td>11</td><td>52</td><td>1023</td></tr>
+                                <tr><td>Quadruple (128 bit)</td><td>1</td><td>15</td><td>111</td><td>16383</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="info-box info">
+                            <h5>📐 Các bước chuyển đổi số thực sang IEEE 754</h5>
+                            <ol>
+                                <li>Đổi số thực sang nhị phân (phần nguyên và phần lẻ)</li>
+                                <li>Chuẩn hóa về dạng ±1.xxx × 2^k</li>
+                                <li>Tính E = k + B (B = bias)</li>
+                                <li>Ghi E dưới dạng nhị phân với số bit quy định</li>
+                                <li>Ghép S + E + F (phần sau dấu phẩy của định trị)</li>
+                            </ol>
+                            <div class="example">
+                                <strong>Ví dụ: X = -2345.125 (kiểu Single)</strong>
+                                <div class="formula">
+                                    B1: -2345.125 = -1001 0010 1001.001₂<br>
+                                    B2: -1.00100101001 × 2¹¹<br>
+                                    B3: E = 11 + 127 = 138 = 10001010₂<br>
+                                    B4: F = 00100101001000000000000 (23 bit)<br>
+                                    B5: S=1, E=10001010, F=00100101001000000000000<br>
+                                    → Kết quả: 1 10001010 00100101001001000000000
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="calculator-card">
+                            <h5>🧮 Tính IEEE 754 Single Precision</h5>
+                            <div class="calc-input">
+                                <label>Nhập số thực:</label>
+                                <input type="text" id="floatInput" value="-2345.125" placeholder="VD: -2345.125">
+                            </div>
+                            <div class="result-box ieee-result">
+                                <div class="ieee-row">
+                                    <span class="badge">Sign (1bit)</span>
+                                    <code id="floatSign"></code>
+                                </div>
+                                <div class="ieee-row">
+                                    <span class="badge info">Exponent (8bit)</span>
+                                    <code id="floatExp"></code>
+                                </div>
+                                <div class="ieee-row">
+                                    <span class="badge success">Mantissa (23bit)</span>
+                                    <code id="floatMant"></code>
+                                </div>
+                                <div class="ieee-full">
+                                    <span class="badge warning">Full (32 bit)</span>
+                                    <code id="floatFull"></code>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 1.4 Mã phát hiện sửa lỗi -->
+                    <section class="sub-section">
+                        <h4>1.4 Mã Phát Hiện & Sửa Lỗi</h4>
+
+                        <!-- Parity -->
+                        <div class="topic-card green">
+                            <h5>🛡️ Bit Chẵn Lẻ (Parity Bit)</h5>
+                            <div class="content-grid two-col">
+                                <div>
+                                    <p>Thêm 1 bit vào dữ liệu để tổng số bit 1 là:</p>
+                                    <ul>
+                                        <li><strong>Parity chẵn:</strong> Tổng bit 1 là số chẵn</li>
+                                        <li><strong>Parity lẻ:</strong> Tổng bit 1 là số lẻ</li>
+                                    </ul>
+                                    <div class="formula">
+                                        Truyền 1001010 + 1 = 10010101<br>
+                                        (có 4 bit 1 → parity chẵn)
+                                    </div>
+                                </div>
+                                <div>
+                                    <p><strong>Parity theo khối:</strong></p>
+                                    <ul>
+                                        <li><strong>VRC (Vertical):</strong> Parity dọc mỗi cột</li>
+                                        <li><strong>LRC (Longitudinal):</strong> Parity ngang mỗi hàng</li>
+                                    </ul>
+                                    <p><strong>Ưu điểm:</strong> Đơn giản, dễ triển khai, phát hiện lỗi 1 bit</p>
+                                    <p><strong>Nhược điểm:</strong> Không sửa lỗi, không phát hiện lỗi 2 bit</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CRC -->
+                        <div class="topic-card blue">
+                            <h5>🔄 Mã CRC (Cyclic Redundancy Check)</h5>
+                            <p>Phát hiện lỗi nhiều bit khi đọc/ghi đĩa, truyền dữ liệu</p>
+
+                            <div class="info-box info">
+                                <h5>Thuật toán tính CRC</h5>
+                                <ol>
+                                    <li>Dãy m bit dữ liệu ~ đa thức M(x)</li>
+                                    <li>Chọn đa thức sinh G(x) bậc n</li>
+                                    <li>Thêm n bit 0 vào sau m bit → đa thức N(x)</li>
+                                    <li>Chia N(x) cho G(x) theo module 2 (XOR)</li>
+                                    <li>Phần dư = mã CRC (n bit)</li>
+                                    <li>Truyền: dữ liệu m bit + CRC n bit</li>
+                                </ol>
+                            </div>
+
+                            <div class="calculator-card">
+                                <h5>🧮 Tính CRC</h5>
+                                <div class="calc-grid two-col">
+                                    <div class="calc-input">
+                                        <label>Dữ liệu (nhị phân):</label>
+                                        <input type="text" id="crcData" value="11010110110111" placeholder="VD: 11010110110111">
+                                    </div>
+                                    <div class="calc-input">
+                                        <label>Đa thức G(x) (nhị phân):</label>
+                                        <input type="text" id="crcPoly" value="10011" placeholder="VD: 10011">
+                                    </div>
+                                </div>
+                                <div class="result-box">
+                                    <div><span class="badge success">CRC</span> <code id="crcResult"></code></div>
+                                    <div><span class="badge info">Dữ liệu truyền</span> <code id="crcTransmit" class="break-all"></code></div>
+                                </div>
+                            </div>
+
+                            <p><strong>Các đa thức CRC phổ biến:</strong></p>
+                            <div class="formula">
+                                CRC-12:    x¹² + x¹¹ + x³ + x² + x + 1<br>
+                                CRC-16:    x¹⁶ + x¹⁵ + x² + 1<br>
+                                CRC-CCITT: x¹⁶ + x¹² + x⁵ + 1<br>
+                                CRC-32:    x³² + x²⁶ + x²³ + x²² + x¹⁶ + x¹² + x¹¹ + x¹⁰ + x⁸ + x⁷ + x⁵ + x⁴ + x² + x + 1
+                            </div>
+
+                            <div class="example">
+                                <strong>Ví dụ tính CRC chi tiết:</strong>
+                                <p>Dữ liệu M = 10010110110111, G(x) = x⁴+x+1 = 10011</p>
+                                <div class="formula">
+                                    B1: Thêm 4 bit 0 → N(x) = 100101101101110000<br>
+                                    B2: Chia N(x)/G(x) theo XOR<br>
+                                    B3: Phần dư = 1010 (CRC)<br>
+                                    B4: Truyền: 10010110110111 1010
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hamming -->
+                        <div class="topic-card purple">
+                            <h5>✅ Mã Hamming (Phát hiện và SỬA lỗi)</h5>
+                            <p>Mã Hamming có khả năng phát hiện VÀ sửa lỗi 1 bit</p>
+
+                            <div class="info-box info">
+                                <h5>Quy tắc mã Hamming</h5>
+                                <ul>
+                                    <li>m bit dữ liệu + r bit kiểm tra</li>
+                                    <li>Chọn r thỏa mãn: 2ʳ ≥ m + r + 1</li>
+                                    <li>Vị trí bit kiểm tra: 2ᵏ (vị trí 1, 2, 4, 8, 16, ...)</li>
+                                    <li>Ký hiệu: H(n, m) với n = m + r</li>
+                                </ul>
+                            </div>
+
+                            <div class="example">
+                                <p><strong>Ví dụ Hamming(7,4):</strong> 4 bit dữ liệu + 3 bit kiểm tra = 7 bit</p>
+                                <table class="data-table">
+                                    <thead>
+                                        <tr><th>Vị trí</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Bit</td><td>i₄</td><td>i₃</td><td>i₂</td><td>C₃</td><td>i₁</td><td>C₂</td><td>C₁</td></tr>
+                                        <tr><td>Giá trị</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+                                    </tbody>
+                                </table>
+                                <p>Công thức tính bit kiểm tra (cho parity chẵn):</p>
+                                <div class="formula">
+                                    C₃ = i₂ ⊕ i₃ ⊕ i₄<br>
+                                    C₂ = i₁ ⊕ i₃ ⊕ i₄<br>
+                                    C₁ = i₁ ⊕ i₂ ⊕ i₄
+                                </div>
+                                <p>Với i₄i₃i₂i₁ = 1101 → C₃C₂C₁ = 010 → Mã truyền: 1100110</p>
+                            </div>
+
+                            <div class="info-box warning">
+                                <h5>🔧 Sửa lỗi Hamming</h5>
+                                <p>Nếu nhận được mã có lỗi, tính lại C₃C₂C₁ và XOR với C₃C₂C₁ nhận được:</p>
+                                <ul>
+                                    <li>Kết quả = 000 → không lỗi</li>
+                                    <li>Kết quả = 110 (= 6) → bit thứ 6 bị sai → sửa bit thứ 6</li>
+                                    <li>Kết quả = 101 (= 5) → bit thứ 5 bị sai → sửa bit thứ 5</li>
+                                </ul>
+                            </div>
+
+                            <div class="calculator-card">
+                                <h5>🧮 Tính Mã Hamming</h5>
+                                <div class="calc-input">
+                                    <label>Dữ liệu (m bit nhị phân):</label>
+                                    <input type="text" id="hammingInput" value="1101" placeholder="VD: 1101">
+                                </div>
+                                <div class="result-box">
+                                    <div><span class="badge success">Mã Hamming</span> <code id="hammingResult" class="code-large"></code></div>
+                                    <div><span class="badge info">Số bit dữ liệu (m)</span> <code id="hammingM"></code></div>
+                                    <div><span class="badge warning">Số bit kiểm tra (r)</span> <code id="hammingR"></code></div>
+                                    <div><span class="badge">Tổng số bit (n)</span> <code id="hammingN"></code></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+
+            <!-- Chương 2 -->
+            <article id="ktmt-ch2" class="chapter">
+                <header class="chapter-header" onclick="toggleChapter(this)">
+                    <div class="chapter-icon monitor-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3>Chương 2: Tổng Quan Về Máy Tính</h3>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="chapter-content">
+                    <!-- Von Neumann -->
+                    <section class="sub-section">
+                        <h4>2.1 Nguyên Lý Von Neumann</h4>
+                        <p>Mô hình kiến trúc máy tính do John von Neumann đề xuất năm 1945, là nền tảng của hầu hết máy tính hiện đại.</p>
+
+                        <div class="content-grid two-col">
+                            <div>
+                                <h5>5 khối cơ bản</h5>
+                                <ul>
+                                    <li><strong>Đơn vị xử lý (ALU):</strong> Thực hiện các phép tính số học và logic</li>
+                                    <li><strong>Đơn vị điều khiển (CU):</strong> Điều phối hoạt động của hệ thống</li>
+                                    <li><strong>Bộ nhớ:</strong> Lưu trữ dữ liệu và chương trình</li>
+                                    <li><strong>Thiết bị nhập:</strong> Nhận dữ liệu đầu vào</li>
+                                    <li><strong>Thiết bị xuất:</strong> Xuất kết quả ra ngoài</li>
+                                </ul>
+                            </div>
+                            <div class="info-box info">
+                                <h5>Nguyên lý hoạt động</h5>
+                                <ul>
+                                    <li>Chương trình được lưu trữ trong bộ nhớ (stored program)</li>
+                                    <li>Bộ nhớ chia thành nhiều ô, mỗi ô có 1 địa chỉ</li>
+                                    <li>Thực hiện lệnh tuần tự qua bộ đếm chương trình (Program Counter)</li>
+                                    <li>Dữ liệu và lệnh cùng lưu trong bộ nhớ</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="diagram-card">
+                            <h5>Sơ Đồ Tổ Chức Tổng Quát</h5>
+                            <div class="von-neumann-diagram">
+                                <div class="vn-block cpu-block">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
+                                    <span>CPU</span>
+                                </div>
+                                <div class="vn-arrows">↔</div>
+                                <div class="vn-block memory-block">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="6" x2="6" y2="18"/><line x1="10" y1="6" x2="10" y2="18"/><line x1="14" y1="6" x2="14" y2="18"/><line x1="18" y1="6" x2="18" y2="18"/></svg>
+                                    <span>Bộ nhớ</span>
+                                </div>
+                                <div class="vn-arrows">↔</div>
+                                <div class="vn-block io-block">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                                    <span>Vào/Ra</span>
+                                </div>
+                            </div>
+                            <p class="diagram-note">
+                                <span class="badge info">Bus hệ thống</span> = Bus địa chỉ + Bus dữ liệu + Bus điều khiển
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Phân loại kiến trúc -->
+                    <section class="sub-section">
+                        <h4>2.2 Phân Loại Kiến Trúc (Flynn)</h4>
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Kiến trúc</th><th>Tên đầy đủ</th><th>Đặc điểm</th><th>Ví dụ</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>SISD</strong></td><td>Single Instruction Single Data</td><td>Một lệnh xử lý một dữ liệu</td><td>CPU đơn nhân cổ điển</td></tr>
+                                <tr><td><strong>SIMD</strong></td><td>Single Instruction Multiple Data</td><td>Một lệnh xử lý nhiều dữ liệu song song</td><td>GPU, vector processor</td></tr>
+                                <tr><td><strong>MISD</strong></td><td>Multiple Instruction Single Data</td><td>Nhiều lệnh xử lý một dữ liệu (hiếm)</td><td>Hệ thống chịu lỗi</td></tr>
+                                <tr><td><strong>MIMD</strong></td><td>Multiple Instruction Multiple Data</td><td>Nhiều lệnh xử lý nhiều dữ liệu</td><td>CPU đa nhân, cluster</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <!-- Bus -->
+                    <section class="sub-section">
+                        <h4>2.3 Bus Hệ Thống</h4>
+                        <p>Bus là tập hợp các đường dây truyền tín hiệu giữa các thành phần trong máy tính.</p>
+                        <div class="content-grid three-col">
+                            <div class="info-box red">
+                                <h5>Bus Địa Chỉ</h5>
+                                <p>Truyền địa chỉ ô nhớ hoặc cổng I/O từ CPU đến các thiết bị. Độ rộng bus quyết định dung lượng bộ nhớ tối đa: 2^n byte.</p>
+                                <p>Ví dụ: 32 bit → 4GB, 64 bit → 16 EB</p>
+                            </div>
+                            <div class="info-box green">
+                                <h5>Bus Dữ Liệu</h5>
+                                <p>Truyền dữ liệu hai chiều giữa CPU, bộ nhớ và I/O. Độ rộng bus quyết định lượng dữ liệu truyền trong 1 chu kỳ.</p>
+                                <p>Ví dụ: 8 bit, 16 bit, 32 bit, 64 bit</p>
+                            </div>
+                            <div class="info-box blue">
+                                <h5>Bus Điều Khiển</h5>
+                                <p>Truyền tín hiệu điều khiển, trạng thái giữa các khối: Read/Write, Clock, Reset, Interrupt,...</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Lịch sử -->
+                    <section class="sub-section">
+                        <h4>2.4 Lịch Sử Phát Triển Máy Tính</h4>
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Thế hệ</th><th>Thời gian</th><th>Công nghệ</th><th>Đại diện</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Thế hệ 1</td><td>1945-1955</td><td>Đèn điện tử chân không</td><td>ENIAC (30 tấn, 140KW)</td></tr>
+                                <tr><td>Thế hệ 2</td><td>1955-1965</td><td>Transistor</td><td>TX-0</td></tr>
+                                <tr><td>Thế hệ 3</td><td>1965-1980</td><td>Vi mạch SSI, MSI</td><td>IBM System/360</td></tr>
+                                <tr><td>Thế hệ 4</td><td>1980-nay</td><td>Vi mạch LSI, VLSI</td><td>PC, máy tính hiện đại</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </article>
+
+            <!-- Chương 3 -->
+            <article id="ktmt-ch3" class="chapter">
+                <header class="chapter-header" onclick="toggleChapter(this)">
+                    <div class="chapter-icon cpu-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="4" width="16" height="16" rx="2"/>
+                            <rect x="9" y="9" width="6" height="6"/>
+                            <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/>
+                        </svg>
+                    </div>
+                    <h3>Chương 3: Tổ Chức Hệ Vi Xử Lý 8088</h3>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="chapter-content">
+                    <!-- Sơ đồ cấu trúc -->
+                    <section class="sub-section">
+                        <h4>3.1 Sơ Đồ Cấu Trúc 8088</h4>
+                        <p>Intel 8088 là vi xử lý 16 bit nội bộ, 8 bit bus ngoài, được dùng trong IBM PC đầu tiên (1981).</p>
+
+                        <div class="content-grid two-col">
+                            <div class="info-box blue">
+                                <h5>BIU (Bus Interface Unit)</h5>
+                                <p>Đơn vị giao tiếp bus - Nạp lệnh và dữ liệu từ bộ nhớ</p>
+                                <ul>
+                                    <li>Các thanh ghi đoạn: CS, DS, SS, ES</li>
+                                    <li>Con trỏ lệnh IP (Instruction Pointer)</li>
+                                    <li>Bộ điều khiển logic bus (BCL)</li>
+                                    <li>Hàng đợi lệnh 4 byte (instruction queue)</li>
+                                </ul>
+                            </div>
+                            <div class="info-box green">
+                                <h5>EU (Execution Unit)</h5>
+                                <p>Đơn vị thực hiện lệnh - Giải mã và thực thi</p>
+                                <ul>
+                                    <li>Khối điều khiển CU với mạch giải mã lệnh</li>
+                                    <li>ALU - đơn vị số học và logic</li>
+                                    <li>Các thanh ghi đa năng: AX, BX, CX, DX</li>
+                                    <li>Các thanh ghi con trỏ/chỉ số: SP, BP, SI, DI</li>
+                                    <li>Thanh ghi cờ FR (Flag Register)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>⚡ Hoạt động Pipeline (Ống dẫn)</h5>
+                            <p>Trong khi EU thực hiện lệnh hiện tại, BIU đã nạp sẵn lệnh tiếp theo vào hàng đợi 4 byte. Điều này giúp CPU xử lý liên tục, không phải chờ nạp lệnh từ bộ nhớ, tăng hiệu suất đáng kể.</p>
+                            <p>8086 có hàng đợi 6 byte, 8088 có hàng đợi 4 byte.</p>
+                        </div>
+                    </section>
+
+                    <!-- Thanh ghi đa năng -->
+                    <section class="sub-section">
+                        <h4>3.2 Các Thanh Ghi Của 8088</h4>
+
+                        <h5>a. Thanh ghi đa năng (16 bit)</h5>
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Thanh ghi</th><th>Tên</th><th>Chia thành</th><th>Chức năng chính</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>AX</strong></td><td>Accumulator</td><td>AH + AL</td><td>Chứa kết quả phép tính, I/O</td></tr>
+                                <tr><td><strong>BX</strong></td><td>Base</td><td>BH + BL</td><td>Con trỏ bộ nhớ, địa chỉ cơ sở</td></tr>
+                                <tr><td><strong>CX</strong></td><td>Count</td><td>CH + CL</td><td>Đếm vòng lặp, số lần dịch/quay</td></tr>
+                                <tr><td><strong>DX</strong></td><td>Data</td><td>DH + DL</td><td>Dữ liệu, địa chỉ cổng I/O 16 bit</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5>b. Thanh ghi đoạn (Segment - 16 bit)</h5>
+                        <p>Vi xử lý 8088 có 20 đường bus địa chỉ → địa chỉ vật lý 20 bit → 1MB bộ nhớ. Nhưng thanh ghi chỉ 16 bit → cần chia bộ nhớ thành các đoạn 64KB.</p>
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Thanh ghi</th><th>Tên</th><th>Kết hợp với</th><th>Mục đích</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>CS</strong></td><td>Code Segment</td><td>IP</td><td>Địa chỉ mã lệnh (CS:IP)</td></tr>
+                                <tr><td><strong>DS</strong></td><td>Data Segment</td><td>SI, DI</td><td>Địa chỉ dữ liệu (DS:SI, DS:DI)</td></tr>
+                                <tr><td><strong>SS</strong></td><td>Stack Segment</td><td>SP, BP</td><td>Địa chỉ ngăn xếp (SS:SP)</td></tr>
+                                <tr><td><strong>ES</strong></td><td>Extra Segment</td><td>DI</td><td>Địa chỉ chuỗi đích (ES:DI)</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5>c. Thanh ghi con trỏ và chỉ số (16 bit)</h5>
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Thanh ghi</th><th>Chức năng</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>IP</strong> (Instruction Pointer)</td><td>Con trỏ lệnh - chỉ tới lệnh tiếp theo</td></tr>
+                                <tr><td><strong>SP</strong> (Stack Pointer)</td><td>Con trỏ đỉnh ngăn xếp</td></tr>
+                                <tr><td><strong>BP</strong> (Base Pointer)</td><td>Con trỏ cơ sở - trỏ dữ liệu trong stack</td></tr>
+                                <tr><td><strong>SI</strong> (Source Index)</td><td>Chỉ số nguồn - địa chỉ chuỗi nguồn</td></tr>
+                                <tr><td><strong>DI</strong> (Destination Index)</td><td>Chỉ số đích - địa chỉ chuỗi đích</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5>d. Thanh ghi cờ FR (Flag Register - 16 bit)</h5>
+                        <div class="content-grid two-col">
+                            <div>
+                                <h6>Cờ trạng thái (6 bit):</h6>
+                                <ul>
+                                    <li><strong>CF (Carry):</strong> Cờ nhớ/borrow bit cao nhất</li>
+                                    <li><strong>PF (Parity):</strong> Cờ chẵn lẻ (PF=1 nếu tổng bit 1 chẵn)</li>
+                                    <li><strong>AF (Auxiliary):</strong> Cờ nhớ phụ (cho BCD)</li>
+                                    <li><strong>ZF (Zero):</strong> Kết quả bằng 0</li>
+                                    <li><strong>SF (Sign):</strong> Kết quả âm (bit cao nhất = 1)</li>
+                                    <li><strong>OF (Overflow):</strong> Tràn số có dấu</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h6>Cờ điều khiển (3 bit):</h6>
+                                <ul>
+                                    <li><strong>TF (Trap):</strong> Chế độ chạy từng lệnh (debug)</li>
+                                    <li><strong>IF (Interrupt):</strong> Cho phép ngắt maskable</li>
+                                    <li><strong>DF (Direction):</strong> Hướng xử lý chuỗi (tăng/giảm địa chỉ)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="formula">
+                            Bit:    x x x x O D I T S Z x A x P x C<br>
+                            (x = bit không định nghĩa)
+                        </div>
+                    </section>
+
+                    <!-- Chế độ địa chỉ -->
+                    <section class="sub-section">
+                        <h4>3.3 Chế Độ Địa Chỉ</h4>
+                        <p>Vi xử lý 8088 dùng địa chỉ logic dạng <strong>Segment:Offset</strong>. Địa chỉ vật lý 20 bit được tính:</p>
+                        <div class="formula">Địa chỉ vật lý = Segment × 16 + Offset = Segment × 10H + Offset</div>
+
+                        <div class="calculator-card">
+                            <h5>🧮 Tính địa chỉ vật lý</h5>
+                            <div class="calc-grid two-col">
+                                <div class="calc-input">
+                                    <label>Segment (hex):</label>
+                                    <input type="text" id="segInput" value="2000" placeholder="VD: 2000">
+                                </div>
+                                <div class="calc-input">
+                                    <label>Offset (hex):</label>
+                                    <input type="text" id="offInput" value="0100" placeholder="VD: 0100">
+                                </div>
+                            </div>
+                            <div class="result-box">
+                                <div><span class="badge success">Địa chỉ vật lý</span> <code id="physAddr"></code></div>
+                            </div>
+                        </div>
+
+                        <h5>Các chế độ địa chỉ phổ biến:</h5>
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Chế độ</th><th>Ví dụ</th><th>Mô tả</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Trực tiếp</td><td>MOV AX, [1000H]</td><td>Toán hạng là địa chỉ ô nhớ</td></tr>
+                                <tr><td>Thanh ghi</td><td>MOV AX, BX</td><td>Toán hạng là thanh ghi</td></tr>
+                                <tr><td>Tức thời</td><td>MOV AX, 1234H</td><td>Toán hạng là hằng số</td></tr>
+                                <tr><td>Gián tiếp thanh ghi</td><td>MOV AX, [BX]</td><td>Địa chỉ trong thanh ghi</td></tr>
+                                <tr><td>Cơ sở + Độ dời</td><td>MOV AX, [BX+10]</td><td>Địa chỉ = thanh ghi + hằng số</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <!-- Tập lệnh -->
+                    <section class="sub-section">
+                        <h4>3.4 Tập Lệnh 8088</h4>
+                        <p>Tập lệnh 8088 có hơn 100 lệnh, chia thành 6 nhóm:</p>
+
+                        <div class="content-grid two-col">
+                            <div class="info-box">
+                                <h5>1. Nhóm lệnh truyền dữ liệu</h5>
+                                <ul>
+                                    <li><code>MOV</code> - Di chuyển dữ liệu</li>
+                                    <li><code>PUSH</code>, <code>POP</code> - Stack operations</li>
+                                    <li><code>XCHG</code> - Trao đổi</li>
+                                    <li><code>LEA</code> - Load effective address</li>
+                                </ul>
+                            </div>
+                            <div class="info-box">
+                                <h5>2. Nhóm lệnh số học</h5>
+                                <ul>
+                                    <li><code>ADD</code>, <code>SUB</code>, <code>MUL</code>, <code>DIV</code></li>
+                                    <li><code>INC</code>, <code>DEC</code> - Tăng/giảm 1</li>
+                                    <li><code>ADC</code>, <code>SBB</code> - Cộng/trừ có nhớ</li>
+                                    <li><code>CMP</code> - So sánh</li>
+                                </ul>
+                            </div>
+                            <div class="info-box">
+                                <h5>3. Nhóm lệnh logic</h5>
+                                <ul>
+                                    <li><code>AND</code>, <code>OR</code>, <code>XOR</code>, <code>NOT</code></li>
+                                    <li><code>TEST</code> - Test bit</li>
+                                    <li><code>SHL</code>, <code>SHR</code> - Dịch trái/phải</li>
+                                    <li><code>ROL</code>, <code>ROR</code> - Quay trái/phải</li>
+                                </ul>
+                            </div>
+                            <div class="info-box">
+                                <h5>4. Nhóm lệnh điều khiển</h5>
+                                <ul>
+                                    <li><code>JMP</code> - Nhảy không điều kiện</li>
+                                    <li><code>JZ</code>, <code>JNZ</code>, <code>JC</code>,... - Nhảy có điều kiện</li>
+                                    <li><code>CALL</code>, <code>RET</code> - Gọi/thoát chương trình con</li>
+                                    <li><code>LOOP</code> - Vòng lặp</li>
+                                    <li><code>INT</code>, <code>IRET</code> - Ngắt</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="example">
+                            <strong>Ví dụ lệnh MOV:</strong>
+                            <div class="formula">
+                                MOV đích, nguồn<br>
+                                MOV AX, BX       ; AX ← BX (thanh ghi → thanh ghi)<br>
+                                MOV [100H], AX   ; ô nhớ 100H ← AX (thanh ghi → bộ nhớ)<br>
+                                MOV AX, 0FFFFH   ; AX ← FFFFH (tức thời → thanh ghi)<br>
+                                MOV AX, MEM1     ; AX ← nội dung tại MEM1 (bộ nhớ → thanh ghi)
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+
+            <!-- Chương 4 -->
+            <article id="ktmt-ch4" class="chapter">
+                <header class="chapter-header" onclick="toggleChapter(this)">
+                    <div class="chapter-icon zap-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
+                    <h3>Chương 4: Kỹ Thuật Ống Dẫn & Bộ Nhớ</h3>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="chapter-content">
+                    <!-- Pipeline -->
+                    <section class="sub-section">
+                        <h4>4.1 Kỹ Thuật Ống Dẫn (Pipeline)</h4>
+                        <p>Kỹ thuật chia quá trình thực hiện lệnh thành các giai đoạn nhỏ, cho phép xử lý chồng lấn nhiều lệnh cùng lúc - tăng throughput của CPU.</p>
+
+                        <div class="info-box warning">
+                            <h5>3 Giai đoạn thực hiện lệnh cơ bản</h5>
+                            <ol>
+                                <li><strong>Fetch (F):</strong> Đọc mã lệnh từ bộ nhớ vào CPU</li>
+                                <li><strong>Decode (D):</strong> Giải mã lệnh, xác định toán hạng</li>
+                                <li><strong>Execute (E):</strong> Thực hiện lệnh, ghi kết quả</li>
+                            </ol>
+                        </div>
+
+                        <h5>So sánh: Không pipeline vs Có pipeline</h5>
+                        <div class="content-grid two-col">
+                            <div class="info-box red">
+                                <h5>Không pipeline (3 lệnh)</h5>
+                                <p>Lệnh 1: F D E</p>
+                                <p>Lệnh 2: . . . F D E</p>
+                                <p>Lệnh 3: . . . . . . F D E</p>
+                                <p><strong>Tổng thời gian: 9 chu kỳ</strong></p>
+                            </div>
+                            <div class="info-box green">
+                                <h5>Có pipeline (3 lệnh)</h5>
+                                <p>Lệnh 1: F D E</p>
+                                <p>Lệnh 2: . F D E</p>
+                                <p>Lệnh 3: . . F D E</p>
+                                <p><strong>Tổng thời gian: 5 chu kỳ</strong></p>
+                            </div>
+                        </div>
+
+                        <h5>Sơ đồ pipeline</h5>
+                        <div class="pipeline-table">
+                            <table class="data-table">
+                                <thead>
+                                    <tr><th>Lệnh / Chu kỳ</th><th>T1</th><th>T2</th><th>T3</th><th>T4</th><th>T5</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Lệnh 1</td><td class="cell-fetch">F</td><td class="cell-decode">D</td><td class="cell-exec">E</td><td></td><td></td></tr>
+                                    <tr><td>Lệnh 2</td><td></td><td class="cell-fetch">F</td><td class="cell-decode">D</td><td class="cell-exec">E</td><td></td></tr>
+                                    <tr><td>Lệnh 3</td><td></td><td></td><td class="cell-fetch">F</td><td class="cell-decode">D</td><td class="cell-exec">E</td></tr>
+                                </tbody>
+                            </table>
+                            <p class="diagram-note">F = Fetch, D = Decode, E = Execute</p>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>⚠️ Xung đột Pipeline (Pipeline Hazards)</h5>
+                            <ul>
+                                <li><strong>Structural Hazard:</strong> Nhiều lệnh cùng cần 1 tài nguyên</li>
+                                <li><strong>Data Hazard:</strong> Lệnh sau cần kết quả của lệnh trước (RAW, WAW, WAR)</li>
+                                <li><strong>Control Hazard:</strong> Lệnh nhảy làm thay đổi luồng thực thi</li>
+                            </ul>
+                        </div>
+
+                        <p><strong>Giải pháp khắc phục:</strong></p>
+                        <ul>
+                            <li><strong>Forwarding/Bypassing:</strong> Truyền trực tiếp kết quả cho lệnh sau</li>
+                            <li><strong>Stall (bubble):</strong> Tạm dừng pipeline</li>
+                            <li><strong>Branch prediction:</strong> Dự đoán nhánh nhảy</li>
+                            <li><strong>Out-of-order execution:</strong> Thực thi không theo thứ tự</li>
+                        </ul>
+                    </section>
+
+                    <!-- Bộ nhớ Cache -->
+                    <section class="sub-section">
+                        <h4>4.2 Bộ Nhớ Cache</h4>
+                        <p>Bộ nhớ đệm tốc độ cao nằm giữa CPU và RAM chính, giảm thời gian truy xuất bộ nhớ. Dựa trên nguyên lý <strong>locality of reference</strong>.</p>
+
+                        <div class="content-grid two-col">
+                            <div class="info-box info">
+                                <h5>Nguyên lý hoạt động</h5>
+                                <ul>
+                                    <li><strong>Temporal locality:</strong> Dữ liệu vừa dùng có khả năng được dùng lại</li>
+                                    <li><strong>Spatial locality:</strong> Dữ liệu gần nhau thường được dùng cùng lúc</li>
+                                </ul>
+                            </div>
+                            <div class="info-box info">
+                                <h5>Phân loại theo vị trí</h5>
+                                <ul>
+                                    <li><strong>L1 Cache:</strong> Nằm trong CPU core, nhanh nhất</li>
+                                    <li><strong>L2 Cache:</strong> Ngoài core nhưng gần, nhanh</li>
+                                    <li><strong>L3 Cache:</strong> Chia sẻ giữa các core</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Loại</th><th>Dung lượng</th><th>Tốc độ</th><th>Vị trí</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>L1</td><td>8-64 KB</td><td>1-4 chu kỳ</td><td>Trong CPU core</td></tr>
+                                <tr><td>L2</td><td>256 KB - 1 MB</td><td>4-10 chu kỳ</td><td>Trong/ngoài CPU</td></tr>
+                                <tr><td>L3</td><td>2-64 MB</td><td>10-20 chu kỳ</td><td>Chia sẻ giữa cores</td></tr>
+                                <tr><td>RAM</td><td>4-128 GB</td><td>100+ chu kỳ</td><td>Trên mainboard</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5>Phân loại theo cách ánh xạ:</h5>
+                        <ul>
+                            <li><strong>Direct-mapped:</strong> Mỗi block RAM chỉ vào 1 vị trí cố định trong cache</li>
+                            <li><strong>Fully associative:</strong> Block RAM có thể vào bất kỳ vị trí nào trong cache</li>
+                            <li><strong>Set-associative:</strong> Cache chia thành các set, mỗi set có nhiều way (kết hợp 2 cách trên)</li>
+                        </ul>
+
+                        <h5>Các thuật toán thay thế cache:</h5>
+                        <ul>
+                            <li><strong>LRU</strong> (Least Recently Used) - Ít dùng gần nhất</li>
+                            <li><strong>FIFO</strong> (First In First Out) - Vào trước ra trước</li>
+                            <li><strong>Random</strong> - Ngẫu nhiên</li>
+                            <li><strong>LFU</strong> (Least Frequently Used) - Ít dùng nhất</li>
+                        </ul>
+
+                        <div class="info-box warning">
+                            <h5>📊 Hiệu suất Cache</h5>
+                            <div class="formula">
+                                Hit ratio = Số truy cập cache / Tổng số truy cập<br>
+                                Miss ratio = 1 - Hit ratio<br><br>
+                                Avg access time = Hit ratio × Cache time + Miss ratio × Memory time
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ROM & RAM -->
+                    <section class="sub-section">
+                        <h4>4.3 Bộ Nhớ ROM & RAM</h4>
+                        <div class="content-grid two-col">
+                            <div class="info-box blue">
+                                <h5>ROM (Read Only Memory)</h5>
+                                <ul>
+                                    <li>Chỉ đọc, không ghi được (thường)</li>
+                                    <li>Lưu BIOS, firmware</li>
+                                    <li>Không mất dữ liệu khi tắt nguồn (non-volatile)</li>
+                                </ul>
+                                <h6>Các loại ROM:</h6>
+                                <ul>
+                                    <li><strong>Mask ROM:</strong> Nạp sẵn từ nhà sản xuất</li>
+                                    <li><strong>PROM:</strong> Nạp 1 lần bằng thiết bị đốt</li>
+                                    <li><strong>EPROM:</strong> Xóa bằng tia cực tím</li>
+                                    <li><strong>EEPROM:</strong> Xóa bằng điện</li>
+                                    <li><strong>Flash:</strong> Loại EEPROM hiện đại, dùng trong BIOS/UEFI</li>
+                                </ul>
+                            </div>
+                            <div class="info-box green">
+                                <h5>RAM (Random Access Memory)</h5>
+                                <ul>
+                                    <li>Đọc và ghi được</li>
+                                    <li>Lưu dữ liệu tạm khi chạy</li>
+                                    <li>Mất dữ liệu khi tắt nguồn (volatile)</li>
+                                </ul>
+                                <h6>Phân loại RAM:</h6>
+                                <ul>
+                                    <li><strong>SRAM (Static):</strong> 6 transistor/bit, không cần refresh, tốc độ cao, giá đắt → dùng làm Cache</li>
+                                    <li><strong>DRAM (Dynamic):</strong> 1 transistor + 1 tụ/bit, cần refresh định kỳ, giá rẻ → dùng làm RAM chính</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h5>Các thế hệ DRAM:</h5>
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Loại</th><th>Số chân</th><th>Tốc độ</th><th>Đặc điểm</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>SDR SDRAM</td><td>168</td><td>66-133 MHz</td><td>Truyền 1 lần/chu kỳ</td></tr>
+                                <tr><td>DDR</td><td>184</td><td>200-400 MHz</td><td>Truyền 2 lần/chu kỳ (cạnh lên & xuống)</td></tr>
+                                <tr><td>DDR2</td><td>240</td><td>400-1066 MHz</td><td>Bus cao gấp đôi DDR, điện áp 1.8V</td></tr>
+                                <tr><td>DDR3</td><td>240</td><td>800-2133 MHz</td><td>Điện áp 1.5V, hiệu suất cao hơn</td></tr>
+                                <tr><td>DDR4</td><td>288</td><td>2133-4266 MHz</td><td>Điện áp 1.2V, tốc độ cao hơn</td></tr>
+                                <tr><td>DDR5</td><td>288</td><td>4800-8400 MHz</td><td>Điện áp 1.1V, băng thông gấp đôi DDR4</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5>Cấu trúc DRAM:</h5>
+                        <ul>
+                            <li>Tổ chức dạng ma trận hàng-cột</li>
+                            <li>Mạch giải mã địa chỉ: RAS (Row Address Selector) và CAS (Column Address Selector)</li>
+                            <li>Đường dây enable mở mạch ra bộ nhớ</li>
+                            <li>Đường dây Read/Write quyết định thao tác</li>
+                            <li>Địa chỉ multiplex: chia sẻ đường địa chỉ cho hàng và cột để tiết kiệm chân</li>
+                        </ul>
+                    </section>
+                </div>
+            </article>
+        </section>
+
+        <!-- BTMT Section -->
+        <section id="btmt-section" class="subject-section">
+            <div class="hero-banner btmt-hero">
+                <h2>Bảo Trì Máy Tính (BTMT)</h2>
+                <p>Ôn tập cuối kỳ · 4 tín chỉ · Được sử dụng tài liệu</p>
+            </div>
+
+            <!-- Quick Navigation -->
+            <div class="quick-nav">
+                <a href="#btmt-ch1" class="quick-nav-item">
+                    <span class="num">1</span>
+                    <span>Cấu tạo máy tính</span>
+                </a>
+                <a href="#btmt-ch2" class="quick-nav-item">
+                    <span class="num">2</span>
+                    <span>Lắp ráp & tương thích</span>
+                </a>
+                <a href="#btmt-ch3" class="quick-nav-item">
+                    <span class="num">3</span>
+                    <span>Bảo trì máy tính</span>
+                </a>
+            </div>
+
+            <!-- Phần 1 -->
+            <article id="btmt-ch1" class="chapter">
+                <header class="chapter-header" onclick="toggleChapter(this)">
+                    <div class="chapter-icon circuit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M11 9h4a2 2 0 0 0 2-2V3"/>
+                            <circle cx="9" cy="9" r="2"/>
+                            <path d="M7 21v-4a2 2 0 0 1 2-2h4"/>
+                            <circle cx="15" cy="15" r="2"/>
+                        </svg>
+                    </div>
+                    <h3>Phần 1: Cấu Tạo Máy Vi Tính</h3>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="chapter-content">
+                    <!-- Mainboard -->
+                    <section class="sub-section">
+                        <h4>1.1 Mainboard (Bo Mạch Chủ)</h4>
+                        <p>Bảng mạch lớn nhất trong máy vi tính, liên kết và điều khiển các thành phần. Là cầu nối trung gian giao tiếp giữa các thiết bị.</p>
+
+                        <div class="content-grid two-col">
+                            <div>
+                                <h5>Các thành phần chính</h5>
+                                <ul>
+                                    <li><strong>Socket/Slot CPU:</strong> Khe cắm vi xử lý (Socket cho CPU dạng vuông, Slot cho dạng thanh)</li>
+                                    <li><strong>Khe DIMM:</strong> Cắm RAM (Dual in-line memory module, 2 hàng chân)</li>
+                                    <li><strong>Chipset:</strong> Bắc cầu (NB) điều khiển CPU-RAM-GPU, Nam cầu (SB) điều khiển I/O</li>
+                                    <li><strong>Khe mở rộng:</strong> PCI, PCIe (x1, x4, x8, x16), AGP (cũ)</li>
+                                    <li><strong>BIOS/UEFI:</strong> ROM chứa chương trình khởi động</li>
+                                    <li><strong>CMOS + Pin:</strong> Lưu thiết lập BIOS, đồng hồ RTC</li>
+                                    <li><strong>Khe M.2, SATA:</strong> Kết nối ổ cứng SSD</li>
+                                    <li><strong>Jumper, DIP:</strong> Thiết lập tham số</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>Các chuẩn bus chính</h5>
+                                <table class="data-table">
+                                    <thead><tr><th>Bus</th><th>Độ rộng</th><th>Ứng dụng</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>ISA</td><td>8/16 bit</td><td>Cũ, card mở rộng</td></tr>
+                                        <tr><td>PCI</td><td>32/64 bit</td><td>Card mở rộng</td></tr>
+                                        <tr><td>PCIe</td><td>x1,x4,x8,x16</td><td>GPU, SSD, card mạng</td></tr>
+                                        <tr><td>AGP</td><td>32 bit</td><td>Card đồ họa (cũ)</td></tr>
+                                        <tr><td>USB</td><td>Serial</td><td>Thiết bị ngoại vi</td></tr>
+                                        <tr><td>SATA</td><td>Serial</td><td>HDD, SSD, ODD</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>📋 Thông số quan trọng khi chọn Mainboard</h5>
+                            <ul>
+                                <li><strong>Form factor:</strong> ATX, Micro-ATX, Mini-ITX (kích thước)</li>
+                                <li><strong>Socket type:</strong> LGA 1200/1700 (Intel), AM4/AM5 (AMD)</li>
+                                <li><strong>Chipset:</strong> B660, Z790 (Intel), B550, X670 (AMD)</li>
+                                <li><strong>Hỗ trợ RAM:</strong> Loại DDR, số khe, dung lượng max, tốc độ max</li>
+                                <li><strong>Khe mở rộng:</strong> Số khe PCIe, M.2, SATA</li>
+                                <li><strong>Cổng I/O:</strong> USB, HDMI, DisplayPort, LAN, Audio</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- CPU -->
+                    <section class="sub-section">
+                        <h4>1.2 CPU (Vi Xử Lý)</h4>
+                        <div class="content-grid two-col">
+                            <div>
+                                <h5>Chức năng</h5>
+                                <ul>
+                                    <li>Thực hiện tính toán và xử lý dữ liệu</li>
+                                    <li>Điều khiển hoạt động hệ thống</li>
+                                    <li>Liên hệ với thiết bị qua mainboard</li>
+                                    <li>Giao tiếp với RAM/ROM trực tiếp</li>
+                                    <li>Quản lý ngắt (IRQ) từ thiết bị</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>Tiêu chí đánh giá</h5>
+                                <ul>
+                                    <li><strong>Tốc độ xung nhịp</strong> (GHz)</li>
+                                    <li><strong>Số nhân (core)</strong> và luồng (thread)</li>
+                                    <li><strong>Dung lượng Cache</strong> L1, L2, L3</li>
+                                    <li><strong>Tập lệnh</strong> hỗ trợ (SSE, AVX, ...)</li>
+                                    <li><strong>Công nghệ sản xuất</strong> (nm)</li>
+                                    <li><strong>Điện áp, TDP</strong> (công suất tiêu thụ)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>🚀 Công nghệ hiện đại</h5>
+                            <ul>
+                                <li><strong>Hyper-Threading (Intel):</strong> 1 core xử lý 2 threads, tăng 15-30% hiệu suất</li>
+                                <li><strong>SMT (AMD):</strong> Simultaneous Multi-Threading, tương tự HT</li>
+                                <li><strong>Multicore:</strong> Nhiều core trên 1 chip, xử lý song song</li>
+                                <li><strong>Turbo Boost / Precision Boost:</strong> Tăng xung tự động khi cần</li>
+                                <li><strong>Overclocking:</strong> Tăng xung thủ công</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>⚙️ Hệ số Ratio (Multiplier)</h5>
+                            <p>Tốc độ CPU = FSB × Ratio</p>
+                            <div class="formula">
+                                Ví dụ: FSB = 100 MHz, Ratio = 40<br>
+                                Tốc độ CPU = 100 × 40 = 4000 MHz = 4 GHz
+                            </div>
+                            <p>FSB (Front Side Bus) là bus dữ liệu giữa CPU và RAM.</p>
+                        </div>
+
+                        <h5>Các dòng CPU Intel & AMD:</h5>
+                        <table class="data-table">
+                            <thead><tr><th>Intel</th><th>AMD</th><th>Phân khúc</th></tr></thead>
+                            <tbody>
+                                <tr><td>Core i3</td><td>Ryzen 3</td><td>Văn phòng</td></tr>
+                                <tr><td>Core i5</td><td>Ryzen 5</td><td>Phổ thông / Gaming</td></tr>
+                                <tr><td>Core i7</td><td>Ryzen 7</td><td>Hiệu suất cao</td></tr>
+                                <tr><td>Core i9</td><td>Ryzen 9</td><td>Workstation</td></tr>
+                                <tr><td>Xeon</td><td>Threadripper / EPYC</td><td>Server / Workstation</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <!-- RAM -->
+                    <section class="sub-section">
+                        <h4>1.3 Bộ Nhớ Trong (RAM)</h4>
+                        <div class="content-grid two-col">
+                            <div class="info-box blue">
+                                <h5>SRAM (Static RAM)</h5>
+                                <ul>
+                                    <li>6 transistor/bit → phức tạp</li>
+                                    <li>Tốc độ cao, không cần refresh</li>
+                                    <li>Giá thành cao, mật độ thấp</li>
+                                    <li>Dùng làm Cache (L1, L2, L3)</li>
+                                </ul>
+                            </div>
+                            <div class="info-box green">
+                                <h5>DRAM (Dynamic RAM)</h5>
+                                <ul>
+                                    <li>1 transistor + 1 tụ/bit → đơn giản</li>
+                                    <li>Cần refresh định kỳ (tụ xả)</li>
+                                    <li>Giá rẻ, mật độ cao</li>
+                                    <li>Dùng làm RAM chính</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h5>Thông số quan trọng của RAM:</h5>
+                        <table class="data-table">
+                            <thead><tr><th>Thông số</th><th>Mô tả</th><th>Ví dụ</th></tr></thead>
+                            <tbody>
+                                <tr><td>Dung lượng</td><td>Khả năng lưu trữ</td><td>8GB, 16GB, 32GB</td></tr>
+                                <tr><td>Tốc độ</td><td>Tần số hoạt động</td><td>3200MHz, 3600MHz</td></tr>
+                                <tr><td>Băng thông</td><td>Lượng dữ liệu truyền/giây</td><td>DDR4-3200: 25.6 GB/s</td></tr>
+                                <tr><td>Latency (CL)</td><td>Độ trễ</td><td>CL16, CL18, CL22</td></tr>
+                                <tr><td>Điện áp</td><td>Nguồn cung cấp</td><td>1.2V (DDR4), 1.1V (DDR5)</td></tr>
+                                <tr><td>Channel</td><td>Số kênh truyền</td><td>Single, Dual, Quad</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="info-box warning">
+                            <h5>💡 Channel - Kênh bộ nhớ</h5>
+                            <ul>
+                                <li><strong>Single Channel:</strong> 1 kênh, băng thông thấp</li>
+                                <li><strong>Dual Channel:</strong> 2 kênh, băng thông gấp đôi (cần 2 thanh RAM cùng tốc độ/dung lượng)</li>
+                                <li><strong>Quad Channel:</strong> 4 kênh (CPU cao cấp, workstation)</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- PSU -->
+                    <section class="sub-section">
+                        <h4>1.4 Nguồn (PSU - Power Supply Unit)</h4>
+                        <p>Chuyển điện AC 220V thành DC ±3.3V, ±5V, ±12V cho hệ thống máy tính.</p>
+
+                        <div class="content-grid two-col">
+                            <div>
+                                <h5>Phân loại theo Form Factor</h5>
+                                <ul>
+                                    <li><strong>ATX:</strong> Phổ biến nhất, PC thông thường</li>
+                                    <li><strong>SFX:</strong> Nhỏ gọn, mini PC</li>
+                                    <li><strong>TFX:</strong> Dạng mỏng, case đặc biệt</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>Phân loại theo thiết kế dây</h5>
+                                <ul>
+                                    <li><strong>Non-modular:</strong> Dây cố định, giá rẻ</li>
+                                    <li><strong>Semi-modular:</strong> Một phần tháo rời</li>
+                                    <li><strong>Full modular:</strong> Tháo rời hoàn toàn, gọn gàng</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h5>Phân loại theo hiệu suất (chuẩn 80 Plus):</h5>
+                        <div class="badges-row">
+                            <span class="badge">White</span>
+                            <span class="badge info">Bronze</span>
+                            <span class="badge success">Silver</span>
+                            <span class="badge warning">Gold</span>
+                            <span class="badge purple">Platinum</span>
+                            <span class="badge red">Titanium</span>
+                        </div>
+                        <p>Hiệu suất càng cao → ít tốn điện, ít tỏa nhiệt, bền hơn.</p>
+
+                        <h5>Công suất theo nhu cầu:</h5>
+                        <table class="data-table">
+                            <thead><tr><th>Công suất</th><th>Nhu cầu sử dụng</th></tr></thead>
+                            <tbody>
+                                <tr><td>&lt; 400W</td><td>Văn phòng cơ bản (CPU onboard)</td></tr>
+                                <tr><td>400-700W</td><td>Phổ thông, gaming nhẹ (GPU mid-range)</td></tr>
+                                <tr><td>700-1000W</td><td>Gaming cao cấp (GPU high-end)</td></tr>
+                                <tr><td>&gt; 1000W</td><td>Workstation, multi-GPU</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <!-- Storage -->
+                    <section class="sub-section">
+                        <h4>1.5 Bộ Nhớ Ngoài (Storage)</h4>
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Loại</th><th>Tốc độ</th><th>Độ bền</th><th>Giá</th><th>Ứng dụng</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>HDD</td><td>80-200 MB/s</td><td>Cơ học, dễ hỏng</td><td>Rẻ</td><td>Lưu trữ lớn</td></tr>
+                                <tr><td>SSD SATA</td><td>500-600 MB/s</td><td>Cao</td><td>Trung bình</td><td>Hệ điều hành</td></tr>
+                                <tr><td>SSD NVMe</td><td>3000-7000+ MB/s</td><td>Cao</td><td>Cao</td><td>Gaming, productivity</td></tr>
+                                <tr><td>SSHD</td><td>Vừa phải</td><td>Trung bình</td><td>Vừa phải</td><td>Cân bằng</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5>Chuẩn kết nối ổ cứng:</h5>
+                        <ul>
+                            <li><strong>IDE/PATA (cũ):</strong> 4 thiết bị, Primary/Secondary Master/Slave</li>
+                            <li><strong>SATA:</strong> 1 thiết bị/cáp, tốc độ 6 Gbps (SATA III)</li>
+                            <li><strong>M.2:</strong> Nhỏ gọn, hỗ trợ SATA và NVMe</li>
+                            <li><strong>U.2:</strong> Server, enterprise SSD</li>
+                        </ul>
+                    </section>
+                </div>
+            </article>
+
+            <!-- Phần 2 -->
+            <article id="btmt-ch2" class="chapter">
+                <header class="chapter-header" onclick="toggleChapter(this)">
+                    <div class="chapter-icon wrench-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <h3>Phần 2: Lắp Ráp & Tính Tương Thích</h3>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="chapter-content">
+                    <!-- Tính tương thích -->
+                    <section class="sub-section">
+                        <h4>2.1 Tính Tương Thích Khi Chọn Thiết Bị</h4>
+
+                        <div class="info-box red">
+                            <h5>⚠️ Nguyên tắc quan trọng khi chọn thiết bị</h5>
+                            <ul>
+                                <li>Xác định <strong>mục đích sử dụng</strong> (gaming, văn phòng, đồ họa, ...)</li>
+                                <li><strong>Tính tương thích</strong> giữa các thiết bị</li>
+                                <li><strong>Tính đồng bộ</strong> (tốc độ CPU, bus, RAM phải khớp)</li>
+                                <li><strong>Khả năng nâng cấp</strong> trong tương lai</li>
+                                <li>Ràng buộc <strong>giá cả</strong></li>
+                                <li>Dễ sử dụng, gọn nhẹ, tính mỹ thuật</li>
+                            </ul>
+                        </div>
+
+                        <div class="content-grid two-col">
+                            <div class="info-box info">
+                                <h5>CPU ↔ Mainboard</h5>
+                                <ul>
+                                    <li>Socket phải khớp (LGA 1700, AM5, ...)</li>
+                                    <li>Chipset hỗ trợ CPU đó</li>
+                                    <li>BIOS version tương thích</li>
+                                    <li>TDP mainboard chịu được</li>
+                                </ul>
+                            </div>
+                            <div class="info-box info">
+                                <h5>RAM ↔ Mainboard</h5>
+                                <ul>
+                                    <li>Loại DDR khớp (DDR4, DDR5)</li>
+                                    <li>Tốc độ được mainboard hỗ trợ</li>
+                                    <li>Số khe và dung lượng max</li>
+                                    <li>Điện áp RAM phù hợp</li>
+                                </ul>
+                            </div>
+                            <div class="info-box info">
+                                <h5>GPU ↔ Mainboard/PSU</h5>
+                                <ul>
+                                    <li>Khe PCIe x16</li>
+                                    <li>Công suất PSU đủ cho GPU</li>
+                                    <li>Đủ cổng PCIe cho GPU</li>
+                                    <li>Kích thước vừa case</li>
+                                </ul>
+                            </div>
+                            <div class="info-box info">
+                                <h5>PSU ↔ Hệ thống</h5>
+                                <ul>
+                                    <li>Công suất đủ tổng tiêu thụ (x2 để dự phòng)</li>
+                                    <li>Đủ cổng kết nối (24-pin, 8-pin CPU, 8-pin GPU)</li>
+                                    <li>Hiệu suất (80 Plus)</li>
+                                    <li>Form factor vừa case</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="info-box success">
+                            <h5>🎯 Ví dụ cấu hình theo nhu cầu</h5>
+                            <table class="data-table">
+                                <thead>
+                                    <tr><th>Nhu cầu</th><th>CPU</th><th>RAM</th><th>GPU</th><th>PSU</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Văn phòng</td><td>i3 / Ryzen 3</td><td>8GB</td><td>Onboard</td><td>400W</td></tr>
+                                    <tr><td>Gaming phổ thông</td><td>i5 / Ryzen 5</td><td>16GB</td><td>RTX 4060 / RX 7600</td><td>600W</td></tr>
+                                    <tr><td>Gaming cao cấp</td><td>i7 / Ryzen 7</td><td>32GB</td><td>RTX 4070 / RX 7800</td><td>750W</td></tr>
+                                    <tr><td>Workstation</td><td>i9 / Ryzen 9</td><td>64GB</td><td>RTX 4090 / RX 7900</td><td>1000W+</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="calculator-card">
+                            <h5>🧮 Tính công suất PSU cần thiết</h5>
+                            <div class="calc-grid two-col">
+                                <div class="calc-input">
+                                    <label>CPU TDP (W):</label>
+                                    <input type="number" id="cpuTdp" value="65" placeholder="65">
+                                </div>
+                                <div class="calc-input">
+                                    <label>GPU TDP (W):</label>
+                                    <input type="number" id="gpuTdp" value="170" placeholder="170">
+                                </div>
+                                <div class="calc-input">
+                                    <label>RAM + Storage + Others (W):</label>
+                                    <input type="number" id="otherTdp" value="50" placeholder="50">
+                                </div>
+                                <div class="calc-input">
+                                    <label>Hệ số dự phòng:</label>
+                                    <input type="number" id="psuBuffer" value="1.5" step="0.1" placeholder="1.5">
+                                </div>
+                            </div>
+                            <div class="result-box">
+                                <div><span class="badge info">Tổng tiêu thụ</span> <code id="totalPower"></code> W</div>
+                                <div><span class="badge success">PSU khuyến nghị</span> <code id="psuRecommend"></code> W</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Quy trình lắp ráp -->
+                    <section class="sub-section">
+                        <h4>2.2 Quy Trình Lắp Ráp Máy Tính</h4>
+
+                        <div class="steps-list">
+                            <div class="step-item">
+                                <div class="step-num">1</div>
+                                <div class="step-content">
+                                    <h5>Chuẩn bị</h5>
+                                    <p>Chuẩn bị thiết bị, công cụ (tua-vit, kềm, vòng chống tĩnh điện), đọc tài liệu hướng dẫn. <strong>Xả tĩnh điện</strong> trước khi chạm vào linh kiện bằng cách chạm tay vào vật tiếp đất.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-num">2</div>
+                                <div class="step-content">
+                                    <h5>Lắp nguồn (PSU) vào case</h5>
+                                    <p>Đặt nguồn đúng vị trí, chọn mức điện áp vào (110V/220V), bắt vít chắc chắn. Nối cáp nguồn chính 24-pin ATX và cáp CPU 4/8-pin.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-num">3</div>
+                                <div class="step-content">
+                                    <h5>Cài đặt CPU + tản nhiệt</h5>
+                                    <p>Nâng đòn bẩy socket, đặt CPU đúng chiều (chú ý tam giác đánh dấu), đóng đòn bẩy. Bôi nhiệt chute (pea-size), lắp quạt tản nhiệt, kết nối cáp quạt CPU (CPU_FAN trên mainboard).</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-num">4</div>
+                                <div class="step-content">
+                                    <h5>Lắp RAM</h5>
+                                    <p>Mở khóa khe DIMM, cắm RAM đúng chiều (khớp với notch), ấn đều 2 đầu đến khi khóa tự đóng "click". Đối với DIMM: cắm thẳng; SIMM: cắm nghiêng rồi đẩy đứng.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-num">5</div>
+                                <div class="step-content">
+                                    <h5>Lắp mainboard vào case</h5>
+                                    <p>Lắp standoff (chân đế) vào case đúng vị trí. Đặt mainboard vào, bắt vít. Lắp tấm che cổng I/O. Kết nối dây đèn LED, nút power/reset, USB, audio từ case vào mainboard.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-num">6</div>
+                                <div class="step-content">
+                                    <h5>Lắp ổ đĩa và GPU</h5>
+                                    <p>Lắp HDD/SSD vào khoang 3.5"/2.5", kết nối cáp SATA và cáp nguồn. Lắp GPU vào khe PCIe x16, bắt vít cố định, kết nối cáp nguồn PCIe (nếu cần).</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-num">7</div>
+                                <div class="step-content">
+                                    <h5>Kết nối nguồn và kiểm tra</h5>
+                                    <p>Kết nối cáp nguồn 24-pin ATX, cáp CPU 4/8-pin, cáp PCIe cho GPU, cáp SATA cho ổ đĩa. <strong>Kiểm tra kỹ</strong> trước khi bật nguồn. Cắm màn hình, bàn phím, chuột.</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-num">8</div>
+                                <div class="step-content">
+                                    <h5>Thiết lập BIOS & cài đặt</h5>
+                                    <p>Bật nguồn, vào BIOS (phím Delete/F2), thiết lập boot order, kiểm tra RAM/CPU. Cài đặt Windows, driver mainboard, driver GPU, cập nhật Windows.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h5>Thiết lập BIOS Setup cơ bản:</h5>
+                        <table class="data-table">
+                            <thead><tr><th>Mục</th><th>Chức năng</th></tr></thead>
+                            <tbody>
+                                <tr><td>Standard CMOS</td><td>Date/Time, kiểu ổ đĩa</td></tr>
+                                <tr><td>Advanced BIOS</td><td>Virus warning, boot order, CPU cache</td></tr>
+                                <tr><td>Advanced Chipset</td><td>Cấu hình chipset, RAM timing</td></tr>
+                                <tr><td>Power Management</td><td>Quản lý điện năng</td></tr>
+                                <tr><td>PnP/PCI</td><td>Cấu hình Plug & Play</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5>Định dạng file hệ thống:</h5>
+                        <table class="data-table">
+                            <thead><tr><th>Đặc điểm</th><th>FAT</th><th>FAT32</th><th>NTFS</th></tr></thead>
+                            <tbody>
+                                <tr><td>OS hỗ trợ</td><td>DOS, tất cả</td><td>Win 95 OSR2+</td><td>Win NT 4.0 SP4+</td></tr>
+                                <tr><td>Dung lượng đĩa</td><td>≤ 4GB</td><td>512MB - 2TB</td><td>&gt; 2TB</td></tr>
+                                <tr><td>File tối đa</td><td>2GB</td><td>4GB</td><td>Không giới hạn</td></tr>
+                                <tr><td>Hỗ trợ domain</td><td>Không</td><td>Không</td><td>Có</td></tr>
+                                <tr><td>Bảo mật</td><td>Không</td><td>Không</td><td>Có (ACL)</td></tr>
+                            </tbody>
+                        </table>
+                        <p><strong>Khuyến nghị:</strong> Sử dụng NTFS cho Windows XP trở lên.</p>
+                    </section>
+
+                    <!-- Lưu ý -->
+                    <section class="sub-section">
+                        <h4>2.3 Lưu Ý Quan Trọng Khi Lắp Ráp</h4>
+                        <div class="content-grid two-col">
+                            <div class="info-box red">
+                                <h5>❌ KHÔNG được làm</h5>
+                                <ul>
+                                    <li>Kết nối điện khi đang lắp</li>
+                                    <li>Chạm trực tiếp vào chip/vi mạch</li>
+                                    <li>Ép mạnh linh kiện</li>
+                                    <li>Cắm ngược chiều các chân</li>
+                                    <li>Làm việc trên bề mặt dẫn điện</li>
+                                    <li>Cắm cáp nguồn sai cổng</li>
+                                </ul>
+                            </div>
+                            <div class="info-box green">
+                                <h5>✅ NÊN làm</h5>
+                                <ul>
+                                    <li>Xả tĩnh điện trước khi thao tác</li>
+                                    <li>Đọc kỹ tài liệu hướng dẫn</li>
+                                    <li>Kiểm tra tính tương thích</li>
+                                    <li>Làm việc trên bề mặt cách điện</li>
+                                    <li>Đeo vòng chống tĩnh điện</li>
+                                    <li>Bắt vít vừa đủ, không quá chặt</li>
+                                    <li>Đánh dấu cáp trước khi tháo</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>🔊 Bíp code BIOS (Beep Codes)</h5>
+                            <p>Khi khởi động, BIOS phát âm thanh bíp để báo trạng thái:</p>
+                            <ul>
+                                <li><strong>1 bíp ngắn:</strong> Hệ thống bình thường</li>
+                                <li><strong>1 bíp dài:</strong> Lỗi refresh DRAM</li>
+                                <li><strong>2 bíp ngắn:</strong> Lỗi parity (RAM)</li>
+                                <li><strong>3 bíp ngắn:</strong> Lỗi 64KB đầu RAM</li>
+                                <li><strong>4 bíp ngắn:</strong> Timer không hoạt động</li>
+                                <li><strong>5 bíp ngắn:</strong> Lỗi CPU</li>
+                                <li><strong>6 bíp ngắn:</strong> Lỗi bàn phím</li>
+                                <li><strong>1 dài + 3 ngắn:</strong> Lỗi card màn hình</li>
+                                <li><strong>1 dài + 2 ngắn:</strong> Lỗi card màn hình/DRAM</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </article>
+
+            <!-- Phần 3 -->
+            <article id="btmt-ch3" class="chapter">
+                <header class="chapter-header" onclick="toggleChapter(this)">
+                    <div class="chapter-icon shield-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>Phần 3: Bảo Trì Máy Tính</h3>
+                    <span class="chevron">▼</span>
+                </header>
+                <div class="chapter-content">
+                    <!-- Kế hoạch bảo trì -->
+                    <section class="sub-section">
+                        <h4>3.1 Kế Hoạch Bảo Dưỡng</h4>
+                        <p><strong>Mục đích:</strong> Ngăn ngừa sự cố, hạn chế thiệt hại. Bảo đảm môi trường làm việc phù hợp: sạch sẽ, khô thoáng, không hút thuốc, không đặt gần chất lỏng.</p>
+
+                        <table class="data-table">
+                            <thead>
+                                <tr><th>Thành phần</th><th>Công việc</th><th>Tần suất</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Bên trong case</td><td>Vệ sinh lỗ thông gió, thổi bụi bằng khí nén, gắn chắc các chíp/card</td><td>Hàng năm</td></tr>
+                                <tr><td>CMOS Setup</td><td>Sao lưu thiết lập BIOS</td><td>Khi thay đổi</td></tr>
+                                <tr><td>Ổ đĩa cứng</td><td>Sao lưu dữ liệu, quét virus, gom mảnh (defrag)</td><td>Định kỳ (hàng tuần/ngày)</td></tr>
+                                <tr><td>Bàn phím</td><td>Làm vệ sinh</td><td>Hàng năm</td></tr>
+                                <tr><td>Mouse</td><td>Vệ sinh trục lăn và bi (mouse cơ)</td><td>Hàng tháng</td></tr>
+                                <tr><td>Monitor</td><td>Lau màn hình bằng vải mềm</td><td>Hàng tháng</td></tr>
+                                <tr><td>Máy in</td><td>Làm sạch bụi, mảnh giấy bằng khí nén</td><td>Hàng tháng</td></tr>
+                                <tr><td>Phần mềm</td><td>Xóa file recycle bin, temp</td><td>Hàng tháng</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5>Bản ghi bảo trì:</h5>
+                        <ul>
+                            <li>Ghi chép phần mềm, số phiên bản, HĐH</li>
+                            <li>Ghi chép phần cứng và cấu hình</li>
+                            <li>Ghi chép thời điểm và cách bảo trì</li>
+                            <li>Ghi lại công việc sửa chữa PC</li>
+                        </ul>
+                    </section>
+
+                    <!-- Sao lưu dữ liệu -->
+                    <section class="sub-section">
+                        <h4>3.2 Sao Lưu Dữ Liệu</h4>
+                        <div class="content-grid three-col">
+                            <div class="info-box blue">
+                                <h5>Full Backup</h5>
+                                <p>Sao lưu đầy đủ tất cả dữ liệu.</p>
+                                <p><strong>Ưu:</strong> Khôi phục nhanh, đơn giản</p>
+                                <p><strong>Nhược:</strong> Tốn thời gian, dung lượng lớn</p>
+                            </div>
+                            <div class="info-box green">
+                                <h5>Differential</h5>
+                                <p>Sao lưu file thay đổi từ lần <strong>Full backup gần nhất</strong>.</p>
+                                <p><strong>Ưu:</strong> Nhanh hơn Full</p>
+                                <p><strong>Nhược:</strong> Khôi phục cần Full + Differential gần nhất</p>
+                            </div>
+                            <div class="info-box warning">
+                                <h5>Incremental</h5>
+                                <p>Sao lưu file thay đổi từ lần <strong>backup gần nhất (bất kỳ)</strong>.</p>
+                                <p><strong>Ưu:</strong> Nhanh nhất, ít dung lượng</p>
+                                <p><strong>Nhược:</strong> Khôi phục phức tạp (Full + tất cả Incremental)</p>
+                            </div>
+                        </div>
+
+                        <h5>Windows Registry:</h5>
+                        <p>Registry là cơ sở dữ liệu lưu trữ thông số kỹ thuật của Windows.</p>
+                        <ul>
+                            <li><strong>HKEY_CLASSES_ROOT:</strong> Thông tin dùng chung hệ thống</li>
+                            <li><strong>HKEY_CURRENT_USER:</strong> Thông tin user đang logon</li>
+                            <li><strong>HKEY_LOCAL_MACHINE:</strong> Thông tin hệ thống, phần cứng, phần mềm</li>
+                            <li><strong>HKEY_USERS:</strong> Thông tin tất cả user</li>
+                            <li><strong>HKEY_CURRENT_CONFIG:</strong> Thông tin phần cứng hiện tại</li>
+                            <li><strong>HKEY_DYN_DATA:</strong> Một phần của HKEY_LOCAL_MACHINE</li>
+                        </ul>
+                        <p>Chỉnh sửa bằng Registry Editor: <code>regedit</code> (Start → Run → regedit)</p>
+
+                        <h5>Các kiểu dữ liệu Registry:</h5>
+                        <ul>
+                            <li><strong>REG_BINARY:</strong> Nhị phân</li>
+                            <li><strong>REG_DWORD:</strong> Double Word (32 bit)</li>
+                            <li><strong>REG_EXPAND_SZ:</strong> Chuỗi mở rộng (VD: %SystemRoot%)</li>
+                            <li><strong>REG_MULTI_SZ:</strong> Chuỗi đặc biệt (nhiều dòng)</li>
+                            <li><strong>REG_SZ:</strong> Chuỗi chuẩn</li>
+                        </ul>
+                    </section>
+
+                    <!-- Phòng chống virus -->
+                    <section class="sub-section">
+                        <h4>3.3 Phòng Chống Virus & Sự Cố</h4>
+
+                        <h5>Các loại mã độc:</h5>
+                        <table class="data-table">
+                            <thead><tr><th>Loại</th><th>Đặc điểm</th><th>Cách lây lan</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>Virus</strong></td><td>Bám vào file/chương trình khác, có khả năng tái lây nhiễm</td><td>File thực thi, boot sector</td></tr>
+                                <tr><td><strong>Worm</strong></td><td>Tự lây lan qua mạng, không cần file chủ</td><td>Email, chat, lỗ hổng mạng</td></tr>
+                                <tr><td><strong>Trojan</strong></td><td>Không tự lây lan, giấu trong phần mềm hợp lệ</td><td>Phần mềm crack, game lậu</td></tr>
+                                <tr><td><strong>Spyware</strong></td><td>Ăn cắp thông tin người dùng</td><td>Phần mềm miễn phí</td></tr>
+                                <tr><td><strong>Adware</strong></td><td>Hiển thị quảng cáo không mong muốn</td><td>Phần mềm miễn phí</td></tr>
+                                <tr><td><strong>Ransomware</strong></td><td>Mã hóa dữ liệu, đòi tiền chuộc</td><td>Email, website độc</td></tr>
+                                <tr><td><strong>Backdoor</strong></td><td>Mở cổng cho hacker kết nối từ xa</td><td>Trojan chuyên biệt</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="info-box red">
+                            <h5>⚠️ Dấu hiệu nhiễm virus</h5>
+                            <ul>
+                                <li>Chương trình nạp lâu, file biến mất hoặc xuất hiện lạ</li>
+                                <li>Dung lượng đĩa giảm, đèn HDD sáng liên tục khi không dùng</li>
+                                <li>Máy chạy chậm, xuất hiện cửa sổ quảng cáo</li>
+                                <li>Thông báo lỗi kỳ lạ, file bị hỏng liên tục</li>
+                                <li>Thay đổi trang chủ browser, toolbar lạ</li>
+                                <li>Thông báo từ phần mềm diệt virus</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box green">
+                            <h5>✅ Biện pháp phòng chống</h5>
+                            <ul>
+                                <li>Cài và cập nhật phần mềm diệt virus (Norton, McAfee, Kaspersky, Bkav, Windows Defender)</li>
+                                <li>Không mở email/link/file không rõ nguồn gốc</li>
+                                <li>Cập nhật hệ điều hành và phần mềm thường xuyên</li>
+                                <li>Sao lưu dữ liệu định kỳ</li>
+                                <li>Không dùng phần mềm crack/lậu</li>
+                                <li>Sử dụng Safe Mode khi cần xử lý</li>
+                                <li>Bật tường lửa (Firewall)</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🔧 Quy trình diệt virus</h5>
+                            <ol>
+                                <li>Tắt máy tính</li>
+                                <li>Khởi động bằng đĩa/USB sạch (bootable AV)</li>
+                                <li>Quét và diệt virus</li>
+                                <li>Khởi động lại từ ổ C</li>
+                                <li>Nếu Windows: dùng Safe Mode (F8) nếu không có đĩa boot</li>
+                                <li>Cập nhật virus database (Live Update)</li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <!-- Sự cố máy tính -->
+                    <section class="sub-section">
+                        <h4>3.4 Khắc Phục Sự Cố Máy Tính</h4>
+                        <p>Sự cố máy tính có 2 nguyên nhân chính: <strong>phần mềm</strong> (bug, virus, xung đột) và <strong>phần cứng</strong> (hỏng hóc).</p>
+
+                        <div class="info-box warning">
+                            <h5>📋 Nguyên tắc chung khi khắc phục</h5>
+                            <ul>
+                                <li>Tiếp cận vấn đề có hệ thống, xem xét kỹ tình huống</li>
+                                <li>Cô lập vấn đề, tháo từng bộ phận, thay thiết bị tốt để xác định nguyên nhân</li>
+                                <li>Kiểm tra thứ đơn giản trước (cắm dây, bật nguồn)</li>
+                                <li>Nghiên cứu tài liệu, Internet, hỏi người khác</li>
+                                <li>Đặt mức ưu tiên (bảo toàn dữ liệu vs đưa máy hoạt động)</li>
+                                <li>Bình tĩnh, không hấp tấp</li>
+                                <li>Lập kế hoạch, ghi chép quá trình</li>
+                                <li>Hỏi ý kiến người dùng trước khi dùng biện pháp mạnh (format, cài lại)</li>
+                            </ul>
+                        </div>
+
+                        <h5>Các chế độ khởi động Windows:</h5>
+                        <table class="data-table">
+                            <thead><tr><th>Chế độ</th><th>Mô tả</th></tr></thead>
+                            <tbody>
+                                <tr><td>Safe Mode</td><td>Tải driver tối thiểu, không mạng, VGA chuẩn</td></tr>
+                                <tr><td>Safe Mode with Networking</td><td>Như Safe Mode + kết nối mạng</td></tr>
+                                <tr><td>Safe Mode with Command Prompt</td><td>Safe Mode + cửa sổ DOS</td></tr>
+                                <tr><td>Enable Boot Logging</td><td>Ghi log driver tải vào ntbtlog.txt</td></tr>
+                                <tr><td>Last Known Good Configuration</td><td>Dùng registry lần shutdown cuối</td></tr>
+                                <tr><td>Normal Mode</td><td>Khởi động bình thường</td></tr>
+                            </tbody>
+                        </table>
+                        <p>Vào chế độ: Ấn <strong>F8</strong> trong quá trình khởi động (sau POST).</p>
+
+                        <h5>Stop Message (Blue Screen of Death - BSOD):</h5>
+                        <p>Khi lỗi vượt ngoài tầm kiểm soát, Windows dừng và báo lỗi Stop error. Gồm 3 phần:</p>
+                        <ul>
+                            <li><strong>Thông tin lỗi:</strong> Mã lỗi (stop error) + tham số</li>
+                            <li><strong>Gợi ý khắc phục:</strong> Cách chung</li>
+                            <li><strong>Thông tin debug:</strong> Port, kết quả</li>
+                        </ul>
+                        <div class="formula">
+                            Ví dụ: *** STOP: 0x0000001E (0xC0000005, 0xFDE38AF9, 0x00000001, 0x7E8B0EB4)<br>
+                            KMODE_EXCEPTION_NOT_HANDLED ***
+                        </div>
+                    </section>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Ôn Tập Cuối Kỳ · Kiến Trúc Máy Tính & Bảo Trì Máy Tính · 4 Tín Chỉ</p>
+            <p>Được sử dụng tài liệu khi làm bài</p>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="back-to-top" title="Lên đầu trang">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
