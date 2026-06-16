@@ -468,6 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupQuickNav();
     setupBackToTop();
     setupCalculators();
+    setupSidebar();
     
     // Initial calculations
     updateDecConversion();
@@ -491,3 +492,237 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Make toggleChapter globally accessible
 window.toggleChapter = toggleChapter;
+
+// ============================================
+// SIDEBAR
+// ============================================
+
+// Toggle collapse subject (KTMT / BTMT) trong sidebar
+function toggleSbSubject(btn) {
+    const subject = btn.closest('.sb-subject');
+    if (subject) {
+        subject.classList.toggle('collapsed');
+    }
+}
+window.toggleSbSubject = toggleSbSubject;
+
+// Setup sidebar interactions
+function setupSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    const closeBtn = document.getElementById('sidebarClose');
+    const mobileBtn = document.getElementById('mobileSidebarBtn');
+    const toggleBtn = document.getElementById('sidebarToggle');
+    const wrapper = document.querySelector('.layout-wrapper');
+    const search = document.getElementById('sidebarSearch');
+
+    // ----- Desktop: ẩn/hiện sidebar -----
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            wrapper.classList.toggle('sidebar-collapsed');
+            // Đổi icon
+            const svg = toggleBtn.querySelector('svg');
+            if (wrapper.classList.contains('sidebar-collapsed')) {
+                svg.innerHTML = '<polyline points="9 18 15 12 9 6"/>';
+            } else {
+                svg.innerHTML = '<polyline points="15 18 9 12 15 6"/>';
+            }
+        });
+    }
+
+    // ----- Mobile: mở sidebar dạng drawer -----
+    function openMobileSidebar() {
+        sidebar.classList.add('show');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeMobileSidebar() {
+        sidebar.classList.remove('show');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+    if (mobileBtn) mobileBtn.addEventListener('click', openMobileSidebar);
+    if (closeBtn) closeBtn.addEventListener('click', closeMobileSidebar);
+    if (overlay) overlay.addEventListener('click', closeMobileSidebar);
+
+    // Đóng sidebar mobile khi bấm ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && sidebar.classList.contains('show')) {
+            closeMobileSidebar();
+        }
+    });
+
+    // ----- Click vào link trong sidebar -----
+    const sbLinks = document.querySelectorAll('.sb-tree a');
+    sbLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href') || '';
+            if (!href.startsWith('#')) return;
+
+            const targetId = href.substring(1);
+            const target = document.getElementById(targetId);
+            if (!target) return;
+
+            e.preventDefault();
+
+            // Nếu là chương/chapter, expand nó ra
+            const chapter = target.closest('.chapter');
+            if (chapter && !chapter.classList.contains('expanded')) {
+                chapter.classList.add('expanded');
+                const header = chapter.querySelector('.chapter-header');
+                if (header) header.classList.add('expanded');
+            }
+
+            // Đợi DOM update rồi scroll
+            setTimeout(() => {
+                const headerHeight = 80; // tương đương scroll-padding-top
+                const rect = target.getBoundingClientRect();
+                const top = window.scrollY + rect.top - headerHeight - 8;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }, 80);
+
+            // Flash hiệu ứng vàng nhạt
+            sbLinks.forEach(l => l.classList.remove('flash'));
+            link.classList.add('flash');
+            setTimeout(() => link.classList.remove('flash'), 1300);
+
+            // Đóng sidebar mobile
+            if (window.innerWidth <= 992) {
+                closeMobileSidebar();
+            }
+
+            // Cập nhật active ngay
+            sbLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        });
+    });
+
+    // ----- Highlight mục đang xem khi scroll -----
+    const sectionIds = Array.from(sbLinks).map(l => l.getAttribute('href').substring(1));
+    let ticking = false;
+
+    function updateActiveOnScroll() {
+        const headerOffset = 100;
+        const scrollPos = window.scrollY + headerOffset + 20;
+
+        let activeId = null;
+        for (let id of sectionIds) {
+            const el = document.getElementById(id);
+            if (!el) continue;
+            // Bỏ qua nếu section (chapter) chưa expand
+            const chapter = el.closest('.chapter');
+            if (chapter && !chapter.classList.contains('expanded')) continue;
+
+            if (el.offsetTop <= scrollPos) {
+                activeId = id;
+            } else {
+                break;
+            }
+        }
+
+        if (activeId) {
+            sbLinks.forEach(l => {
+                l.classList.toggle('active', l.getAttribute('href') === '#' + activeId);
+            });
+
+            // Scroll sidebar để theo dõi mục active (chỉ khi không đang focus search)
+            if (document.activeElement !== search) {
+                const activeLink = document.querySelector('.sb-tree a.active');
+                if (activeLink) {
+                    const linkTop = activeLink.offsetTop;
+                    const linkHeight = activeLink.offsetHeight;
+                    const nav = document.getElementById('sidebarNav');
+                    const navVisibleHeight = nav.clientHeight;
+                    const currentScroll = nav.scrollTop;
+
+                    if (linkTop < currentScroll || linkTop + linkHeight > currentScroll + navVisibleHeight) {
+                        nav.scrollTo({
+                            top: linkTop - navVisibleHeight / 2 + linkHeight / 2,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            }
+        }
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(updateActiveOnScroll);
+            ticking = true;
+        }
+    }, { passive: true });
+
+    // ----- Search trong sidebar -----
+    if (search) {
+        search.addEventListener('input', () => {
+            const q = search.value.toLowerCase().trim();
+
+            document.querySelectorAll('.sb-subject').forEach(subject => {
+                let anyMatch = false;
+                const chapters = subject.querySelectorAll('.sb-tree > li');
+
+                chapters.forEach(chap => {
+                    const chapLink = chap.querySelector('.sb-chapter');
+                    const subLinks = chap.querySelectorAll('ul li a');
+
+                    const chapText = chapLink ? chapLink.textContent.toLowerCase() : '';
+                    const chapMatch = chapText.includes(q);
+
+                    let anySubMatch = false;
+                    subLinks.forEach(s => {
+                        const t = s.textContent.toLowerCase();
+                        const match = t.includes(q) || chapMatch;
+                        s.classList.toggle('hidden-by-search', !match);
+                        if (match) anySubMatch = true;
+                    });
+
+                    // Ẩn cả chương nếu không có match
+                    chap.style.display = (anySubMatch || chapMatch) ? '' : 'none';
+                    if (anySubMatch || chapMatch) anyMatch = true;
+                });
+
+                // Mở rộng subject nếu có match, thu gọn nếu rỗng search
+                if (q) {
+                    subject.classList.remove('collapsed');
+                    subject.style.display = anyMatch ? '' : 'none';
+                } else {
+                    subject.style.display = '';
+                }
+            });
+        });
+    }
+
+    // ----- Khi đổi tab KTMT/BTMT, tự scroll subject tương ứng trong sidebar -----
+    const tabButtons = document.querySelectorAll('.nav-btn');
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tab = btn.dataset.tab; // 'ktmt' hoặc 'btmt'
+            // Mở rộng subject tương ứng, thu gọn subject kia
+            document.querySelectorAll('.sb-subject').forEach(sub => {
+                if (sub.dataset.subject === tab) {
+                    sub.classList.remove('collapsed');
+                    // Scroll sidebar tới subject đó
+                    setTimeout(() => {
+                        const titleBtn = sub.querySelector('.sb-subject-title');
+                        if (titleBtn) {
+                            titleBtn.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }, 150);
+                } else {
+                    sub.classList.add('collapsed');
+                }
+            });
+        });
+    });
+
+    // ----- Khởi tạo: mở rộng KTMT, thu gọn BTMT -----
+    const ktmtSub = document.querySelector('.sb-subject[data-subject="ktmt"]');
+    const btmtSub = document.querySelector('.sb-subject[data-subject="btmt"]');
+    if (ktmtSub) ktmtSub.classList.remove('collapsed');
+    if (btmtSub) btmtSub.classList.add('collapsed');
+
+    // Tính active ban đầu
+    setTimeout(updateActiveOnScroll, 200);
+}

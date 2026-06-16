@@ -53,6 +53,122 @@
         </div>
     </header>
 
+    <!-- Layout: Sidebar + Main Content -->
+    <div class="layout-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>📚 Mục Lục</h3>
+                <button class="sidebar-close" id="sidebarClose" aria-label="Đóng">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="sidebar-search">
+                <input type="text" id="sidebarSearch" placeholder="🔍 Tìm kiếm mục..." autocomplete="off">
+            </div>
+
+            <nav class="sidebar-nav" id="sidebarNav">
+                <!-- KTMT Tree -->
+                <div class="sb-subject" data-subject="ktmt">
+                    <button class="sb-subject-title" onclick="toggleSbSubject(this)">
+                        <span class="sb-icon">🖥️</span>
+                        <span>KTMT - Kiến Trúc Máy Tính</span>
+                        <span class="sb-caret">▾</span>
+                    </button>
+                    <ul class="sb-tree">
+                        <li>
+                            <a href="#ktmt-ch1" class="sb-chapter">Chương 1: Số Học Máy Tính</a>
+                            <ul>
+                                <li><a href="#sec-ktmt-1-1">1.1 Hệ Nhị Phân & Cơ Số 16</a></li>
+                                <li><a href="#sec-ktmt-1-2">1.2 Biểu Diễn Số Nguyên</a></li>
+                                <li><a href="#sec-ktmt-1-3">1.3 Số Thực (IEEE 754)</a></li>
+                                <li><a href="#sec-ktmt-1-4">1.4 Mã Phát Hiện Lỗi</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#ktmt-ch2" class="sb-chapter">Chương 2: Tổng Quan Máy Tính</a>
+                            <ul>
+                                <li><a href="#sec-ktmt-2-1">2.1 Sơ Đồ Tổng Quát</a></li>
+                                <li><a href="#sec-ktmt-2-2">2.2 Von Neumann</a></li>
+                                <li><a href="#sec-ktmt-2-3">2.3 Phân Loại Flynn</a></li>
+                                <li><a href="#sec-ktmt-2-4">2.4 Bus Hệ Thống</a></li>
+                                <li><a href="#sec-ktmt-2-5">2.5 Lịch Sử PT</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#ktmt-ch3" class="sb-chapter">Chương 3: Vi Xử Lý 8088</a>
+                            <ul>
+                                <li><a href="#sec-ktmt-3-1">3.1 Sơ Đồ Cấu Trúc 8088</a></li>
+                                <li><a href="#sec-ktmt-3-2">3.2 Các Thanh Ghi</a></li>
+                                <li><a href="#sec-ktmt-3-3">3.3 Chế Độ Địa Chỉ</a></li>
+                                <li><a href="#sec-ktmt-3-4">3.4 Tập Lệnh 8088</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#ktmt-ch4" class="sb-chapter">Chương 4: Ống Dẫn & Bộ Nhớ</a>
+                            <ul>
+                                <li><a href="#sec-ktmt-4-1">4.1 Kỹ Thuật Pipeline</a></li>
+                                <li><a href="#sec-ktmt-4-2">4.2 Bộ Nhớ Cache</a></li>
+                                <li><a href="#sec-ktmt-4-3">4.3 Bộ Nhớ ROM & RAM</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- BTMT Tree -->
+                <div class="sb-subject" data-subject="btmt">
+                    <button class="sb-subject-title" onclick="toggleSbSubject(this)">
+                        <span class="sb-icon">🔧</span>
+                        <span>BTMT - Bảo Trì Máy Tính</span>
+                        <span class="sb-caret">▾</span>
+                    </button>
+                    <ul class="sb-tree">
+                        <li>
+                            <a href="#btmt-ch1" class="sb-chapter">Phần 1: Cấu Tạo Máy</a>
+                            <ul>
+                                <li><a href="#sec-btmt-1-1">1.1 Mainboard</a></li>
+                                <li><a href="#sec-btmt-1-2">1.2 CPU</a></li>
+                                <li><a href="#sec-btmt-1-3">1.3 RAM</a></li>
+                                <li><a href="#sec-btmt-1-4">1.4 PSU (Nguồn)</a></li>
+                                <li><a href="#sec-btmt-1-5">1.5 Bộ Nhớ Ngoài</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#btmt-ch2" class="sb-chapter">Phần 2: Lắp Ráp & Tương Thích</a>
+                            <ul>
+                                <li><a href="#sec-btmt-2-1">2.1 Tính Tương Thích</a></li>
+                                <li><a href="#sec-btmt-2-2">2.2 Quy Trình Lắp Ráp</a></li>
+                                <li><a href="#sec-btmt-2-3">2.3 Lưu Ý Quan Trọng</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#btmt-ch3" class="sb-chapter">Phần 3: Bảo Trì</a>
+                            <ul>
+                                <li><a href="#sec-btmt-3-1">3.1 Kế Hoạch Bảo Dưỡng</a></li>
+                                <li><a href="#sec-btmt-3-2">3.2 Sao Lưu Dữ Liệu</a></li>
+                                <li><a href="#sec-btmt-3-3">3.3 Phòng Chống Virus</a></li>
+                                <li><a href="#sec-btmt-3-4">3.4 Khắc Phục Sự Cố</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Overlay for mobile -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Sidebar toggle (desktop) -->
+        <button class="sidebar-toggle" id="sidebarToggle" title="Ẩn/Hiện mục lục" aria-label="Toggle sidebar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"/>
+            </svg>
+        </button>
+
     <!-- Main Content -->
     <main class="container main-content">
         <!-- KTMT Section -->
@@ -96,8 +212,7 @@
                 </header>
                 <div class="chapter-content">
                     <!-- 1.1 Hệ nhị phân -->
-                    <section class="sub-section">
-                        <h4>1.1 Hệ Nhị Phân & Hệ Cơ Số 16</h4>
+                    <section class="sub-section" id="sec-ktmt-1-1"><h4>1.1 Hệ Nhị Phân & Hệ Cơ Số 16</h4>
                         <div class="content-grid two-col">
                             <div>
                                 <h5>Khái niệm cơ bản</h5>
@@ -149,8 +264,7 @@
                     </section>
 
                     <!-- 1.2 Số nguyên -->
-                    <section class="sub-section">
-                        <h4>1.2 Biểu Diễn Số Nguyên</h4>
+                    <section class="sub-section" id="sec-ktmt-1-2"><h4>1.2 Biểu Diễn Số Nguyên</h4>
                         <div class="content-grid two-col">
                             <div>
                                 <h5>Số không dấu</h5>
@@ -210,8 +324,7 @@
                     </section>
 
                     <!-- 1.3 Số thực -->
-                    <section class="sub-section">
-                        <h4>1.3 Biểu Diễn Số Thực (IEEE 754-1985)</h4>
+                    <section class="sub-section" id="sec-ktmt-1-3"><h4>1.3 Biểu Diễn Số Thực (IEEE 754-1985)</h4>
                         <p>Dạng tổng quát:</p>
                         <div class="formula">X = (-1)^S × 2^(E-B) × 1.F</div>
                         <p>Trong đó: S = bit dấu, E = số mũ, F = phần định trị, B = bias</p>
@@ -277,8 +390,7 @@
                     </section>
 
                     <!-- 1.4 Mã phát hiện sửa lỗi -->
-                    <section class="sub-section">
-                        <h4>1.4 Mã Phát Hiện & Sửa Lỗi</h4>
+                    <section class="sub-section" id="sec-ktmt-1-4"><h4>1.4 Mã Phát Hiện & Sửa Lỗi</h4>
 
                         <!-- Parity -->
                         <div class="topic-card green">
@@ -440,8 +552,7 @@
                 </header>
                 <div class="chapter-content">
                     <!-- Sơ đồ tổng quát máy tính -->
-                    <section class="sub-section">
-                        <h4>2.1 Sơ Đồ Tổng Quát Máy Tính - Các Khối Chức Năng</h4>
+                    <section class="sub-section" id="sec-ktmt-2-1"><h4>2.1 Sơ Đồ Tổng Quát Máy Tính - Các Khối Chức Năng</h4>
                         <p>Máy tính điện tử số bao giờ cũng được cấu tạo từ <strong>5 khối chức năng cơ bản</strong> kết nối với nhau qua hệ thống bus. Sơ đồ tổng quát này là nền tảng để hiểu mọi kiến trúc máy tính, từ máy tính cá nhân đến siêu máy tính.</p>
 
                         <div class="diagram-card">
@@ -534,8 +645,7 @@
                     </section>
 
                     <!-- Von Neumann -->
-                    <section class="sub-section">
-                        <h4>2.2 Nguyên Lý Von Neumann</h4>
+                    <section class="sub-section" id="sec-ktmt-2-2"><h4>2.2 Nguyên Lý Von Neumann</h4>
                         <p>Mô hình kiến trúc máy tính do John von Neumann đề xuất năm 1945, là nền tảng của hầu hết máy tính hiện đại.</p>
 
                         <div class="content-grid two-col">
@@ -585,8 +695,7 @@
                     </section>
 
                     <!-- Phân loại kiến trúc -->
-                    <section class="sub-section">
-                        <h4>2.3 Phân Loại Kiến Trúc (Flynn)</h4>
+                    <section class="sub-section" id="sec-ktmt-2-3"><h4>2.3 Phân Loại Kiến Trúc (Flynn)</h4>
                         <table class="data-table">
                             <thead>
                                 <tr><th>Kiến trúc</th><th>Tên đầy đủ</th><th>Đặc điểm</th><th>Ví dụ</th></tr>
@@ -601,8 +710,7 @@
                     </section>
 
                     <!-- Bus -->
-                    <section class="sub-section">
-                        <h4>2.4 Bus Hệ Thống</h4>
+                    <section class="sub-section" id="sec-ktmt-2-4"><h4>2.4 Bus Hệ Thống</h4>
                         <p>Bus là tập hợp các đường dây truyền tín hiệu giữa các thành phần trong máy tính.</p>
                         <div class="content-grid three-col">
                             <div class="info-box red">
@@ -623,8 +731,7 @@
                     </section>
 
                     <!-- Lịch sử -->
-                    <section class="sub-section">
-                        <h4>2.5 Lịch Sử Phát Triển Máy Tính</h4>
+                    <section class="sub-section" id="sec-ktmt-2-5"><h4>2.5 Lịch Sử Phát Triển Máy Tính</h4>
                         <table class="data-table">
                             <thead>
                                 <tr><th>Thế hệ</th><th>Thời gian</th><th>Công nghệ</th><th>Đại diện</th></tr>
@@ -655,8 +762,7 @@
                 </header>
                 <div class="chapter-content">
                     <!-- Sơ đồ cấu trúc -->
-                    <section class="sub-section">
-                        <h4>3.1 Sơ Đồ Cấu Trúc 8088</h4>
+                    <section class="sub-section" id="sec-ktmt-3-1"><h4>3.1 Sơ Đồ Cấu Trúc 8088</h4>
                         <p>Intel 8088 là vi xử lý 16 bit nội bộ, 8 bit bus ngoài, được dùng trong IBM PC đầu tiên (1981).</p>
 
                         <div class="content-grid two-col">
@@ -691,8 +797,7 @@
                     </section>
 
                     <!-- Thanh ghi đa năng -->
-                    <section class="sub-section">
-                        <h4>3.2 Các Thanh Ghi Của 8088</h4>
+                    <section class="sub-section" id="sec-ktmt-3-2"><h4>3.2 Các Thanh Ghi Của 8088</h4>
 
                         <h5>a. Thanh ghi đa năng (16 bit)</h5>
                         <table class="data-table">
@@ -764,8 +869,7 @@
                     </section>
 
                     <!-- Chế độ địa chỉ -->
-                    <section class="sub-section">
-                        <h4>3.3 Chế Độ Địa Chỉ</h4>
+                    <section class="sub-section" id="sec-ktmt-3-3"><h4>3.3 Chế Độ Địa Chỉ</h4>
                         <p>Vi xử lý 8088 dùng địa chỉ logic dạng <strong>Segment:Offset</strong>. Địa chỉ vật lý 20 bit được tính:</p>
                         <div class="formula">Địa chỉ vật lý = Segment × 16 + Offset = Segment × 10H + Offset</div>
 
@@ -802,8 +906,7 @@
                     </section>
 
                     <!-- Tập lệnh -->
-                    <section class="sub-section">
-                        <h4>3.4 Tập Lệnh 8088</h4>
+                    <section class="sub-section" id="sec-ktmt-3-4"><h4>3.4 Tập Lệnh 8088</h4>
                         <p>Tập lệnh 8088 có hơn 100 lệnh, chia thành 6 nhóm:</p>
 
                         <div class="content-grid two-col">
@@ -873,8 +976,7 @@
                 </header>
                 <div class="chapter-content">
                     <!-- Pipeline -->
-                    <section class="sub-section">
-                        <h4>4.1 Kỹ Thuật Ống Dẫn (Pipeline)</h4>
+                    <section class="sub-section" id="sec-ktmt-4-1"><h4>4.1 Kỹ Thuật Ống Dẫn (Pipeline)</h4>
                         <p>Kỹ thuật chia quá trình thực hiện lệnh thành các giai đoạn nhỏ, cho phép xử lý chồng lấn nhiều lệnh cùng lúc - tăng throughput của CPU.</p>
 
                         <div class="info-box warning">
@@ -938,8 +1040,7 @@
                     </section>
 
                     <!-- Bộ nhớ Cache -->
-                    <section class="sub-section">
-                        <h4>4.2 Bộ Nhớ Cache</h4>
+                    <section class="sub-section" id="sec-ktmt-4-2"><h4>4.2 Bộ Nhớ Cache</h4>
                         <p>Bộ nhớ đệm tốc độ cao nằm giữa CPU và RAM chính, giảm thời gian truy xuất bộ nhớ. Dựa trên nguyên lý <strong>locality of reference</strong>.</p>
 
                         <div class="content-grid two-col">
@@ -998,8 +1099,7 @@
                     </section>
 
                     <!-- ROM & RAM -->
-                    <section class="sub-section">
-                        <h4>4.3 Bộ Nhớ ROM & RAM</h4>
+                    <section class="sub-section" id="sec-ktmt-4-3"><h4>4.3 Bộ Nhớ ROM & RAM</h4>
                         <div class="content-grid two-col">
                             <div class="info-box blue">
                                 <h5>ROM (Read Only Memory)</h5>
@@ -1099,8 +1199,7 @@
                 </header>
                 <div class="chapter-content">
                     <!-- Mainboard -->
-                    <section class="sub-section">
-                        <h4>1.1 Mainboard (Bo Mạch Chủ)</h4>
+                    <section class="sub-section" id="sec-btmt-1-1"><h4>1.1 Mainboard (Bo Mạch Chủ)</h4>
                         <p>Bảng mạch lớn nhất trong máy vi tính, liên kết và điều khiển các thành phần. Là cầu nối trung gian giao tiếp giữa các thiết bị.</p>
 
                         <div class="content-grid two-col">
@@ -1147,8 +1246,7 @@
                     </section>
 
                     <!-- CPU -->
-                    <section class="sub-section">
-                        <h4>1.2 CPU (Vi Xử Lý)</h4>
+                    <section class="sub-section" id="sec-btmt-1-2"><h4>1.2 CPU (Vi Xử Lý)</h4>
                         <div class="content-grid two-col">
                             <div>
                                 <h5>Chức năng</h5>
@@ -1208,8 +1306,7 @@
                     </section>
 
                     <!-- RAM -->
-                    <section class="sub-section">
-                        <h4>1.3 Bộ Nhớ Trong (RAM)</h4>
+                    <section class="sub-section" id="sec-btmt-1-3"><h4>1.3 Bộ Nhớ Trong (RAM)</h4>
                         <div class="content-grid two-col">
                             <div class="info-box blue">
                                 <h5>SRAM (Static RAM)</h5>
@@ -1255,8 +1352,7 @@
                     </section>
 
                     <!-- PSU -->
-                    <section class="sub-section">
-                        <h4>1.4 Nguồn (PSU - Power Supply Unit)</h4>
+                    <section class="sub-section" id="sec-btmt-1-4"><h4>1.4 Nguồn (PSU - Power Supply Unit)</h4>
                         <p>Chuyển điện AC 220V thành DC ±3.3V, ±5V, ±12V cho hệ thống máy tính.</p>
 
                         <div class="content-grid two-col">
@@ -1302,8 +1398,7 @@
                     </section>
 
                     <!-- Storage -->
-                    <section class="sub-section">
-                        <h4>1.5 Bộ Nhớ Ngoài (Storage)</h4>
+                    <section class="sub-section" id="sec-btmt-1-5"><h4>1.5 Bộ Nhớ Ngoài (Storage)</h4>
                         <table class="data-table">
                             <thead>
                                 <tr><th>Loại</th><th>Tốc độ</th><th>Độ bền</th><th>Giá</th><th>Ứng dụng</th></tr>
@@ -1340,8 +1435,7 @@
                 </header>
                 <div class="chapter-content">
                     <!-- Tính tương thích -->
-                    <section class="sub-section">
-                        <h4>2.1 Tính Tương Thích Khi Chọn Thiết Bị</h4>
+                    <section class="sub-section" id="sec-btmt-2-1"><h4>2.1 Tính Tương Thích Khi Chọn Thiết Bị</h4>
 
                         <div class="info-box red">
                             <h5>⚠️ Nguyên tắc quan trọng khi chọn thiết bị</h5>
@@ -1574,8 +1668,7 @@
                     </section>
 
                     <!-- Quy trình lắp ráp -->
-                    <section class="sub-section">
-                        <h4>2.3 Quy Trình Lắp Ráp Máy Tính</h4>
+                    <section class="sub-section" id="sec-btmt-2-2"><h4>2.2 Quy Trình Lắp Ráp Máy Tính</h4>
 
                         <div class="steps-list">
                             <div class="step-item">
@@ -1663,8 +1756,7 @@
                     </section>
 
                     <!-- Lưu ý -->
-                    <section class="sub-section">
-                        <h4>2.4 Lưu Ý Quan Trọng Khi Lắp Ráp</h4>
+                    <section class="sub-section" id="sec-btmt-2-3"><h4>2.3 Lưu Ý Quan Trọng Khi Lắp Ráp</h4>
                         <div class="content-grid two-col">
                             <div class="info-box red">
                                 <h5>❌ KHÔNG được làm</h5>
@@ -1723,8 +1815,7 @@
                 </header>
                 <div class="chapter-content">
                     <!-- Kế hoạch bảo trì -->
-                    <section class="sub-section">
-                        <h4>3.1 Kế Hoạch Bảo Dưỡng</h4>
+                    <section class="sub-section" id="sec-btmt-3-1"><h4>3.1 Kế Hoạch Bảo Dưỡng</h4>
                         <p><strong>Mục đích:</strong> Ngăn ngừa sự cố, hạn chế thiệt hại. Bảo đảm môi trường làm việc phù hợp: sạch sẽ, khô thoáng, không hút thuốc, không đặt gần chất lỏng.</p>
 
                         <table class="data-table">
@@ -1753,8 +1844,7 @@
                     </section>
 
                     <!-- Sao lưu dữ liệu -->
-                    <section class="sub-section">
-                        <h4>3.2 Sao Lưu Dữ Liệu</h4>
+                    <section class="sub-section" id="sec-btmt-3-2"><h4>3.2 Sao Lưu Dữ Liệu</h4>
                         <div class="content-grid three-col">
                             <div class="info-box blue">
                                 <h5>Full Backup</h5>
@@ -1799,8 +1889,7 @@
                     </section>
 
                     <!-- Phòng chống virus -->
-                    <section class="sub-section">
-                        <h4>3.3 Phòng Chống Virus & Sự Cố</h4>
+                    <section class="sub-section" id="sec-btmt-3-3"><h4>3.3 Phòng Chống Virus & Sự Cố</h4>
 
                         <h5>Các loại mã độc:</h5>
                         <table class="data-table">
@@ -1855,8 +1944,7 @@
                     </section>
 
                     <!-- Sự cố máy tính -->
-                    <section class="sub-section">
-                        <h4>3.4 Khắc Phục Sự Cố Máy Tính</h4>
+                    <section class="sub-section" id="sec-btmt-3-4"><h4>3.4 Khắc Phục Sự Cố Máy Tính</h4>
                         <p>Sự cố máy tính có 2 nguyên nhân chính: <strong>phần mềm</strong> (bug, virus, xung đột) và <strong>phần cứng</strong> (hỏng hóc).</p>
 
                         <div class="info-box warning">
@@ -1903,6 +1991,7 @@
             </article>
         </section>
     </main>
+    </div><!-- /.layout-wrapper -->
 
     <!-- Footer -->
     <footer class="footer">
@@ -1916,6 +2005,15 @@
     <button id="backToTop" class="back-to-top" title="Lên đầu trang">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
+
+    <!-- Mobile sidebar open button -->
+    <button class="mobile-sidebar-btn" id="mobileSidebarBtn" title="Mở mục lục" aria-label="Mở mục lục">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
         </svg>
     </button>
 
