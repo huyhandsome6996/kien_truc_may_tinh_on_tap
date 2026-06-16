@@ -2526,6 +2526,79 @@
                                 <li><strong>Cổng I/O:</strong> USB, HDMI, DisplayPort, LAN, Audio</li>
                             </ul>
                         </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 Mainboard giống "bộ xương" của máy tính</div>
+                            <p>Tưởng tượng mainboard như <strong>bộ xương và hệ thần kinh</strong> trong cơ thể bạn: não (CPU), trí nhớ ngắn hạn (RAM), trí nhớ dài hạn (ổ cứng), tay-chân (bàn phím, chuột, màn hình) đều <strong>dính vào xương</strong> và <strong>trao đổi tín hiệu qua dây thần kinh</strong> (bus).</p>
+                            <p>Nếu mainboard hỏng thì dù não (CPU) có khoẻ cũng không điều khiển được tay chân. Đó là lý do mainboard được gọi là "bo mạch chủ" – chủ trì toàn bộ hệ thống.</p>
+                            <p><strong>Ví dụ thực tế:</strong> Khi bạn gõ phím "A", tín hiệu đi từ bàn phím → cổng PS/2/USB → mainboard → CPU xử lý → RAM lưu chữ "A" → card màn hình → màn hình hiển thị chữ "A". Tất cả đều "đi qua" mainboard.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🔧 2 loại khe cắm CPU trên mainboard</h5>
+                            <p>Theo giáo trình BTMT, mainboard dùng 1 trong 2 loại khe cắm CPU sau:</p>
+                            <ul>
+                                <li><strong>Slot:</strong> khe cắm dài như thanh (giống khe cắm card mở rộng). Dùng cho <strong>Pentium II, Pentium III, Pentium Pro</strong> – các CPU thời đó được gắn trên một bảng mạch con rồi cắm ngang vào mainboard.</li>
+                                <li><strong>Socket:</strong> khe cắm hình chữ nhật có nhiều lỗ nhỏ (xăm lổ) để cắm CPU dạng vuông phẳng. Phổ biến ngày nay (LGA, PGA, AM4, AM5...).</li>
+                            </ul>
+                            <p><strong>Chú ý:</strong> Khe cắm CPU phải khớp với kiểu chân của CPU. CPU Intel LGA 1700 không cắm được vào socket AM4 của AMD.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>💾 2 loại khe cắm RAM trên mainboard</h5>
+                            <ul>
+                                <li><strong>DIMM (Dual In-line Memory Module):</strong> module nhớ có <strong>2 hàng chân</strong> độc lập (mặt trước và mặt sau truyền dữ liệu riêng). Cắm thẳng đứng, ấn xuống.</li>
+                                <li><strong>SIMM (Single In-line Memory Module):</strong> module nhớ chỉ có <strong>1 hàng chân</strong> (mặt trước và mặt sau cùng 1 tiếp điểm). Cắm nghiêng rồi đẩy đứng.</li>
+                            </ul>
+                            <p>Khe cắm RAM phải tương thích với loại RAM: thanh DDR4 không cắm được vào khe DDR5, thanh DIMM không cắm vào khe SIMM.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🚌 Các chuẩn bus trên mainboard (theo giáo trình BTMT)</h5>
+                            <p>Bus là hệ thống dây truyền tín hiệu trong mainboard. Mỗi chuẩn bus có độ rộng và tốc độ khác nhau:</p>
+                            <table class="data-table">
+                                <thead><tr><th>Chuẩn bus</th><th>Tên đầy đủ</th><th>Độ rộng</th><th>Đặc điểm</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>ISA</strong></td><td>Industry Standard Architecture</td><td>16 bit</td><td>Cũ, dùng 80286 – Pentium (trước đó 8 bit)</td></tr>
+                                    <tr><td><strong>EISA</strong></td><td>Extended ISA</td><td>32 bit</td><td>Cải tiến ISA, bus mở rộng không qua CPU</td></tr>
+                                    <tr><td><strong>PCI</strong></td><td>Peripheral Component Interconnect</td><td>32/64 bit</td><td>Phổ biến, card mạng/âm thanh</td></tr>
+                                    <tr><td><strong>VESA</strong></td><td>Video Electronic Standards Association</td><td>64 bit</td><td>Chuyên đồ họa (cũ)</td></tr>
+                                    <tr><td><strong>USB</strong></td><td>Universal Serial Bus</td><td>10–100 Mbps</td><td>Nhiều thiết bị ngoại vi, hot plug</td></tr>
+                                    <tr><td><strong>AGP</strong></td><td>Accelerated Graphics Port</td><td>64 bit</td><td>Chuyên card màn hình, max 533 MB/s</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>⚡ Các thành phần đặc biệt khác trên mainboard</h5>
+                            <ul>
+                                <li><strong>ROM BIOS:</strong> chip chứa BIOS – trình điều khiển, kiểm tra thiết bị (POST), trình khởi động. CPU chỉ đọc, không ghi được.</li>
+                                <li><strong>Chip DMA (Direct Memory Access):</strong> cho phép thiết bị truy cập bộ nhớ <strong>trực tiếp, không qua CPU</strong> → giảm tải cho CPU, tăng tốc độ truyền dữ liệu (ví dụ ổ cứng ↔ RAM).</li>
+                                <li><strong>Pin và CMOS:</strong> chip CMOS lưu thông số thiết lập cấu hình máy (BIOS setup). Được nuôi bằng pin nhỏ trên mainboard, có <strong>RTC (Real Time Clock)</strong> – đồng hồ thời gian thực – để máy tính vẫn giữ đúng giờ khi rút điện.</li>
+                                <li><strong>Jumper, DIP:</strong> công cụ thiết lập tham số thiết bị (tốc độ CPU, bus, xóa CMOS, bật/tắt khe cắm...). Mainboard mới thiết lập tự động bằng phần mềm (BIOS setup).</li>
+                                <li><strong>Khe IDE:</strong> 2 khe cắm cáp đĩa cứng và CDROM (Primary, Secondary).</li>
+                                <li><strong>Khe Floppy:</strong> cắm cáp ổ đĩa mềm (FDD).</li>
+                                <li><strong>Cổng PS/2, DIN:</strong> nối bàn phím, chuột.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>⚙️ FSB (Front Side Bus) – Bus dữ liệu CPU ↔ RAM</h5>
+                            <p><strong>FSB (Front Side Bus)</strong> – còn gọi là <strong>System Bus</strong> hoặc <strong>Memory Bus</strong> – là đường bus dữ liệu <strong>trực tiếp giữa CPU và RAM</strong>. Tốc độ FSB quyết định tốc độ giao tiếp CPU↔RAM, ảnh hưởng lớn tới hiệu năng máy.</p>
+                            <p>Ví dụ: CPU Pentium 4 tốc độ 2.4 GHz, FSB 800 MHz → Ratio = 2400/800 = 3. FSB càng cao, dữ liệu vào/ra CPU càng nhanh.</p>
+                        </div>
+
+                        <div class="info-box purple">
+                            <h5>📌 Đặc tính đáng chú ý của mainboard</h5>
+                            <ul>
+                                <li>Hỗ trợ được CPU, RAM, Card mở rộng nào (số khe, loại khe).</li>
+                                <li>Tốc độ bus, đặc biệt <strong>System Bus (FSB)</strong> giữa CPU và RAM.</li>
+                                <li>Các thành phần trên mainboard (DMA, CMOS, RTC, BIOS).</li>
+                                <li>Form factor (kích thước): ATX, Micro-ATX, Mini-ITX.</li>
+                            </ul>
+                        </div>
+
+                        <p class="quick-fact"><strong>📌 Lưu ý:</strong> Pin CMOS (như pin đồng hồ CR2032) khi hết điện sẽ làm máy quên thiết lập BIOS (vd: ngày tháng, thứ tự boot, thông số CPU). Dấu hiệu: máy báo "CMOS Checksum Error" hoặc giờ sai – chỉ cần thay pin mới là xong.</p>
                     </section>
 
                     <!-- CPU -->
@@ -2586,6 +2659,89 @@
                                 <tr><td>Xeon</td><td>Threadripper / EPYC</td><td>Server / Workstation</td></tr>
                             </tbody>
                         </table>
+
+                        <div class="info-box info">
+                            <h5>🔗 Cách CPU liên hệ với các thiết bị khác</h5>
+                            <p>Theo giáo trình BTMT, CPU có 2 cách giao tiếp với các thành phần trong máy:</p>
+                            <ul>
+                                <li><strong>Liên hệ gián tiếp qua mainboard và cáp:</strong> CPU không cắm trực tiếp ổ cứng hay màn hình, mà tín hiệu đi qua mainboard và cáp để tới thiết bị.</li>
+                                <li><strong>Giao tiếp trực tiếp RAM/ROM:</strong> CPU nối thẳng với RAM và ROM (BIOS) qua bus dữ liệu và bus địa chỉ trên mainboard.</li>
+                                <li><strong>Thiết bị khác liên hệ qua "cổng":</strong> gọi chung là <strong>cổng</strong>, gồm 2 thành phần:
+                                    <ul>
+                                        <li><strong>Vùng nhớ (địa chỉ I/O):</strong> mỗi thiết bị được cấp một dải địa chỉ riêng.</li>
+                                        <li><strong>Ngắt (IRQ – Interrupt Request):</strong> khi thiết bị cần giao tiếp, nó gửi yêu cầu ngắt → CPU tạm dừng công việc hiện tại, gọi chương trình xử lý ngắt tương ứng.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p><strong>Ví dụ:</strong> Khi bạn nhấn phím, bàn phím gửi IRQ → CPU nhận → đọc vùng nhớ của bàn phím → lấy mã phím → xử lý.</p>
+                        </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 CPU giống "giám đốc" công ty</div>
+                            <p>Tưởng tượng CPU là <strong>ông giám đốc</strong> ngồi ở văn phòng trung tâm. RAM và ROM (BIOS) là hai <strong>phòng làm việc ngay cạnh</strong> – giám đốc muốn lấy hồ sơ là bước sang được luôn (giao tiếp trực tiếp).</p>
+                            <p>Còn bàn phím, chuột, ổ cứng, màn hình... nằm ở các <strong>chi nhánh xa</strong>. Khi nhân viên chi nhánh cần gặp giám đốc, họ <strong>bấm chuông gọi (IRQ)</strong>. Giám đốc nghe chuông thì dừng việc đang làm, ra cửa (cổng) gặp nhân viên. Vì phải đi qua cửa (mainboard) nên gọi là "giao tiếp gián tiếp".</p>
+                            <p><strong>IRQ nhiều</strong> thì giám đốc bận rộn. CPU mạnh (nhiều nhân, Hyper-Threading) giống giám đốc có nhiều trợ lý – có thể gặp nhiều người cùng lúc.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>📊 5 tiêu chí đánh giá CPU (theo giáo trình BTMT)</h5>
+                            <ol>
+                                <li><strong>Tốc độ (Hz):</strong> số xung nhịp mỗi giây. Càng cao, CPU xử lý càng nhanh. Đơn vị: MHz, GHz.</li>
+                                <li><strong>Độ lớn của Cache:</strong> bộ nhớ đệm L1/L2/L3 nằm trong CPU. Cache lớn → ít phải đi lấy dữ liệu từ RAM → nhanh hơn.</li>
+                                <li><strong>Tập lệnh (instruction set):</strong> số lượng lệnh CPU hiểu được. Có các tập lệnh đặc biệt (MMX, SSE, AVX) giúp xử lý âm thanh, video, AI nhanh hơn.</li>
+                                <li><strong>Khả năng đa xử lý:</strong> chạy được nhiều CPU trên cùng một hệ thống (server, workstation).</li>
+                                <li><strong>Chức năng đặc biệt:</strong> Hyper-Threading, Turbo Boost, virtualization (ảo hoá), ECC memory...</li>
+                            </ol>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>⚙️ Hệ số Ratio (Multiplier) – Đồng bộ giữa CPU và FSB</h5>
+                            <p><strong>Ratio</strong> là hệ số đồng bộ giữa tốc độ CPU và tốc độ bus dữ liệu (FSB). Công thức:</p>
+                            <div class="formula">
+                                <strong>Tốc độ CPU = FSB × Ratio</strong><br>
+                                Hay: <strong>Ratio = Tốc độ CPU / FSB</strong>
+                            </div>
+                            <p><strong>Ví dụ giáo trình:</strong> CPU 200 MHz, FSB 66 MHz → <strong>Ratio = 200 / 66 ≈ 3</strong> (vì 66 × 3 ≈ 200).</p>
+                            <p><strong>Ví dụ hiện đại:</strong> FSB (Base Clock) 100 MHz, Ratio 40 → Tốc độ CPU = 100 × 40 = 4000 MHz = 4 GHz.</p>
+                            <p><strong>Ý nghĩa:</strong> Khi tăng Ratio (overclocking), CPU chạy nhanh hơn nhưng FSB vẫn giữ nguyên. CPU "nhịp cao" + FSB "nhịp thấp" → Ratio cao.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🚀 Công nghệ siêu phân luồng (Hyper-Threading Technology)</h5>
+                            <p><strong>Hyper-Threading (HT)</strong> là công nghệ Intel ra mắt trên dòng Pentium 4. Một CPU vật lý sẽ hoạt động như <strong>2 CPU logic</strong> (2 luồng – thread), cho phép xử lý song song 2 thread cùng lúc.</p>
+                            <ul>
+                                <li>Theo Intel, cải thiện tốc độ <strong>15% – 30%</strong> so với CPU cùng tốc độ nhưng không có HT.</li>
+                                <li>Hệ điều hành thấy 2 CPU ảo → tận dụng tốt đa tác vụ.</li>
+                                <li>Không phải lúc nào cũng tăng tốc – chỉ hiệu quả khi chạy nhiều chương trình cùng lúc.</li>
+                            </ul>
+                        </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 Hyper-Threading giống "giám đốc quản 2 phòng ban"</div>
+                            <p>Bình thường một giám đốc (CPU) chỉ làm 1 việc lúc. Nhưng nếu giám đốc <strong>rất nhanh nhạy</strong>, ông ấy có thể vừa nghe báo cáo phòng Kinh doanh, vừa phê duyệt phòng Kế toán – xen kẽ từng phút giây. Về mặt tổ chức, công ty như có <strong>2 giám đốc</strong> (2 CPU logic), dù thực ra chỉ có 1 người!</p>
+                            <p>Đó chính là Hyper-Threading: 1 CPU vật lý, nhưng hệ điều hành coi như có 2. Khi 1 thread đang chờ RAM (rảnh rỗi), thread kia được chạy lấp vào → tận dụng thời gian chết → tăng 15-30% hiệu năng.</p>
+                            <p><strong>Ví dụ thực tế:</strong> Core i7-13700K có 16 nhân 24 luồng (8 nhân có HT = 16 luồng, 8 nhân không HT = 8 luồng). Windows thấy 24 CPU ảo!</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🧠 Chip đa lõi (Multi-Core)</h5>
+                            <p><strong>Multi-Core</strong> là sự kết hợp <strong>nhiều vi xử lý (core) vào một chip CPU</strong>. Mỗi core là một CPU độc lập có thể xử lý một thread riêng.</p>
+                            <ul>
+                                <li><strong>Dual-Core (2 nhân):</strong> 2 CPU trong 1 chip.</li>
+                                <li><strong>Quad-Core (4 nhân):</strong> 4 CPU trong 1 chip.</li>
+                                <li><strong>Octa-Core (8 nhân), 16 nhân, 32 nhân...</strong> ở CPU cao cấp.</li>
+                            </ul>
+                            <p><strong>So sánh với Hyper-Threading:</strong> Multi-Core là "thực" 2 CPU vật lý (rất mạnh), còn HT là "ảo" 2 CPU (tăng ít hơn). Multi-Core + HT (vd: 8 nhân × 2 thread = 16 luồng) là cấu hình phổ biến hiện nay.</p>
+                        </div>
+
+                        <div class="info-box purple">
+                            <h5>📌 Các dòng CPU lịch sử</h5>
+                            <p><strong>Intel:</strong> 8080 → 8086/8088 → 80286 → 80386 → 80486SX/DX → Pentium I (PR75–PR233 MMX) → Pentium II (266–450, Celeron) → Pentium III → Pentium IV (có Hyper-Threading).</p>
+                            <p><strong>AMD:</strong> K5 (PR75–PR166) → K6 (PR166–PR233) → K7 → Duron → Thunderbird XP.</p>
+                            <p><strong>Cyrix/IBM:</strong> M1 (PR120–PR200L), M2 (PR166–PR233).</p>
+                        </div>
+
+                        <p class="quick-fact"><strong>📌 Trang web so sánh CPU:</strong> <a href="https://cpu.userbenchmark.com/" target="_blank">cpu.userbenchmark.com</a> (so sánh hiệu năng) và <a href="https://www.tomshardware.com/" target="_blank">tomshardware.com</a> (reviews chuyên sâu).</p>
                     </section>
 
                     <!-- RAM -->
@@ -2632,6 +2788,79 @@
                                 <li><strong>Quad Channel:</strong> 4 kênh (CPU cao cấp, workstation)</li>
                             </ul>
                         </div>
+
+                        <div class="info-box info">
+                            <h5>📖 ROM (Read Only Memory) – Bộ nhớ chỉ đọc</h5>
+                            <p><strong>ROM</strong> là loại bộ nhớ trong mà <strong>CPU chỉ có quyền đọc và thực hiện, không thay đổi nội dung</strong>. ROM dùng để ghi các chương trình quan trọng như: khởi động máy, kiểm tra thiết bị (POST). Tiêu biểu trên mainboard là <strong>ROM BIOS</strong> – chip chứa BIOS.</p>
+                            <p>ROM giữ nội dung ngay cả khi mất điện → lý tưởng để lưu chương trình khởi động máy. Mỗi lần bật máy, CPU chạy chương trình trong ROM BIOS đầu tiên.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>📖 RAM (Random Access Memory) – Bộ nhớ truy cập ngẫu nhiên</h5>
+                            <p><strong>RAM</strong> là <strong>bộ nhớ chính</strong> mà CPU giao tiếp trong xử lý dữ liệu. RAM lưu chương trình và dữ liệu <strong>khi máy hoạt động</strong>. Khi tắt máy, dữ liệu trong RAM bị mất (khác với ROM và ổ cứng).</p>
+                            <p>"Truy cập ngẫu nhiên" có nghĩa CPU có thể truy cập trực tiếp ô nhớ bất kỳ trong RAM, không cần phải đọc tuần tự từ đầu.</p>
+                        </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 RAM vs ROM: "sổ tay" vs "sách in"</div>
+                            <p><strong>RAM giống sổ tay của bạn:</strong> viết nhanh, đọc nhanh, xóa dễ dàng, nhưng <strong>mở rơi mất là bay sạch</strong>. Khi tắt máy, RAM mất hết dữ liệu → nên mới cần phải "Save" (lưu) vào ổ cứng trước khi tắt.</p>
+                            <p><strong>ROM giống sách in:</strong> đã in sẵn nội dung, <strong>không xóa được</strong> (chỉ đọc). Dù bạn đóng sách lại, để năm năm, mở ra nội dung vẫn y nguyên. ROM BIOS chứa "hướng dẫn khởi động" của máy – luôn luôn ở đó, không bao giờ mất.</p>
+                            <p><strong>Ví dụ thực tế:</strong> Khi bạn chơi game, nhân vật, điểm số, vũ khí đều nằm trong RAM. Nếu cúp điện đột ngột, toàn bộ tiến độ mất (trừ khi đã "Save" vào ổ cứng). Còn BIOS (ROM) thì vẫn ở đó – nên lần sau mở máy vẫn khởi động được.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>📊 3 thông số chính của bộ nhớ trong</h5>
+                            <ul>
+                                <li><strong>Tốc độ (Hz):</strong> tần số hoạt động của RAM. Càng cao, đọc/ghi càng nhanh (vd: DDR4-3200 hoạt động ở 3200 MHz).</li>
+                                <li><strong>Băng thông (bit/s):</strong> lượng dữ liệu truyền được mỗi giây. Liên quan tới tốc độ × độ rộng bus.</li>
+                                <li><strong>Dung lượng (Byte):</strong> kích thước lưu trữ. VD: 8GB, 16GB, 32GB.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>⚡ SRAM vs DRAM – So sánh chi tiết</h5>
+                            <table class="data-table">
+                                <thead><tr><th>Tiêu chí</th><th>SRAM (Static RAM)</th><th>DRAM (Dynamic RAM)</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Cấu trúc 1 bit</td><td>6 transistor</td><td>1 transistor + 1 tụ điện</td></tr>
+                                    <tr><td>Tốc độ</td><td>Rất cao</td><td>Thấp hơn SRAM</td></tr>
+                                    <tr><td>Refresh</td><td>Không cần</td><td>Cần refresh định kỳ (tụ xả)</td></tr>
+                                    <tr><td>Giá thành</td><td>Cao</td><td>Thấp</td></tr>
+                                    <tr><td>Mật độ</td><td>Thấp (cứng phức tạp)</td><td>Cao (đơn giản)</td></tr>
+                                    <tr><td>Ứng dụng</td><td>Cache (L1, L2, L3)</td><td>Bộ nhớ chính (main memory)</td></tr>
+                                </tbody>
+                            </table>
+                            <p><strong>Nguyên lý:</strong> SRAM dùng transistor giữ trạng thái (tĩnh), DRAM dùng tụ điện (phải nạp lại → "động"). SRAM nhanh nhưng đắt, chỉ làm cache nhỏ. DRAM rẻ, làm RAM chính dung lượng lớn.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>💾 Các loại DRAM – Các thế hệ RAM chính</h5>
+                            <table class="data-table">
+                                <thead><tr><th>Loại DRAM</th><th>Số chân</th><th>Tốc độ</th><th>Đặc điểm</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>SDR SDRAM</strong></td><td>168 chân</td><td>—</td><td>Single Data Rate. Dùng từ Pentium 3 trở về trước.</td></tr>
+                                    <tr><td><strong>DDR SDRAM</strong></td><td>184 chân</td><td>2× SDR</td><td>Double Data Rate – truyền 2 lần trong 1 chu kỳ → gấp đôi SDR.</td></tr>
+                                    <tr><td><strong>DDR2 SDRAM</strong></td><td>240 chân</td><td>2× DDR</td><td>Tốc độ bus gấp đôi DDR.</td></tr>
+                                    <tr><td><strong>DDR3 / DDR4 / DDR5</strong></td><td>240/288/288</td><td>Cao hơn</td><td>Các thế hệ sau (cao cấp hơn DDR2).</td></tr>
+                                    <tr><td><strong>RDRAM</strong></td><td>—</td><td>400–800 MHz</td><td>Rambus DRAM – tốc độ rất cao, ít phổ biến.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="info-box purple">
+                            <h5>📌 Sơ đồ phân loại RAM</h5>
+                            <div class="formula">
+                                RAM<br>
+                                ├── SRAM (cache – nhanh, đắt)<br>
+                                └── DRAM (bộ nhớ chính – rẻ)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;├── RAMBUS<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;└── SDRAM<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── SDR SDRAM (168 chân)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── DDR (184 chân) → DDR2 (240) → DDR3 → DDR4 → DDR5<br>
+                            </div>
+                        </div>
+
+                        <p class="quick-fact"><strong>📌 Mẹo nhớ số chân:</strong> SDR=168, DDR=184 (cộng 16), DDR2/DDR3=240, DDR4/DDR5=288. Mỗi thế hệ chân khác nhau → không cắm nhầm được (có notch – rãnh khóa – ở vị trí khác nhau).</p>
                     </section>
 
                     <!-- PSU -->
@@ -2678,6 +2907,81 @@
                                 <tr><td>&gt; 1000W</td><td>Workstation, multi-GPU</td></tr>
                             </tbody>
                         </table>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 PSU giống "trạm biến áp" của máy tính</div>
+                            <p>Ở nhà bạn, điện lưới đưa vào là điện <strong>AC xoay chiều 220V</strong> (lớn, nguy hiểm). Nhưng linh kiện trong máy tính chỉ ăn được điện <strong>DC một chiều ±3.3V, ±5V, ±12V</strong> (nhỏ, an toàn). PSU là <strong>trạm biến áp</strong> đứng giữa: bẻ 220V thành các mức điện thấp phù hợp từng linh kiện.</p>
+                            <p><strong>Ví dụ thực tế:</strong> ổ cứng dùng 12V để quay motor, RAM dùng 3.3V/1.2V, CPU dùng 5V rồi VRM hạ xuống 1V. Nếu không có PSU, cắm điện lưới thẳng vào mainboard → cháy nổ ngay lập tức!</p>
+                            <p>PSU <strong>chất lượng kém</strong> có thể "nuốt" máy tính (chập cháy hỏng mainboard/CPU). Đừng tiếc tiền cho PSU – đây là linh kiện quan trọng nhất để bảo vệ cả dàn máy.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🔌 Chuyển đổi điện AC → DC</h5>
+                            <p>PSU nhận <strong>điện AC 220V (xoay chiều)</strong> từ ổ cắm tường, chuyển thành <strong>điện DC (một chiều)</strong> với các mức:</p>
+                            <ul>
+                                <li><strong>±3.3V:</strong> cho RAM, một số vi mạch.</li>
+                                <li><strong>±5V:</strong> cho mainboard, USB, vi mạch điều khiển.</li>
+                                <li><strong>±12V:</strong> cho motor ổ cứng, quạt, CPU (qua VRM), GPU.</li>
+                            </ul>
+                            <p>Các mức điện này cung cấp cho toàn bộ hệ thống trong hộp máy.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>📐 3 chuẩn Form Factor của PSU</h5>
+                            <ul>
+                                <li><strong>ATX:</strong> phổ biến nhất, dùng cho PC thông thường (kích thước chuẩn 150×86×140 mm).</li>
+                                <li><strong>SFX:</strong> nhỏ gọn, dùng cho máy mini, Mini-ITX.</li>
+                                <li><strong>TFX:</strong> dạng mỏng, dùng cho case mỏng (slim case) đặc biệt.</li>
+                            </ul>
+                            <p>Form factor phải khớp với case: case ATX lắp được PSU ATX, case SFX chỉ lắp được PSU SFX (hoặc ATX nhỏ hơn).</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🧵 3 thiết kế dây cáp PSU</h5>
+                            <table class="data-table">
+                                <thead><tr><th>Thiết kế</th><th>Đặc điểm</th><th>Ưu / Nhược</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>Non-modular</strong></td><td>Dây cố định, không tháo rời được</td><td>Rẻ nhất, nhưng thừa dây → bụi, rối</td></tr>
+                                    <tr><td><strong>Semi-modular</strong></td><td>Một phần dây tháo rời (CPU, GPU, ổ đĩa), phần chính (24-pin ATX) cố định</td><td>Cân bằng giá và gọn gàng</td></tr>
+                                    <tr><td><strong>Full modular</strong></td><td>Toàn bộ dây tháo rời</td><td>Gọn nhất, dễ lắp, dễ thay dây custom; đắt nhất</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🏅 Chuẩn hiệu suất 80 Plus (từ thấp đến cao)</h5>
+                            <p>Chứng nhận 80 Plus đo <strong>tỷ lệ chuyển đổi điện AC → DC</strong>. Càng cao càng ít tốn điện, ít tỏa nhiệt, bền hơn:</p>
+                            <div class="formula">
+                                <strong>White</strong> (82-85%) → <strong>Bronze</strong> (85-88%) → <strong>Silver</strong> (87-90%)<br>
+                                → <strong>Gold</strong> (89-92%) → <strong>Platinum</strong> (90-94%) → <strong>Titanium</strong> (92-96%)<br>
+                                <br>
+                                VD: PSU 500W Gold, tải 80% → tiêu thụ từ ổ cắm: 500/0.90 ≈ 555W.<br>
+                                PSU 500W White, tải 80% → tiêu thụ: 500/0.82 ≈ 610W.<br>
+                                → Gold tiết kiệm ~55W điện so với White.
+                            </div>
+                            <p><strong>Khuyến nghị:</strong> Văn phòng dùng Bronze; gaming dùng Gold; workstation/server dùng Platinum/Titanium.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>⚡ 3 mức công suất theo nhu cầu (theo giáo trình BTMT)</h5>
+                            <ul>
+                                <li><strong>&lt; 400W:</strong> máy văn phòng, CPU onboard, không card rời, không game.</li>
+                                <li><strong>400–700W:</strong> máy phổ thông, gaming nhẹ (GPU tầm trung như RTX 4060).</li>
+                                <li><strong>&gt; 700W:</strong> gaming cao cấp, workstation (GPU high-end như RTX 4080/4090, CPU i9/Ryzen 9).</li>
+                            </ul>
+                            <p><strong>Công thức tính nhanh:</strong> Tổng TDP hệ thống × 1.5 = công suất PSU nên dùng (dự phòng 50%).</p>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>🔌 Cáp nguồn chính cho mainboard</h5>
+                            <ul>
+                                <li><strong>ATX 1.x:</strong> cáp <strong>20 pin</strong> (chuẩn cũ, trước 2003).</li>
+                                <li><strong>ATX 2.x:</strong> cáp <strong>24 pin</strong> (thêm 4 pin cho PCI Express, CPU đa lõi). Phổ biến ngày nay.</li>
+                            </ul>
+                            <p>Ngoài ra còn cáp nguồn CPU 4-pin/8-pin (EPS), cáp PCIe 6+2-pin cho GPU, cáp SATA 15-pin cho ổ đĩa.</p>
+                        </div>
+
+                        <p class="quick-fact"><strong>📌 Mẹo chọn PSU:</strong> (1) Công suất đủ + 50% dự phòng. (2) Hiệu suất tối thiểu 80+ Bronze. (3) Hãng uy tín (Corsair, Seasonic, EVGA, be quiet!). (4) Đủ cổng cho GPU. (5) Full modular nếu ngân sách cho phép.</p>
                     </section>
 
                     <!-- Storage -->
@@ -2701,6 +3005,190 @@
                             <li><strong>M.2:</strong> Nhỏ gọn, hỗ trợ SATA và NVMe</li>
                             <li><strong>U.2:</strong> Server, enterprise SSD</li>
                         </ul>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 SSD vs HDD: "USB" vs "đĩa than"</div>
+                            <p><strong>HDD (ổ cứng cơ khí) giống đĩa than / đĩa CD:</strong> bên trong có một đĩa kim loại tròn quay tần tần (5400 hoặc 7200 vòng/phút) và một <strong>cái kim đầu từ</strong> di chuyển ra vào đọc/ghi dữ liệu. Vì có <strong>bộ phận cơ khí chuyển động</strong> nên HDD kêu, nóng, rung, dễ hỏng khi rơi.</p>
+                            <p><strong>SSD giống USB:</strong> bên trong chỉ có <strong>chip nhớ flash</strong>, không có gì chuyển động cả. Tốc độ đọc/ghi rất cao (nhanh hơn HDD nhiều lần), không ồn, ít nóng, bền, chống sốc tốt. Nhưng giá cao hơn HDD trên mỗi GB.</p>
+                            <p><strong>SSHD</strong> (lai) = HDD dung lượng lớn + SSD nhỏ làm cache → vừa rẻ vừa nhanh.</p>
+                            <p><strong>Ví dụ thực tế:</strong> Laptop bạn rơi từ bàn xuống đất: HDD có thể hỏng hoàn toàn do đầu từ cày vào đĩa; SSD thì không sao cả (không có bộ phận cơ khí).</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>💾 3 loại ổ cứng</h5>
+                            <ul>
+                                <li><strong>HDD (Hard Disk Drive):</strong> ổ đĩa cơ khí dùng đĩa từ quay. Dung lượng lớn, giá rẻ, tốc độ chậm.</li>
+                                <li><strong>SSD (Solid State Drive):</strong> ổ đĩa dùng bộ nhớ flash, không cơ khí. Tốc độ cao, không ồn, ít nóng, bền, chống sốc, giá cao hơn.</li>
+                                <li><strong>SSHD (Solid State Hybrid Drive):</strong> ổ lai – kết hợp HDD dung lượng lớn + SSD nhỏ làm cache. Cân bằng giữa giá và tốc độ.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>💿 Chuẩn IDE (PATA) – 4 ổ đĩa trên 2 khe cắm</h5>
+                            <p>Một mainboard có <strong>2 khe IDE</strong> (Primary và Secondary), mỗi khe cắm được <strong>2 ổ</strong> (Master và Slave) → tổng cộng <strong>4 ổ IDE</strong>:</p>
+                            <table class="data-table">
+                                <thead><tr><th>Khe IDE</th><th>Vị trí ổ</th><th>Mô tả</th></tr></thead>
+                                <tbody>
+                                    <tr><td rowspan="2">Primary</td><td><strong>Master</strong></td><td>Ổ đầu tiên trên khe Primary</td></tr>
+                                    <tr><td><strong>Slave</strong></td><td>Ổ thứ 2 trên khe Primary</td></tr>
+                                    <tr><td rowspan="2">Secondary</td><td><strong>Master</strong></td><td>Ổ đầu tiên trên khe Secondary</td></tr>
+                                    <tr><td><strong>Slave</strong></td><td>Ổ thứ 2 trên khe Secondary</td></tr>
+                                </tbody>
+                            </table>
+                            <p><strong>Thiết lập Master/Slave/Single</strong> bằng <strong>Jumper</strong> trên ổ đĩa (cách thiết lập in trên vỏ đĩa). Nếu chỉ 1 ổ trên khe → đặt <strong>Single</strong> (thường Single = Master).</p>
+                            <p><strong>Quy ước:</strong> Ổ cứng boot thường là Primary Master. CD-ROM thường là Secondary Master.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🎯 Cấu trúc vật lý HDD – 4 khái niệm cốt lõi</h5>
+                            <ul>
+                                <li><strong>Track (rãnh):</strong> vòng tròn đồng tâm trên mặt đĩa, là nơi dữ liệu được ghi.</li>
+                                <li><strong>Sector (cung từ):</strong> phần nhỏ của Track, thường 512 byte. Là đơn vị nhỏ nhất đọc/ghi.</li>
+                                <li><strong>Head (đầu từ):</strong> đầu đọc/ghi dữ liệu, mỗi mặt đĩa có 1 head.</li>
+                                <li><strong>Cylinder (trụ):</strong> tập hợp các Track cùng vị trí (cùng bán kính) trên các mặt đĩa khác nhau.</li>
+                            </ul>
+                            <p><strong>Công thức dung lượng:</strong> Dung lượng = Số Cylinder × Số Head × Số Sector/Track × Byte/Sector.</p>
+                            <div class="formula">
+                                VD: HDD có 16383 cylinder, 16 head, 63 sector/track, 512 byte/sector<br>
+                                → Dung lượng ≈ 16383 × 16 × 63 × 512 ≈ 8.45 GB
+                            </div>
+                        </div>
+
+                        <div class="info-box success">
+                            <h5>🚀 SSD – Ưu điểm vượt trội</h5>
+                            <ul>
+                                <li>Không có bộ phận cơ khí → <strong>không ồn, ít nóng, bền hơn</strong>.</li>
+                                <li>Tốc độ đọc/ghi rất cao (gấp nhiều lần HDD).</li>
+                                <li>Tiêu thụ điện thấp → tiết kiệm pin laptop.</li>
+                                <li>Chống sốc tốt (phù hợp laptop, di động).</li>
+                                <li>Khởi động Windows cực nhanh (5-15 giây thay vì 30-60 giây).</li>
+                            </ul>
+                            <p><strong>Nhược duy nhất:</strong> giá cao hơn HDD trên mỗi GB.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>📊 Thông số và đặc tính kỹ thuật của ổ cứng</h5>
+                            <ul>
+                                <li><strong>Dung lượng:</strong> 10GB, 20GB, 40GB, 1TB, 2TB, 4TB...</li>
+                                <li><strong>Tốc độ quay (rpm):</strong> 5400 rpm (laptop), 7200 rpm (PC), 10000-15000 rpm (server).</li>
+                                <li><strong>Chuẩn:</strong> PATA (cũ) / SATA (hiện nay).</li>
+                                <li><strong>Tuổi thọ trung bình:</strong> tính bằng giờ hoạt động (MTBF).</li>
+                                <li><strong>Tốc độ truyền dữ liệu (Data Transfer Rate):</strong> MB/s.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box purple">
+                            <h5>🛡️ 4 khả năng tự bảo vệ của ổ cứng</h5>
+                            <ul>
+                                <li><strong>SELF DIAGNOSTICS:</strong> tự chẩn đoán tình trạng hoạt động (S.M.A.R.T).</li>
+                                <li><strong>SHOCK &amp; VIBRATION:</strong> hoạt động ổn định dưới va đập, rung động.</li>
+                                <li><strong>AUTO PARKING &amp; LOAD:</strong> tự động kéo đầu từ về vị trí an toàn khi tắt máy → tránh cày xước đĩa.</li>
+                                <li><strong>AUTO RESSIGN DEFECTIVE SECTOR:</strong> tự cấp phát lại sector mới thay cho sector hỏng → tránh mất dữ liệu.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🔗 Chuẩn SATA (Serial ATA) – Thay thế PATA</h5>
+                            <p><strong>Ưu điểm so với PATA:</strong></p>
+                            <ul>
+                                <li>Tốc độ cao hơn nhiều.</li>
+                                <li>Dây cáp nhỏ → thoáng máy, dễ lắp.</li>
+                                <li>Không cần jumper Master/Slave.</li>
+                                <li>Ổn định hơn, ít nhiễu.</li>
+                                <li>Hỗ trợ ổ SSD hiện đại.</li>
+                                <li>Kết nối <strong>điểm-điểm</strong> (1 cổng ↔ 1 ổ) → không chia sẻ băng thông.</li>
+                                <li>Hỗ trợ <strong>hot plug</strong> (cắm nóng, tùy hệ thống).</li>
+                            </ul>
+                            <table class="data-table">
+                                <thead><tr><th>Chuẩn SATA</th><th>Tốc độ</th><th>Ghi chú</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>SATA I</strong></td><td>1.5 Gbps</td><td>~150 MB/s</td></tr>
+                                    <tr><td><strong>SATA II</strong></td><td>3 Gbps</td><td>~300 MB/s</td></tr>
+                                    <tr><td><strong>SATA III</strong></td><td>6 Gbps</td><td>~600 MB/s (phổ biến hiện nay)</td></tr>
+                                </tbody>
+                            </table>
+                            <p><strong>Cáp kết nối SATA:</strong></p>
+                            <ul>
+                                <li><strong>Cáp dữ liệu SATA:</strong> 7 chân, nhỏ gọn.</li>
+                                <li><strong>Cáp nguồn SATA:</strong> 15 chân (nhiều chân nhưng mỏng).</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🧩 Partition (Phân khu) – Chia ổ đĩa thành các ổ logic</h5>
+                            <p>Partition là phần chia bởi ổ đĩa cứng, hoạt động như một ổ đĩa biệt lập (vd: ổ C:, ổ D: trên cùng 1 HDD). Quản lý theo 2 chuẩn:</p>
+                            <ul>
+                                <li><strong>MBR (Master Boot Record)</strong> – chuẩn cũ.</li>
+                                <li><strong>GPT (GUID Partition Table)</strong> – chuẩn mới.</li>
+                            </ul>
+                            <p><strong>Lưu ý BIOS tương ứng:</strong></p>
+                            <ul>
+                                <li><strong>Legacy BIOS ↔ MBR</strong></li>
+                                <li><strong>UEFI BIOS ↔ GPT</strong></li>
+                                <li>UEFI BIOS thường hỗ trợ Legacy (tương thích ngược).</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>📐 MBR (Master Boot Record) – Chuẩn cũ</h5>
+                            <ul>
+                                <li>Là <strong>sector đầu tiên</strong> của ổ đĩa (sector 0).</li>
+                                <li>Chứa thông tin các Partition: số thứ tự, tên ổ đĩa logic, trạng thái, kích thước (điểm vào).</li>
+                                <li>Mỗi MBR quản lý <strong>4 điểm vào (4 primary partition)</strong>.</li>
+                                <li>Mỗi điểm vào <strong>16 bytes</strong> → cần <strong>64 bytes</strong> cho bảng Partition.</li>
+                                <li>Sector đầu của Partition thứ 4 có thể quản lý chia tiếp → <strong>MBR phụ</strong>, cứ thế tiếp tục (extended partition).</li>
+                                <li>Phần còn lại: chương trình <strong>Bootrap</strong> của đĩa khởi động (chương trình nhỏ nạp HĐH).</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box success">
+                            <h5>🚀 GPT (GUID Partition Table) – Chuẩn hiện đại</h5>
+                            <p>Chuẩn bảng phân vùng hiện đại, thuộc hệ UEFI, thay thế MBR:</p>
+                            <ul>
+                                <li>Sử dụng <strong>địa chỉ LBA 64-bit</strong> → hỗ trợ dung lượng rất lớn (&gt;2TB, lý thuyết đến ZB).</li>
+                                <li>Mỗi phân vùng có <strong>GUID duy nhất toàn cầu</strong> (Globally Unique Identifier) → không trùng lặp.</li>
+                                <li>Hỗ trợ <strong>128 phân vùng</strong> (trên Windows, có thể nhiều hơn).</li>
+                                <li>Cơ chế kiểm tra lỗi bằng <strong>CRC32</strong> → tăng độ tin cậy.</li>
+                                <li>Lưu cả bản chính và bản sao (backup) ở cuối đĩa → khôi phục được khi hỏng.</li>
+                            </ul>
+                            <p><strong>Cấu trúc GPT Header:</strong></p>
+                            <ul>
+                                <li><strong>Protective MBR (LBA 0):</strong> bảo vệ và tương thích BIOS cũ.</li>
+                                <li><strong>Primary GPT Header (LBA 1):</strong> chứa metadata (CRC, số partition, vị trí bảng).</li>
+                                <li><strong>Partition Entry Array:</strong> danh sách phân vùng (GUID, LBA start/end, tên).</li>
+                                <li><strong>Backup GPT Header:</strong> ở cuối đĩa, bản sao của header chính.</li>
+                                <li><strong>Backup Partition Array:</strong> bản sao bảng phân vùng để phục hồi.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>📋 So sánh MBR vs GPT</h5>
+                            <table class="data-table">
+                                <thead><tr><th>Tiêu chí</th><th>MBR</th><th>GPT</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Chuẩn</td><td>cũ (1983)</td><td>mới (UEFI)</td></tr>
+                                    <tr><td>Dung lượng tối đa</td><td>≤ 2 TB</td><td>&gt; 2 TB (lý thuyết ZB)</td></tr>
+                                    <tr><td>Số phân vùng tối đa</td><td>4 primary (hoặc 3+1 extended)</td><td>128 (Windows, có thể hơn)</td></tr>
+                                    <tr><td>Địa chỉ</td><td>LBA 32-bit</td><td>LBA 64-bit</td></tr>
+                                    <tr><td>ID phân vùng</td><td>Số thứ tự</td><td>GUID duy nhất</td></tr>
+                                    <tr><td>Kiểm tra lỗi</td><td>Không có</td><td>CRC32</td></tr>
+                                    <tr><td>Backup</td><td>Không</td><td>Có (cuối đĩa)</td></tr>
+                                    <tr><td>Boot mode</td><td>Legacy BIOS</td><td>UEFI BIOS</td></tr>
+                                    <tr><td>Khả năng mở rộng/an toàn</td><td>—</td><td>Vượt trội MBR</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🔧 3 bước định dạng ổ đĩa (theo giáo trình BTMT)</h5>
+                            <ol>
+                                <li><strong>Định dạng cấp thấp (Low-level format):</strong> định dạng vật lý – tạo Track, Cluster, Cylinder, hệ số đan xen. Bỏ qua sector hỏng. Đưa thông tin về dạng 0,1. <strong>Loại tận gốc dữ liệu, sửa lỗi Bad Sector.</strong> (Thường nhà sản xuất làm sẵn, người dùng ít khi phải làm).</li>
+                                <li><strong>Phân chia đĩa (Partitioning):</strong> chia thành nhiều Partition → tạo ổ đĩa logic (C:, D:, E:...).</li>
+                                <li><strong>Định dạng cấp cao (High-level format):</strong> xác định thông số logic, cấu hình Partition để làm việc như ổ đĩa thực thụ (tạo file system: NTFS, FAT32, exFAT...).</li>
+                            </ol>
+                        </div>
+
+                        <p class="quick-fact"><strong>📌 Lưu ý:</strong> Khi mua HDD/SSD mới, người dùng chỉ cần làm bước 2 (Partition) và bước 3 (High-level format). Bước 1 (low-level format) đã được nhà sản xuất làm sẵn. Format nhanh (Quick Format) chỉ xóa bảng file system, không xóa dữ liệu thực → có thể khôi phục được; Format đầy đủ thì quét bad sector và xóa sạch.</p>
                     </section>
                 </div>
             </article>
@@ -2719,6 +3207,55 @@
                 <div class="chapter-content">
                     <!-- Tính tương thích -->
                     <section class="sub-section" id="sec-btmt-2-1"><h4>2.1 Tính Tương Thích Khi Chọn Thiết Bị</h4>
+
+                        <div class="info-box info">
+                            <h5>📋 8 tiêu chí chọn thiết bị (theo giáo trình BTMT)</h5>
+                            <p>Khi chọn linh kiện để lắp máy, cần cân nhắc 8 tiêu chí sau:</p>
+                            <ol>
+                                <li><strong>Chức năng, mục đích</strong> của máy tính (hiện tại và tương lai): máy làm gì? Word/Excel, gaming, đồ họa, server?</li>
+                                <li><strong>Các phần mềm</strong> cần sử dụng: phần mềm nào yêu cầu cấu hình tối thiểu gì?</li>
+                                <li><strong>Ràng buộc giá cả</strong>: ngân sách bao nhiêu?</li>
+                                <li><strong>Cấu hình máy phù hợp thời</strong>: công nghệ hiện hành là gì (DDR5, PCIe 5.0...)?</li>
+                                <li><strong>Tính tương thích</strong>: các linh kiện có cắm được vào nhau không (socket CPU, khe RAM, khe PCIe...)?</li>
+                                <li><strong>Tính đồng bộ</strong>: tốc độ CPU, System Bus (FSB) và RAM phải khớp nhau. VD: CPU FSB 1333 MHz thì RAM cũng nên DDR3-1333.</li>
+                                <li><strong>Tính hỗ trợ cao</strong>: đặc biệt <strong>mainboard</strong> cần hỗ trợ RAM, HDD, CPU lớn hơn hiện tại để <strong>có dư địa nâng cấp</strong> sau này.</li>
+                                <li><strong>Dễ sử dụng, gọn nhẹ, tính mỹ thuật</strong>: case đẹp, cáp gọn, dễ bảo hành.</li>
+                            </ol>
+                        </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 Tính tương thích giống "lắp ghép Lego"</div>
+                            <p>Tưởng tượng bạn chơi <strong>Lego</strong>. Mỗi khối Lego có "chân cắm" hình tròn nhỏ. Khối 4 chấm chỉ khớp với khối 4 chấm, không khớp với khối 8 chấm. CPU, mainboard, RAM, GPU cũng vậy – mỗi loại có <strong>"chân cắm" riêng</strong>.</p>
+                            <p><strong>Ví dụ:</strong> CPU Intel LGA 1700 (1700 chân) chỉ cắm được vào mainboard có socket LGA 1700. Cố cắm vào socket AM4 (AMD) thì <strong>không vừa</strong>, gãy chân, cháy máy. RAM DDR5 cũng không cắm được vào khe DDR4 (rãnh khóa khác vị trí).</p>
+                            <p><strong>Tính đồng bộ</strong> giống như 2 người khiêu vũ – phải cùng nhịp. CPU chạy nhanh mà RAM chậm thì CPU phải chờ RAM → phí tài nguyên. Tương tự FSB phải khớp tốc độ RAM.</p>
+                            <p><strong>Tính hỗ trợ cao</strong> giống mua balo to hơn dự phòng – mainboard hỗ trợ CPU 200W dù bạn dùng CPU 65W → sau này nâng cấp CPU mạnh hơn không cần thay mainboard.</p>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>🔌 4 chuẩn bị trước khi lắp ráp</h5>
+                            <p>Theo giáo trình BTMT, trước khi lắp máy cần chuẩn bị:</p>
+                            <ul>
+                                <li><strong>Tất cả thiết bị và tài liệu đi kèm</strong> phần cứng (User's Manual của mainboard, đĩa driver).</li>
+                                <li><strong>Đĩa khởi động</strong> (đĩa mềm, CD-ROM khởi động được) để cài HĐH.</li>
+                                <li><strong>Công cụ:</strong> tua-vit (tournevis), kềm mỏ nhọn/nhíp, vòng chống tĩnh điện.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box red">
+                            <h5>⚠️ 4 chú ý QUAN TRỌNG khi lắp ráp (theo giáo trình BTMT)</h5>
+                            <ol>
+                                <li><strong>Không nối nguồn</strong> cho bất kỳ thiết bị nào khi đang làm việc. Rút dây điện ra khỏi ổ cắm trước.</li>
+                                <li><strong>Chạm tay vào vật tiếp đất</strong> (vỏ máy kim loại nối đất, hoặc mặc vòng chống tĩnh điện) để <strong>giải phóng tĩnh điện</strong> trước khi chạm vào linh kiện. Tĩnh điện hàng nghìn volt có thể <strong>cháy vi mạch</strong> mà bạn không thấy được!</li>
+                                <li>Khi cầm nắm thiết bị, <strong>tránh cầm ở vi mạch, chip, chân cắm</strong> – chỉ cầm vào vỏ nhựa, cạnh bo mạch.</li>
+                                <li><strong>Để thiết bị rời vào nơi an toàn</strong> (bọc nilon chống tĩnh, mặt bàn cách điện), tránh rơi, tránh va đập.</li>
+                            </ol>
+                        </div>
+
+                        <div class="info-box purple">
+                            <h5>📌 Tại sao tĩnh điện nguy hiểm?</h5>
+                            <p>Cơ thể bạn có thể tích điện tĩnh 3000V khi đi all thảm hoặc cọ áo nylon – bạn <strong>không cảm thấy gì</strong> (ngưỡng cảm giác ~3500V). Nhưng vi mạch chỉ chịu ~10V! Một tia tĩnh điện qua chân chip là <strong>cháy luôn vi mạch</strong>, không sửa được.</p>
+                            <p>Đó là lý do phòng máy tính phải <strong>điều hòa ẩm</strong> (50% độ ẩm), nhân viên lắp ráp phải <strong>đeo vòng chống tĩnh</strong> có dây nối đất.</p>
+                        </div>
 
                         <div class="info-box red">
                             <h5>⚠️ Nguyên tắc quan trọng khi chọn thiết bị</h5>
@@ -2953,6 +3490,53 @@
                     <!-- Quy trình lắp ráp -->
                     <section class="sub-section" id="sec-btmt-2-2"><h4>2.2 Quy Trình Lắp Ráp Máy Tính</h4>
 
+                        <div class="info-box info">
+                            <h5>📖 12 bước lắp ráp chi tiết theo giáo trình BTMT (a → l)</h5>
+                            <p>Theo giáo trình BTMT, quy trình lắp ráp máy tính gồm 12 bước theo thứ tự:</p>
+                            <ol type="a">
+                                <li><strong>Lắp nguồn (PSU) vào vỏ máy:</strong> Chọn mức điện áp vào (nếu có nút chuyển đổi 110V/220V). Đưa PSU vào đúng vị trí trên vỏ, bắt vít.</li>
+                                <li><strong>Xác lập Jumper/DIP switches trên mainboard:</strong> Cần User's Manual. Các jumper hay gặp: xác lập tốc độ CPU/bus, jumper xóa CMOS RAM, jumper cho phép/không bật nguồn từ bàn phím, jumper cho phép/không khe cắm mở rộng, jumper hoán đổi đĩa mềm. <em>Chú ý:</em> Các jumper đã đặt mặc định. Ngày nay thiết lập bằng BIOS setup.</li>
+                                <li><strong>Gắp CPU và quạt vào mainboard:</strong> Socket: nâng đòn bẩy <strong>ZIP</strong> lên, đặt CPU xuống (chú ý thứ tự chân), đẩy đòn bẩy xuống. Lắp quạt CPU, nối nguồn cho quạt. <em>Chú ý:</em> Nguồn quạt CPU thường trên mainboard (ký hiệu <strong>"CPU Fan"</strong>). Quạt phải lắp sát CPU.</li>
+                                <li><strong>Gắn RAM vào mainboard:</strong> <strong>SIMM:</strong> đưa nghiêng RAM vào chân, quay đứng thẳng đến khi vòng kẹp kẹp chặt. <strong>DIMM:</strong> kéo cánh tay đỡ ra phía ngoài, xác định chiều gắn, lắp thẳng RAM vào khe, ấn xuống cho đến khi tay đỡ bật vào giữ RAM.</li>
+                                <li><strong>Nối cáp IDE, đĩa mềm và cáp các cổng:</strong> Xác định đầu cáp cắm vào mainboard. Xác định vị trí cắm: IDE1, IDE2, Primary/Secondary IDE, Floppy, FDD, HDD1, HDD2. <em>Chú ý chiều cắm: <strong>bên đỏ của cáp là dây số 1</strong></em>, thường xác định nhờ gờ trên cáp và khe cắm.</li>
+                                <li><strong>Gắn mainboard vào vỏ máy:</strong> Xác định vị trí. Chọn, lắp tấm che cổng. Lắp chân đế, miếng lót. Đưa mainboard vào, bắt vít.</li>
+                                <li><strong>Nối nguồn cho mainboard:</strong> <strong>Nguồn AT:</strong> xem thứ tự dây. Dùng hai đầu P8, P9, cho <strong>các dây đen vào phía trong</strong>. Có thể xác định chiều nhờ gờ, ngàm. <strong>Nguồn ATX:</strong> dùng một đầu cắm <strong>20 dây</strong>. Xác định chiều nhờ gờ.</li>
+                                <li><strong>Nối đèn chỉ thị, công tắc, loa:</strong> Đèn LED nguồn, đèn LED HDD. Công tắc: power, reset. Xác định dây trên vỏ máy (dựa ký hiệu), xác định vị trí cắm trên mainboard (ký hiệu "Reset", HDD LED, "Power"...).</li>
+                                <li><strong>Nối đĩa mềm, cứng, CDROM:</strong> Xác lập jumper cho thiết bị IDE: một Master, một Slave. Nếu chỉ 1 đĩa → Single (thường Single = Master). Cách thiết lập in trên vỏ đĩa. Lắp ổ đĩa vào khoang, bắt vít. <em>Chú ý cáp đĩa mềm:</em> dây FDD có 2 đầu cắm. Một cho đĩa 1.4M (đoạn dây phía trước có phần xoắn), một cho ổ 1.2M. Cắm nguồn: đầu cắm nhỏ cho đĩa mềm.</li>
+                                <li><strong>Gắn các card mở rộng:</strong> Đọc tài liệu card, xác lập jumper (nếu có). Xác định vị trí cắm, tháo tấm mặt khe cắm ra khỏi vỏ, gắn card vào, bắt vít.</li>
+                                <li><strong>Kết nối thiết bị ngoại vi:</strong> Bàn phím: DIN, PS/2, USB. Chuột: COM, PS/2, USB. Màn hình: dây RGB vào card màn hình, nguồn (lấy từ hộp nguồn máy tính hoặc nguồn ngoài).</li>
+                                <li><strong>Bật nguồn, thiết lập BIOS Setup, kiểm tra hệ thống:</strong> Thiết lập tham số BIOS, kiểm tra máy tính, cài đặt HĐH, thiết bị, phần mềm. Có thể dùng đĩa mềm/CD khởi động thử. <strong>Theo dõi hệ thống dựa vào bảng "BIOS beep code"</strong> trong tài liệu kèm mainboard.</li>
+                            </ol>
+                        </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 SIMM vs DIMM: 2 kiểu cắm RAM khác nhau</div>
+                            <p><strong>SIMM (cũ, 1 hàng chân):</strong> cắm kiểu <strong>"nghiêng rồi dựng đứng"</strong> – giống bạn chọc cây viết mực vào lỗ rồi dựng thẳng lên. Cắm nghiêng 45° vào khe, rồi đẩy đứng → vòng kẹp tự kẹp lại. Để tháo: đẩy nghiêng ra → rút ra.</p>
+                            <p><strong>DIMM (mới, 2 hàng chân):</strong> cắm kiểu <strong>"thẳng đứng ấn xuống"</strong> – giống bạn đóng băng hình vào bức tường. Đặt thẳng vuông góc với mainboard, ấn đều 2 đầu xuống đến khi nghe "click" → tay đỡ 2 bên tự bật vào giữ RAM.</p>
+                            <p><strong>Tại sao khác nhau?</strong> SIMM chỉ có 1 hàng chân nên cần cắm nghiêng cho dễ căn. DIMM có 2 hàng chân song song, cắm thẳng nhanh hơn. RAM hiện đại (DDR4, DDR5) đều là DIMM.</p>
+                            <p><strong>Mẹo:</strong> Luôn <strong>tắt máy và rút dây điện</strong> trước khi cắm/tháo RAM. Nếu RAM cắm không khớp → <strong>không ép</strong>, kiểm tra lại rãnh khóa (notch) có đúng vị trí chưa.</p>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>🔌 Nối nguồn AT vs ATX cho mainboard</h5>
+                            <table class="data-table">
+                                <thead><tr><th>Tiêu chí</th><th>Nguồn AT (cũ)</th><th>Nguồn ATX (hiện nay)</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Số đầu cắm</td><td>2 đầu: P8 + P9</td><td>1 đầu: 20 dây (ATX 1.x) hoặc 24 dây (ATX 2.x)</td></tr>
+                                    <tr><td>Cách cắm</td><td><strong>Các dây đen vào phía trong</strong> (2 đầu P8+P9 đối nhau, dây đen gặp nhau giữa)</td><td>Một đầu duy nhất, có gờ khóa → không cắm sai được</td></tr>
+                                    <tr><td>Tắt máy</td><td>Tắt bằng công tắc vật lý</td><td>Tắt mềm (soft-off) qua OS</td></tr>
+                                    <tr><td>Khóa an toàn</td><td>Phải để ý thứ tự dây đen</td><td>Có gờ khóa, cắm sai không vừa</td></tr>
+                                </tbody>
+                            </table>
+                            <p><strong>⚠️ Cẩn thận với AT:</strong> Nếu cắm ngược P8/P9 (dây đen ra ngoài) → <strong>cháy mainboard ngay!</strong> Với ATX thì không có vấn đề này vì có gờ khóa.</p>
+                        </div>
+
+                        <div class="info-box purple">
+                            <h5>📌 Mẹo nhớ "dây đỏ = dây số 1" khi cắm cáp IDE/Floppy</h5>
+                            <p>Cáp IDE và cáp Floppy là cáp dải nhiều dây, có 1 bên <strong>màu đỏ</strong>. Quy ước: <strong>bên đỏ = dây số 1 (Pin 1)</strong>. Khi cắm vào mainboard hoặc ổ đĩa, phải căn sao cho dây đỏ khớp với "Pin 1" của đầu cắm (thường có ký hiệu "1" hoặc tam giác nhỏ trên bo mạch).</p>
+                            <p><strong>Cắm ngược</strong> → ổ đĩa không hoạt động, có khi cháy. Cắm đúng thì ổ đĩa có đèn LED báo.</p>
+                        </div>
+
                         <div class="steps-list">
                             <div class="step-item">
                                 <div class="step-num">1</div>
@@ -3040,6 +3624,347 @@
 
                     <!-- Lưu ý -->
                     <section class="sub-section" id="sec-btmt-2-3"><h4>2.3 Lưu Ý Quan Trọng Khi Lắp Ráp</h4>
+
+                        <div class="info-box info">
+                            <h5>⚙️ BIOS = Basic Input/Output System</h5>
+                            <p><strong>BIOS</strong> là phần mềm tích hợp sẵn, xác định công việc máy tính có thể làm <strong>mà không truy cập đĩo</strong>. Thường đặt trong chip <strong>ROM</strong> trên mainboard. BIOS làm 2 việc:</p>
+                            <ul>
+                                <li><strong>Khởi động máy:</strong> POST (Power-On Self-Test) – kiểm tra phần cứng, nạp HĐH.</li>
+                                <li><strong>Cung cấp driver cơ bản:</strong> cho phép HĐH giao tiếp với phần cứng trước khi cài driver đầy đủ.</li>
+                            </ul>
+                            <p><strong>Thông số BIOS</strong> chứa tại <strong>CMOS</strong> – chip bán dẫn khác, hoạt động bằng <strong>pin</strong> (nên giữ thông số khi mất điện).</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>⚡ Shadowing – Tăng tốc BIOS</h5>
+                            <p>Do <strong>RAM luôn nhanh hơn ROM</strong>, nhiều nhà sản xuất thiết kế BIOS sao cho <strong>sao chép từ ROM sang RAM</strong> mỗi lần khởi động → gọi là <strong>shadowing</strong>. Khi CPU cần gọi BIOS, nó truy cập RAM (nhanh) thay vì ROM (chậm) → tăng tốc hệ thống.</p>
+                        </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 BIOS giống "hướng dẫn sử dụng" dán trên tủ lạnh</div>
+                            <p>Tưởng tượng BIOS là <strong>tờ hướng dẫn sử dụng tủ lạnh</strong> – bạn cần đọc nó để biết cách bật/tắt, chỉnh nhiệt, thay bóng đèn. Tờ hướng dẫn được dán sẵn (BIOS trong ROM) – không cần tìm.</p>
+                            <p><strong>Thông số thiết lập</strong> (nhiệt độ tủ, chế độ đông lạnh) thì bạn ghi vào một tờ giấy nhớ dán cạnh (CMOS). Tờ giấy nhớ này có <strong>pin nuôi</strong> – rút điện tủ thì giấy nhớ vẫn còn → lần sau bật tủ không phải thiết lập lại.</p>
+                            <p><strong>Shadowing</strong> giống việc bạn <strong>chép tay</strong> tờ hướng dẫn từ tủ lạnh sang sổ tay (RAM) – sổ tay bạn mở nhanh hơn tủ lạnh, nên tra cứu nhanh hơn.</p>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>⌨️ Phím vào BIOS Setup (theo giáo trình BTMT)</h5>
+                            <p>Trong quá trình <strong>POST (Power-On Self Test)</strong>, màn hình hiện chỉ dẫn vd: "Press Delete to enter BIOS setup". Phím thông thường:</p>
+                            <table class="data-table">
+                                <thead><tr><th>Phím</th><th>Hãng BIOS</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>Delete</strong></td><td>AMI BIOS</td></tr>
+                                    <tr><td><strong>F2</strong></td><td>Phoenix BIOS</td></tr>
+                                    <tr><td><strong>Ctrl+Alt+Esc</strong> hoặc <strong>Delete</strong></td><td>Award BIOS</td></tr>
+                                    <tr><td><strong>F1</strong></td><td>IBM Aptiva/Valuepoint</td></tr>
+                                    <tr><td><strong>F10</strong></td><td>Compaq</td></tr>
+                                </tbody>
+                            </table>
+                            <p>Trong BIOS setup: dùng phím mũi tên di chuyển, Enter chọn, PageUp/PageDown hoặc +/- thay đổi giá trị.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>📋 Standard CMOS Setup – Thiết lập cơ bản</h5>
+                            <ul>
+                                <li><strong>Date:</strong> khai báo ngày tháng (mm/dd/yy).</li>
+                                <li><strong>Time:</strong> hệ 24h.</li>
+                                <li><strong>Halt On</strong> (BIOS phản ứng với lỗi khi POST):
+                                    <ul>
+                                        <li><strong>All Error:</strong> treo khi phát hiện bất cứ lỗi nào.</li>
+                                        <li><strong>No Errors:</strong> không treo dù có lỗi.</li>
+                                        <li><strong>All But Keyboard:</strong> treo với tất cả lỗi trừ bàn phím.</li>
+                                        <li><strong>All But Diskette/Floppy:</strong> treo với tất cả lỗi trừ ổ đĩa và bàn phím.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>⚙️ Advanced BIOS Features – Tính năng nâng cao</h5>
+                            <ul>
+                                <li><strong>Virus Warning:</strong> khi Enabled, BIOS báo động và treo máy nếu có hành động <strong>viết vào boot sector hoặc partition</strong> → bảo vệ khỏi virus MBR. Khi cài Windows cần <strong>tắt</strong> tính năng này nếu không Windows báo lỗi.</li>
+                                <li><strong>CPU L1 &amp; L2 Cache</strong> (một số BIOS tách làm Internal Cache và External Cache):
+                                    <ul>
+                                        <li>L1: tắt/bật cache nội trên VXL.</li>
+                                        <li>L2: tắt/bật cache ngoại.</li>
+                                        <li>Chỉ nên tắt vì mục đích kiểm tra lỗi.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Thứ tự thiết bị khởi động:</strong> 1st Boot Device, 2nd Boot Device, 3rd Boot Device (vd: USB → CD-ROM → HDD).</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>💾 So sánh 3 định dạng đĩa: NTFS vs FAT vs FAT32 (theo giáo trình BTMT)</h5>
+                            <table class="data-table">
+                                <thead><tr><th>Tiêu chí</th><th>NTFS</th><th>FAT</th><th>FAT32</th></tr></thead>
+                                <tbody>
+                                    <tr><td>HĐH hỗ trợ</td><td>Windows XP, 2000, NT 4.0+SP4</td><td>MS-DOS, tất cả Windows, NT, 2000, XP, OS/2</td><td>Win 95 OSR2, 98, ME, 2000, XP</td></tr>
+                                    <tr><td>Dung lượng đĩa</td><td>&gt;10MB, &gt;2TB</td><td>Từ đĩa mềm đến 4GB</td><td>512MB đến 2TB (≤32GB với Win XP)</td></tr>
+                                    <tr><td>Không dùng cho</td><td>Đĩa mềm</td><td>—</td><td>—</td></tr>
+                                    <tr><td>File tối đa</td><td>Không giới hạn (hạn chế bởi dung lượng đĩa)</td><td>2 GB</td><td>4 GB</td></tr>
+                                    <tr><td>Hỗ trợ domain</td><td>Có</td><td>Không</td><td>Không</td></tr>
+                                    <tr><td>Bảo mật (ACL, security)</td><td>Có</td><td>Không</td><td>Không</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="info-box success">
+                            <h5>✅ Microsoft khuyến nghị dùng NTFS</h5>
+                            <ul>
+                                <li>NTFS mạnh hơn FAT/FAT32, có <strong>Active Directory</strong> và <strong>security</strong> (phân quyền file/folder).</li>
+                                <li>Dễ chuyển đổi partition sang NTFS: dùng lệnh <code>convert.exe</code> (giữ nguyên file).</li>
+                                <li>Để kiểm soát truy cập file/folder và tài khoản giới hạn → <strong>phải dùng NTFS</strong>.</li>
+                                <li>NTFS hoạt động tốt nhất với đĩa lớn (FAT32 là kế tiếp).</li>
+                            </ul>
+                        </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 NTFS vs FAT: "sổ bảo mật" vs "sổ tay thường"</div>
+                            <p><strong>FAT (File Allocation Table) giống sổ tay thường:</strong> ghi đơn giản, không phân quyền, ai cũng xem được. Phù hợp đĩa nhỏ, hệ điều hành cũ.</p>
+                            <p><strong>NTFS (NT File System) giống sổ bảo mật:</strong> có <strong>khoá</strong> (security), có <strong>chữ ký</strong> (ACL), có <strong>phòng vệ</strong> (Active Directory). Có thể đặt quyền "chỉ boss xem được, nhân viên không xem". Phù hợp đĩa lớn, Windows XP trở lên.</p>
+                            <p><strong>Ví dụ thực tế:</strong> USB nhỏ 8GB → dùng FAT32 (cả Mac/Windows/TV đều đọc được). Ổ C: chạy Windows → dùng NTFS (có bảo mật, file lớn không giới hạn, hỗ trợ sao lưu point-in-time).</p>
+                            <p><strong>Hạn chế file:</strong> FAT giới hạn file ≤ 2GB (không chứa được phim 4K), FAT32 ≤ 4GB (không chứa được phim HD dài), NTFS không giới hạn.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>💿 4 bước cài đặt HĐH Windows</h5>
+                            <ol>
+                                <li><strong>Vào BIOS Setup</strong> → cho phép boot từ CD-ROM (hoặc USB) – thiết lập "1st Boot Device = CD-ROM".</li>
+                                <li>Đưa CD Windows vào, khởi động máy.</li>
+                                <li>Khi thấy thông báo <strong>"Press any Key to Boot From CD-Rom"</strong> → ấn phím bất kỳ (trong vòng vài giây, nếu không ấn máy sẽ bỏ qua và boot từ HDD).</li>
+                                <li><strong>Làm theo chỉ dẫn trên màn hình</strong> (chọn partition, format, nhập license key, đặt user/admin password...).</li>
+                            </ol>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🔧 Cài đặt driver thiết bị</h5>
+                            <p>Sau khi cài Windows, cần cài driver cho: card màn hình, card âm thanh, máy in, modem, camera, scanner, card mạng...</p>
+                            <p><strong>Tìm driver ở đâu:</strong></p>
+                            <ul>
+                                <li><strong>Đĩa đi kèm</strong> (đĩa mainboard đối với thiết bị onboard).</li>
+                                <li><strong>Internet:</strong> xác định loại card (hãng, số hiệu) từ tài liệu, người bán, hoặc đọc trên card本身.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>🌐 Bấm cáp mạng RJ-45 – Quy ước màu</h5>
+                            <p>Cáp mạng twisted pair (xoắn đôi), đầu cắm RJ-45. <strong>Quy định màu sắc cơ bản:</strong></p>
+                            <ul>
+                                <li><strong>1 ↔ 3</strong> (đổi chéo dây 1 và 3)</li>
+                                <li><strong>2 ↔ 6</strong> (đổi chéo dây 2 và 6)</li>
+                            </ul>
+                            <p>Hai chuẩn wiring phổ biến: <strong>T568A</strong> và <strong>T568B</strong> – khác nhau ở vị trí màu cam/xanh lá.</p>
+                        </div>
+
+                        <div class="info-box success">
+                            <h5>📋 2 loại cáp mạng: thẳng vs chéo</h5>
+                            <table class="data-table">
+                                <thead><tr><th>Loại cáp</th><th>Chuẩn</th><th>Ứng dụng</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>Cáp thẳng (Straight-through)</strong></td><td>A – A hoặc B – B</td><td>Nối máy tính ↔ hub/switch (2 thiết bị khác loại)</td></tr>
+                                    <tr><td><strong>Cáp chéo (Crossover)</strong></td><td>A – B</td><td>Nối 2 máy tính trực tiếp, hoặc 2 Hub qua cổng Uplink (2 thiết bị cùng loại)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 Cáp chéo vs cáp thẳng: "truyền và nhận" phải đổi vị trí</div>
+                            <p>Mỗi đầu cáp mạng có 8 dây, trong đó có dây <strong>truyền (TX)</strong> và dây <strong>nhận (RX)</strong>. Quy tắc giao tiếp: <strong>TX bên này phải nối RX bên kia</strong> (truyền đi thì bên kia nhận).</p>
+                            <p><strong>Máy tính và Hub/Switch</strong> đã thiết kế ngược nhau (TX máy ↔ RX hub) → dùng <strong>cáp thẳng</strong> là ghép đúng.</p>
+                            <p><strong>2 máy tính hoặc 2 Hub</strong> thì cùng thiết kế (TX↔TX) → phải dùng <strong>cáp chéo</strong> để đảo TX↔RX (đó là lý do đổi 1↔3, 2↔6).</p>
+                            <p><strong>Ví dụ thực tế:</strong> Khi bạn nối PC với router WiFi → cáp thẳng. Khi nối 2 PC chơi game LAN không cần router → cáp chéo.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🌐 Cài đặt card mạng</h5>
+                            <ul>
+                                <li>Lắp card vào slot PCI hoặc ISA (hoặc dùng card mạng onboard).</li>
+                                <li>Cài driver (Windows tự cài; hoặc dùng đĩa đi kèm; hoặc tìm theo số hiệu card trên Internet).</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🌐 Thiết lập cấu hình mạng</h5>
+                            <p>Các bước thiết lập mạng LAN:</p>
+                            <ul>
+                                <li>Phân bố lớp IP, Gateway, DNS, TCP/IP, DHCP Server.</li>
+                                <li>Kiểm tra kết nối, dịch vụ và giao thức bổ sung.</li>
+                                <li>Khai báo tên máy và workgroup/domain.</li>
+                            </ul>
+                            <p><strong>Đường vào:</strong> Start → Settings → Network Connections → Local Area Connection → Properties → Internet Protocol (TCP/IP) → Properties.</p>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>📊 Phân bố các lớp IP</h5>
+                            <table class="data-table">
+                                <thead><tr><th>Lớp</th><th>Internet (bắt đầu – kết thúc)</th><th>Intranet (dành riêng)</th><th>Netmask</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>A</strong></td><td>1.0.0.0 – 127.255.255.255</td><td>10.0.0.0 – 10.255.255.255</td><td>255.0.0.0</td></tr>
+                                    <tr><td><strong>B</strong></td><td>128.0.0.0 – 191.255.255.255</td><td>172.16.0.0 – 172.31.255.255</td><td>255.255.0.0</td></tr>
+                                    <tr><td><strong>C</strong></td><td>192.0.0.0 – 223.255.255.255</td><td>192.168.0.0 – 192.168.255.255</td><td>255.255.255.0</td></tr>
+                                </tbody>
+                            </table>
+                            <p><strong>Lưu ý:</strong> Lớp D, E dành riêng cho các trường hợp đặc biệt (multicast, thử nghiệm).</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🚪 Gateway (Cổng ra) = IP Router</h5>
+                            <p><strong>Gateway</strong> là thiết bị kết nối các mạng TCP/IP khác nhau, dẫn đường, chuyển gói tin. Còn gọi là <strong>IP Router</strong>. Mạng LAN kết nối Internet bằng ADSL: Gateway → ADSL router.</p>
+                            <p><strong>DNS (Domain Name System):</strong> dịch vụ Internet ánh xạ giữa <strong>địa chỉ IP và hostname</strong>. Thường chuyển hostname → IP (vd: <code>google.com → 142.250.190.46</code>). Cấu trúc tên miền phân cấp: vn, com, edu, net, org, us, yahoo, amazon, cornell, sprint...</p>
+                        </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 IP tĩnh vs IP động: "số nhà" vs "số thứ tự xếp hàng"</div>
+                            <p><strong>IP tĩnh</strong> giống <strong>số nhà</strong> – không đổi, ai cũng biết nhà bạn ở số 12 Nguyễn Huệ. Phù hợp cho máy chủ web, máy in mạng, máy cần truy cập từ xa. Người dùng tự gán tay.</p>
+                            <p><strong>IP động (DHCP)</strong> giống <strong>số thứ tự xếp hàng</strong> – bạn tới lấy số 5, lần sau tới lấy số 12, mỗi lần một số khác. Phù hợp cho laptop, điện thoại (di động, không cố định). Server DHCP tự cấp IP khi máy kết nối mạng.</p>
+                            <p><strong>Ví dụ thực tế:</strong> Server web <code>google.com</code> phải có IP tĩnh (nếu IP đổi liên tục thì tên miền không trỏ tới được). Laptop bạn ở nhà dùng IP động (DHCP) –router WiFi cấp IP tự động, hết "lease time" thì cấp lại IP khác.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>📋 DHCP (Dynamic Host Configuration Protocol)</h5>
+                            <p>DHCP là chuẩn IP giảm tính phức tạp quản trị cấu hình địa chỉ IP. <strong>DHCP Server cung cấp:</strong> gateway, DNS, subnet mask, dải địa chỉ IP.</p>
+                            <p><strong>Cài trên Windows 2000 Server:</strong></p>
+                            <ul>
+                                <li>Administrator Tools → Configure your server.</li>
+                                <li><strong>Phạm vi (scope):</strong> tập hợp địa chỉ IP máy tính trong mạng con dùng DHCP.</li>
+                                <li>Các bước:
+                                    <ol>
+                                        <li>Đặt tên scope.</li>
+                                        <li>Phạm vi địa chỉ phân phối (vd: 192.168.1.100 - 192.168.1.200).</li>
+                                        <li>Phạm vi loại trừ (IP giữ riêng không cấp).</li>
+                                        <li>Thời gian "thuê bao" (lease time – vd: 8 giờ).</li>
+                                        <li>Khai báo Gateway.</li>
+                                        <li>Khai báo DNS Server.</li>
+                                        <li>Kích hoạt scope.</li>
+                                    </ol>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🔍 Lệnh kiểm tra hoạt động mạng</h5>
+                            <table class="data-table">
+                                <thead><tr><th>Lệnh</th><th>Chức năng</th></tr></thead>
+                                <tbody>
+                                    <tr><td><code>ipconfig</code></td><td>Xem cấu hình TCP/IP của máy (IP, gateway, DNS, subnet mask)</td></tr>
+                                    <tr><td><code>ping</code></td><td>Kiểm tra kết nối tới một máy chủ (gói tin ICMP echo)</td></tr>
+                                    <tr><td><code>nslookup</code></td><td>Kiểm tra DNS – tìm Mail Server, Web Server từ tên miền</td></tr>
+                                    <tr><td><code>pathping</code></td><td>Theo dõi đường đi gói tin + thống kê loss theo từng chặng</td></tr>
+                                    <tr><td><code>tracert</code></td><td>Theo dõi đường đi gói tin (trace route), hiển thị từng router trung gian</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>📁 Chia sẻ tài nguyên mạng</h5>
+                            <p><strong>Chia sẻ ổ đĩa, thư mục:</strong></p>
+                            <ul>
+                                <li>Window Explorer → R-Click → Sharing...</li>
+                                <li>New Share / Remove Share / Share this folder / Share name / Allow (giới hạn user) / Permissions.</li>
+                            </ul>
+                            <p><strong>Chia sẻ máy in:</strong></p>
+                            <ul>
+                                <li>Start → Settings → Printer → R-Click → Sharing... → Share this printer, Share name.</li>
+                            </ul>
+                            <p><strong>Duyệt tài nguyên chia sẻ:</strong></p>
+                            <ul>
+                                <li>My Network Places.</li>
+                                <li>Gõ trực tiếp <code>\\tênmáy\tênShare</code> (vd: <code>\\SERVER-01\PrinterHP</code>).</li>
+                            </ul>
+                            <p><strong>Ánh xạ ổ đĩa mạng (Map Network Drive):</strong> Tools → Map Network Drive → thư mục chia sẻ → ánh xạ thành ổ đĩa logic (vd: Z: dùng như ổ cứng nội bộ).</p>
+                            <p><strong>Cài máy in mạng:</strong> Start → Settings → Printer → Add Printer → Network printer → chọn máy in.</p>
+                            <p><strong>Dịch vụ bổ sung:</strong> Client for Microsoft Network (truy cập file/máy in), File and Printer Sharing for Microsoft Network (chia sẻ).</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>📡 ADSL – Asymmetric Digital Subscriber Line</h5>
+                            <p><strong>ADSL</strong> thay thế modem/ISDN cũ, truy nhập Internet tốc độ cao qua đường dây điện thoại thường.</p>
+                            <p><strong>Ý nghĩa tên:</strong></p>
+                            <ul>
+                                <li><strong>Asymmetric:</strong> tốc độ truyền <strong>không giống nhau 2 chiều</strong>. Chiều <em>xuống</em> (mạng → thuê bao) có thể <strong>nhanh hơn 10 lần</strong> chiều <em>lên</em> (thuê bao → mạng). Phù hợp khai thác Internet (nhấn chuột ít → tải nhiều).</li>
+                                <li><strong>Subscriber Line:</strong> hoạt động trên đường dây thuê bao bình thường. Vẫn dùng điện thoại cùng lúc qua <strong>Splitters</strong> (bộ tách thoại và dữ liệu).</li>
+                            </ul>
+                            <p><strong>Yêu cầu:</strong></p>
+                            <ul>
+                                <li>Máy tính cấu hình tối thiểu 166 MHz (USB hoặc card mạng RJ45), Windows/Mac/Linux, TCP/IP, IE/Netscape.</li>
+                                <li>Modem ADSL (USB hoặc RJ45).</li>
+                                <li>Filter/Spliter (nếu dùng thoại).</li>
+                                <li>Đường line ADSL.</li>
+                                <li>Account ADSL.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>🔧 5 bước lắp đặt thiết bị ADSL</h5>
+                            <ol>
+                                <li><strong>Bước 1:</strong> Đấu đôi cáp ADSL vào 2 ốc vít thiết bị chống sét (số 1, 2). Cáp ADSL phải đi trực tiếp từ Bưu Điện, không rẽ nhánh, không qua thiết bị chống sét thường/chuông/tổng đài.</li>
+                                <li><strong>Bước 2:</strong> Gắn Filter vào cổng Phone (hoặc POT) của thiết bị chống sét (số 3).</li>
+                                <li><strong>Bước 3:</strong>
+                                    <ul>
+                                        <li>3.1: Nối cổng DATA của thiết bị chống sét (số 4) vào cổng Wan của Modem ADSL (số 5) bằng cáp RJ11.</li>
+                                        <li>3.2 (thay thế 3.1): Nối cổng Data/Modem của Filter (số 7) vào cổng Wan của Modem ADSL (số 5) bằng cáp RJ11.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Bước 4:</strong> Nối cổng Phone của Filter (số 6) vào hệ thống điện thoại và Fax. <strong>Tất cả hệ thống thoại/Fax phải nối sau Filter</strong> để dùng ADSL đồng thời thoại.</li>
+                                <li><strong>Bước 5:</strong>
+                                    <ul>
+                                        <li>5.1 LAN: Nối cổng LAN (RJ45) của Modem (số 8) vào cổng LAN (RJ45) của Hub/Switch (số 9).</li>
+                                        <li>5.2 PC card mạng: Nối cổng LAN của Modem (số 8) vào cổng card mạng máy tính.</li>
+                                        <li>5.3 PC USB: Nối cổng USB của Modem vào cổng USB máy tính.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>⚙️ Thông số cấu hình Modem ADSL (VNN)</h5>
+                            <p><strong>Thông số quan trọng cần biết:</strong></p>
+                            <ul>
+                                <li>Username/password Modem (mở trang web cấu hình).</li>
+                                <li>Địa chỉ IP Modem ADSL.</li>
+                                <li>Username/Password MegaVNN do VNN cung cấp.</li>
+                                <li><strong>VPI = 8</strong> và <strong>VCI = 35</strong> (bắt buộc với ADSL VNN).</li>
+                                <li><strong>Encapsulation: PPPoE LLC</strong></li>
+                            </ul>
+                            <p><strong>Cài đặt TCP/IP:</strong> My Computer → Control Panel → Network and Dial-up Connections → Properties → Obtain an IP address automatically / Obtain DNS server address automatically (Modem cấp phát IP/DNS). Hoặc tự gán IP/DNS nếu biết địa chỉ IP Modem.</p>
+                        </div>
+
+                        <div class="info-box purple">
+                            <h5>📋 Bảng thông số 10 Modem ADSL phổ biến</h5>
+                            <table class="data-table">
+                                <thead><tr><th>Chip</th><th>Tên Modem</th><th>IP modem</th><th>User modem</th><th>Password modem</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Alcatel</td><td>Speedtouch 500/530/536/516</td><td>10.0.0.138</td><td>Bạn tự đặt</td><td>Bạn tự đặt</td></tr>
+                                    <tr><td>Conexant</td><td>Micronet</td><td>10.0.0.2</td><td>admin</td><td>epicrouter</td></tr>
+                                    <tr><td>Conexant</td><td>Aztech</td><td>10.0.0.2</td><td>admin</td><td>(bỏ trống)</td></tr>
+                                    <tr><td>Conexant</td><td>Zoom X3-X4-X5</td><td>10.0.0.2</td><td>admin</td><td>zoomadsl</td></tr>
+                                    <tr><td>Conexant</td><td>Cnet</td><td>10.0.0.2</td><td>admin</td><td>epicrouter</td></tr>
+                                    <tr><td>Conexant</td><td>GVC</td><td>10.0.0.2</td><td>admin</td><td>epicrouter</td></tr>
+                                    <tr><td>Alcatel</td><td>Linkpro</td><td>192.168.8.1</td><td>admin</td><td>(bỏ trống)</td></tr>
+                                    <tr><td>Conexant</td><td>SMC</td><td>192.168.1.1</td><td>admin</td><td>Barricade</td></tr>
+                                    <tr><td>Conexant</td><td>Ovislink</td><td>192.168.1.254</td><td>admin</td><td>ovislink</td></tr>
+                                    <tr><td>Đa số modem</td><td>—</td><td>—</td><td>user</td><td>password</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🚀 Ví dụ cấu hình SpeedTouch 530</h5>
+                            <ol>
+                                <li>Cấp điện toàn hệ thống.</li>
+                                <li>Mở IE, gõ IP modem: <code>10.0.0.138</code>.</li>
+                                <li>Lần đầu cấu hình SpeedTouch không hỏi password modem (các modem khác có thể hỏi).</li>
+                                <li>Menu: <strong>Advanced → Easy Setup → Next → Routed PPPoE-DHCP-NAPT → Next → 8.35 (VCI/VPI) → Next</strong>.</li>
+                                <li>Cửa sổ <strong>PPP Account Setting</strong>: khai báo username/password VNN, Service Name: <strong>MeGaVNN</strong> → Next.</li>
+                                <li>Cửa sổ <strong>Speed Touch Security</strong>: khai báo username/password modem (tự đặt; bỏ trống → lần sau không hỏi) → Next → Start.</li>
+                                <li><strong>Save All</strong> để lưu thông số.</li>
+                                <li>Đợi 1–2 phút để modem tự kết nối Internet.</li>
+                            </ol>
+                        </div>
+
+                        <p class="quick-fact"><strong>📌 Lưu ý:</strong> VPI/VCI ở mỗi quốc gia khác nhau – Việt Nam (VNN) dùng VPI=8, VCI=35. Các thông số này phải khớp với nhà cung cấp dịch vụ, nếu không modem sẽ không kết nối được.</p>
+
                         <div class="content-grid two-col">
                             <div class="info-box red">
                                 <h5>❌ KHÔNG được làm</h5>
@@ -3101,29 +4026,76 @@
                     <section class="sub-section" id="sec-btmt-3-1"><h4>3.1 Kế Hoạch Bảo Dưỡng</h4>
                         <p><strong>Mục đích:</strong> Ngăn ngừa sự cố, hạn chế thiệt hại. Bảo đảm môi trường làm việc phù hợp: sạch sẽ, khô thoáng, không hút thuốc, không đặt gần chất lỏng.</p>
 
+                        <div class="info-box info">
+                            <h5>🎯 2 mục đích bảo dưỡng máy tính</h5>
+                            <ol>
+                                <li><strong>Ngăn ngừa sự cố:</strong> phát hiện sớm dấu hiệu hỏng hóc (bụi nhiều, nhiệt độ cao, quạt kêu) trước khi máy chết.</li>
+                                <li><strong>Hạn chế thiệt hại:</strong> bảo vệ dữ liệu, kéo dài tuổi thọ linh kiện, tránh mất tiền sửa chữa lớn.</li>
+                            </ol>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>🏠 Bảo đảm môi trường làm việc</h5>
+                            <ul>
+                                <li>Môi trường <strong>sạch sẽ, khô thoáng</strong> – tránh bụi, độ ẩm cao.</li>
+                                <li><strong>Không cho phép hút thuốc bên cạnh PC</strong> – khói thuốc gây cặn nhớt, oxy hóa tiếp điểm.</li>
+                                <li>Đặt PC ở nơi <strong>không bị va sốc</strong> – tránh rung chấn động ổ cứng.</li>
+                                <li><strong>Không để chất lỏng gần máy tính</strong> – cà phê, nước tràn vào bàn phím/mainboard = cháy.</li>
+                            </ul>
+                        </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 Bảo dưỡng máy tính giống "bảo dưỡng xe máy định kỳ"</div>
+                            <p>Xe máy của bạn chạy 5.000 km phải thay dầu, 10.000 km phải vệ sinh bugi, 20.000 km phải thay lốp. <strong>Không bảo dưỡng</strong> thì xe đột ngột hỏng giữa đường, tốn tiền nhiều hơn.</p>
+                            <p>Máy tính cũng vậy – <strong>bụi</strong> làm nóng CPU (cháy), <strong>đĩa cứng</strong> hỏng mất dữ liệu quan trọng (cháy luôn ảnh hưởng gia đình), <strong>virus</strong> len lỏi lấy cắp mật khẩu. Bảo dưỡng định kỳ giúp máy chạy êm, bền, an toàn dữ liệu.</p>
+                            <p><strong>Ví dụ thực tế:</strong> Laptop bạn dùng 1 năm bụi đầy quạt tản nhiệt → CPU 90°C (bình thường 60°C) → tự sập khi chơi game. Đem ra tiệm vệ sinh bụi, tra keo tản nhiệt → 65°C, chạy ngon. Chi phí ~200k, đỡ hơn mua laptop mới.</p>
+                        </div>
+
+                        <h5>Bảng tần suất bảo trì chi tiết (theo giáo trình BTMT):</h5>
                         <table class="data-table">
                             <thead>
-                                <tr><th>Thành phần</th><th>Công việc</th><th>Tần suất</th></tr>
+                                <tr><th>Thành phần</th><th>Công việc bảo trì</th><th>Tần suất</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Bên trong case</td><td>Vệ sinh lỗ thông gió, thổi bụi bằng khí nén, gắn chắc các chíp/card</td><td>Hàng năm</td></tr>
-                                <tr><td>CMOS Setup</td><td>Sao lưu thiết lập BIOS</td><td>Khi thay đổi</td></tr>
-                                <tr><td>Ổ đĩa cứng</td><td>Sao lưu dữ liệu, quét virus, gom mảnh (defrag)</td><td>Định kỳ (hàng tuần/ngày)</td></tr>
-                                <tr><td>Bàn phím</td><td>Làm vệ sinh</td><td>Hàng năm</td></tr>
-                                <tr><td>Mouse</td><td>Vệ sinh trục lăn và bi (mouse cơ)</td><td>Hàng tháng</td></tr>
-                                <tr><td>Monitor</td><td>Lau màn hình bằng vải mềm</td><td>Hàng tháng</td></tr>
-                                <tr><td>Máy in</td><td>Làm sạch bụi, mảnh giấy bằng khí nén</td><td>Hàng tháng</td></tr>
-                                <tr><td>Phần mềm</td><td>Xóa file recycle bin, temp</td><td>Hàng tháng</td></tr>
+                                <tr><td><strong>Bên trong vỏ máy</strong></td><td>Làm vệ sinh lỗ thông gió; thổi bụi đất bằng khí nén; vệ sinh bộ nguồn và quạt; gắn chắc chíp và card; vệ sinh tiếp điểm card mở rộng</td><td><strong>Hàng năm</strong></td></tr>
+                                <tr><td><strong>CMOS setup</strong></td><td>Sao lưu setup</td><td><strong>Mỗi khi thay đổi</strong></td></tr>
+                                <tr><td><strong>Ổ đĩa mềm</strong></td><td>Vệ sinh đầu ổ đĩa mềm</td><td><strong>Khi ổ đĩa gặp trục trặc</strong></td></tr>
+                                <tr><td><strong>Ổ đĩa cứng</strong></td><td>Sao lưu dữ liệu</td><td><strong>Ít nhất mỗi tuần</strong></td></tr>
+                                <tr><td><strong>Ổ đĩa cứng</strong></td><td>Tự động quét virus lúc khởi động</td><td><strong>Ít nhất mỗi ngày</strong></td></tr>
+                                <tr><td><strong>Ổ đĩa cứng</strong></td><td>Gom mảnh (defrag)</td><td><strong>Hàng năm</strong></td></tr>
+                                <tr><td><strong>Bàn phím</strong></td><td>Vệ sinh</td><td><strong>Hàng năm</strong></td></tr>
+                                <tr><td><strong>Mouse</strong></td><td>Vệ sinh trục lăn và bi lăn</td><td><strong>Hàng tháng</strong></td></tr>
+                                <tr><td><strong>Monitor</strong></td><td>Lau bằng vải mềm</td><td><strong>Ít nhất mỗi tháng</strong></td></tr>
+                                <tr><td><strong>Máy in</strong></td><td>Làm sạch bụi và mảnh giấy bằng khí nén/chân không; lấy giấy vụn bằng kẹp; vệ sinh đường đi giấy và ruy-băng bằng vải mềm không xơ; <strong>không dùng hộp mực đã sắc lại hoặc đổ mực vào ruy-băng</strong></td><td><strong>Ít nhất mỗi tháng</strong></td></tr>
+                                <tr><td><strong>Phần mềm</strong></td><td>Kiểm tra phần mềm hợp pháp (nếu được chỉ thị); xóa tập tin khỏi Recycle Bin và <code>\temp</code></td><td><strong>Ít nhất mỗi tháng</strong></td></tr>
                             </tbody>
                         </table>
 
-                        <h5>Bản ghi bảo trì:</h5>
+                        <div class="info-box purple">
+                            <h5>📌 Tại sao "không dùng hộp mực đã sắc lại hoặc đổ mực vào ruy-băng"?</h5>
+                            <p>Hộp mực in (cartridge) "sắc lại" (tân trang) thường có chất lượng mực kém, có tạp chất → <strong>đui đầu in</strong>, rò rỉ mực ra máy in, hỏng drum. Ruy-băng đổ mực的手工 cách thường không đều → in lem, mờ, hỏng kim in. Tốn ít tiền lúc đầu nhưng hỏng máy in tốn nhiều hơn. Nên dùng hộp mực chính hãng.</p>
+                        </div>
+
+                        <h5>Bản ghi bảo trì (logbook):</h5>
                         <ul>
-                            <li>Ghi chép phần mềm, số phiên bản, HĐH</li>
-                            <li>Ghi chép phần cứng và cấu hình</li>
-                            <li>Ghi chép thời điểm và cách bảo trì</li>
-                            <li>Ghi lại công việc sửa chữa PC</li>
+                            <li>Ghi chép tất cả <strong>phần mềm</strong> (kể cả số phiên bản, HĐH).</li>
+                            <li>Ghi chép tất cả <strong>thành phần phần cứng</strong> được cài và xác lập phần cứng.</li>
+                            <li>Ghi chép <strong>thời điểm bảo trì phòng ngừa</strong> và cách bảo trì.</li>
+                            <li>Ghi lại <strong>công việc sửa chữa PC</strong> (khi nào hỏng gì, thay linh kiện gì, ai sửa).</li>
                         </ul>
+
+                        <div class="info-box warning">
+                            <h5>📦 Khi vận chuyển thiết bị máy tính</h5>
+                            <ul>
+                                <li><strong>Sao lưu ổ đĩa cứng</strong> lên CD-ROM / USB / cloud trước khi chuyển.</li>
+                                <li><strong>Tắt PC và mọi thiết bị</strong>, rút dây điện ra khỏi ổ cắm và thiết bị.</li>
+                                <li>Rút tất cả thiết bị ngoài. <strong>Đánh dấu đầu nối cáp</strong> bằng băng keo trắng để nhận diện (tránh nhầm khi cắm lại).</li>
+                                <li>Cuộn tất cả dây lại, buộc bằng dây thun.</li>
+                                <li>Bỏ máy tính, monitor, thiết bị vào <strong>thùng các tông có vật liệu bảo vệ</strong> (xốp, bọc bóng khí).</li>
+                            </ul>
+                        </div>
+
+                        <p class="quick-fact"><strong>📌 Lưu ý:</strong> Mỗi tháng nên chạy 1 lần quét S.M.A.R.T ổ cứng (CrystalDiskInfo) để biết ổ sắp hỏng hay không. Mỗi 6 tháng nên kiểm tra nhiệt độ CPU/GPU khi tải cao (HWMonitor). Mỗi năm nên tháo case vệ sinh bụi, tra keo tản nhiệt CPU.</p>
                     </section>
 
                     <!-- Sao lưu dữ liệu -->
@@ -3169,12 +4141,235 @@
                             <li><strong>REG_MULTI_SZ:</strong> Chuỗi đặc biệt (nhiều dòng)</li>
                             <li><strong>REG_SZ:</strong> Chuỗi chuẩn</li>
                         </ul>
+
+                        <div class="info-box info">
+                            <h5>💾 2 mức sao lưu dữ liệu</h5>
+                            <ul>
+                                <li><strong>Sao lưu trên đĩa cứng:</strong> nhanh, dễ khôi phục, nhưng nếu ổ cứng hỏng thì mất cả bản sao lưu. Nên sao lưu sang ổ cứng khác (không cùng physical drive).</li>
+                                <li><strong>Sao lưu vào băng từ / CD-ROM / USB / cloud:</strong> chậm hơn nhưng an toàn hơn – tách biệt vật lý với máy tính. Khuyến nghị dùng cloud (Google Drive, OneDrive) hoặc external HDD.</li>
+                            </ul>
+                        </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 Backup giống "photo giấy tờ quan trọng"</div>
+                            <p>Tưởng tượng bạn có <strong>bằng tốt nghiệp, CCCD, sổ đỏ</strong> – nếu cháy nhà mất hết thì khổ cả đời. Bạn <strong>photo</strong> các giấy tờ này, cất ở nhà người thân. Nếu nhà mình cháy thì vẫn còn bản photo → chứng minh được mình.</p>
+                            <p><strong>Full backup</strong> giống photo <em>toàn bộ</em> giấy tờ mỗi tháng. Tốn nhiều giấy nhưng dễ khôi phục (chỉ cần lôi 1 cặp photo ra).</p>
+                            <p><strong>Differential backup</strong> giống photo <em>chỉ giấy tờ thay đổi</em> từ lần photo Full gần nhất. VD: tháng 1 photo Full, tháng 2 photo Differential (chỉ giấy thay đổi từ T1), tháng 3 cũng photo Differential (chỉ giấy thay đổi từ T1). Khi khôi phục: Full T1 + Differential mới nhất.</p>
+                            <p><strong>Incremental backup</strong> giống photo <em>chỉ giấy thay đổi từ lần photo gần nhất</em> (bất kể Full hay Incremental). VD: T1 Full, T2 Incremental (thay đổi từ T1), T3 Incremental (thay đổi từ T2)... Khi khôi phục: Full T1 + tất cả Incremental T2, T3, T4... → rất phức tạp.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🛠️ Tiện ích Backup của Windows</h5>
+                            <p><strong>Khởi động:</strong> Start → Programs → Accessories → System Tools → Backup.</p>
+                            <p><strong>Chức năng chính:</strong></p>
+                            <ul>
+                                <li>Sao lưu (backup) và khôi phục (Restore) <strong>thư mục/tập tin</strong> theo các dạng (Full, Differential, Incremental).</li>
+                                <li>Sao lưu/khôi phục <strong>System State</strong> – trạng thái hệ thống, gồm:
+                                    <ul>
+                                        <li><strong>Registry</strong> – cơ sở dữ liệu thông số Windows.</li>
+                                        <li><strong>Dữ liệu về các lớp COM+</strong> đã đăng ký.</li>
+                                        <li><strong>File hệ thống, file boot</strong> (ntldr, ntdetect, boot.ini).</li>
+                                        <li><strong>Dịch vụ Active Directory</strong> (trên Domain Controller).</li>
+                                        <li>... và các thành phần hệ thống khác.</li>
+                                    </ul>
+                                </li>
+                                <li>Sao lưu 2 dạng trên theo <strong>lịch trình (Schedule)</strong> – có thể chạy tự động hàng ngày/tuần/tháng.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>📚 Windows Registry – "Hộ khẩu" của Windows</h5>
+                            <p><strong>Registry</strong> là cơ sở dữ liệu lưu <strong>thông số kỹ thuật Windows</strong>. Ghi nhận tất cả thông tin khi thay đổi Menu Settings, Control Panel, cài đặt phần mềm, phần cứng...</p>
+                            <p><strong>Vị trí file Registry theo phiên bản Windows:</strong></p>
+                            <table class="data-table">
+                                <thead><tr><th>Phiên bản Windows</th><th>Vị trí file</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Win95 &amp; 98</td><td><code>user.dat</code> và <code>system.dat</code> trong thư mục Windows</td></tr>
+                                    <tr><td>Windows Me</td><td>Thêm <code>Classes.dat</code> trong thư mục Windows</td></tr>
+                                    <tr><td>Win2K / XP / 7 / 10 / 11</td><td><code>Windows\System32\Config</code></td></tr>
+                                </tbody>
+                            </table>
+                            <p><strong>Registry Editor:</strong> gõ <code>regedit</code> vào cửa sổ Run (Start → Run → regedit).</p>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>🌳 Cấu trúc cây Registry – 6 root key</h5>
+                            <table class="data-table">
+                                <thead><tr><th>Root key</th><th>Chức năng</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>HKEY_CLASSES_ROOT</strong></td><td>Thông tin dùng chung toàn hệ thống (file association, COM objects).</td></tr>
+                                    <tr><td><strong>HKEY_CURRENT_USER</strong></td><td>Thông tin người dùng đang Logon (desktop, theme, network drives).</td></tr>
+                                    <tr><td><strong>HKEY_LOCAL_MACHINE</strong></td><td>Thông tin hệ thống, phần cứng, phần mềm đã cài (drivers, services).</td></tr>
+                                    <tr><td><strong>HKEY_USERS</strong></td><td>Thông tin tất cả User (mỗi user là nhánh với tên = số ID).</td></tr>
+                                    <tr><td><strong>HKEY_CURRENT_CONFIG</strong></td><td>Thông tin phần cứng hiện tại (đang dùng profile nào).</td></tr>
+                                    <tr><td><strong>HKEY_DYN_DATA</strong></td><td>Phần của nhánh HKEY_LOCAL_MACHINE (dữ liệu động, plug-and-play).</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 Registry giống "hộ khẩu" của Windows</div>
+                            <p>Hộ khẩu ghi mọi thông tin về gia đình bạn: ai ở đâu, nghề nghiệp gì, quan hệ thế nào. <strong>Registry</strong> cũng vậy – ghi mọi thông số của Windows: phần mềm nào cài, phím tắt gì, ảnh nền nào, máy in mặc định...</p>
+                            <p><strong>Sửa Registry</strong> giống sửa hộ khẩu – sai 1 dòng là Windows "không nhận" phần mềm, mất ảnh nền, không khởi động được. <strong>Phải backup Registry trước khi sửa!</strong></p>
+                            <p><strong>6 root key</strong> giống 6 phòng ban của hộ khẩu: HKLM = phòng "hệ thống" (phần cứng + phần mềm toàn cục), HKCU = phòng "cá nhân tôi" (cài đặt riêng user), HKCR = phòng "loại file" (.doc → Word, .pdf → Acrobat)... Mỗi phòng quản 1 mảng.</p>
+                            <p><strong>Ví dụ thực tế:</strong> Khi cài Office, Windows ghi vào Registry (HKLM) "đã cài Office, đường dẫn C:\Program Files\...". Khi bấm đúp file .docx, Windows tra Registry (HKCR) → mở bằng Word.</p>
+                        </div>
+
+                        <div class="info-box purple">
+                            <h5>📌 5 kiểu dữ liệu trong Registry</h5>
+                            <table class="data-table">
+                                <thead><tr><th>Kiểu</th><th>Mô tả</th><th>Ví dụ</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>REG_BINARY</strong></td><td>Nhị phân (raw bytes)</td><td>Thông tin phần cứng, mật khẩu mã hóa</td></tr>
+                                    <tr><td><strong>REG_DWORD</strong></td><td>Double Word (32-bit số nguyên)</td><td>0 hoặc 1 (tắt/bật), 0x00000001</td></tr>
+                                    <tr><td><strong>REG_EXPAND_SZ</strong></td><td>Chuỗi mở rộng đặc biệt (có biến môi trường)</td><td><code>%SystemRoot%\system32</code></td></tr>
+                                    <tr><td><strong>REG_MULTI_SZ</strong></td><td>Chuỗi đặc biệt (nhiều dòng)</td><td>Danh sách thư mục PATH</td></tr>
+                                    <tr><td><strong>REG_SZ</strong></td><td>Chuỗi chuẩn (text)</td><td><code>C:\Program Files\</code></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p class="quick-fact"><strong>📌 Lưu ý:</strong> Khi chỉnh sửa Registry, luôn <strong>Export</strong> (File → Export) trước khi thay đổi. Nếu Windows không khởi động được sau khi sửa, có thể vào Safe Mode và <strong>Import</strong> lại file .reg đã export để khôi phục.</p>
                     </section>
 
                     <!-- Phòng chống virus -->
                     <section class="sub-section" id="sec-btmt-3-3"><h4>3.3 Phòng Chống Virus & Sự Cố</h4>
 
-                        <h5>Các loại mã độc:</h5>
+                        <div class="info-box info">
+                            <h5>🦠 Virus máy tính – Định nghĩa và đặc điểm</h5>
+                            <p><strong>Virus</strong> là đoạn mã chương trình đặc biệt, thường <strong>"bám" vào đối tượng</strong> (file chương trình, master boot, boot sector, văn bản...) trên đĩa. Có thể gây ra <strong>sự tái lây nhiễm</strong>. <strong>Mục đích chủ yếu:</strong> phá hoại hoặc ăn cắp thông tin.</p>
+                            <p><strong>Đặc điểm và tính chất chủ yếu của virus:</strong></p>
+                            <ul>
+                                <li>Kích thước <strong>nhỏ</strong>, được mã hóa cẩn thận để <strong>tránh phát hiện</strong>.</li>
+                                <li>Có khả năng <strong>kiểm soát hoạt động máy tính</strong> → tự lây nhiễm.</li>
+                                <li>Hầu hết có <strong>tính chất phá hoại</strong>.</li>
+                                <li>Phương thức "bám" đa dạng: <strong>nối cuối</strong>, <strong>chen vào vị trí bên trong</strong>, có thể làm <strong>tăng hoặc bảo toàn</strong> kích thước đối tượng bị nhiễm.</li>
+                            </ul>
+                        </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 Virus máy tính giống virus sinh học lây từ người sang người</div>
+                            <p><strong>Virus cúm</strong> không sống độc lập – phải bám vào tế bào người, nhân bản lên hàng triệu, lây sang người khác qua ho, sổ mũi. Virus máy tính cũng vậy – không tồn tại độc lập, phải bám vào file <code>.exe</code>, <code>.doc</code>, boot sector...</p>
+                            <p>Khi bạn chạy file nhiễm virus, virus <strong>nạp vào RAM</strong>, tìm các file sạch khác để bám vào → lây lan. Khi bạn copy file nhiễm sang USB, đưa cho bạn → bạn cũng bị nhiễm. <strong>Vòng lây nhiễm</strong> cứ thế tiếp tục.</p>
+                            <p><strong>Ví dụ thực tế:</strong> Virus ILOVEYOU (2000) lây qua email "LOVE LETTER FOR YOU" → 50 triệu máy nhiễm trong 10 ngày, thiệt hại 5.5 tỷ USD. Giống Covid-19 lây qua đường hô hấp, virus máy tính lây qua mạng và USB.</p>
+                            <p><strong>Phòng virus</strong> giống phòng dịch: <strong>tiêm vaccine</strong> (cài AV), <strong>đeo khẩu trang</strong> (firewall), <strong>rửa tay</strong> (không mở file lạ), <strong>cách ly</strong> (Safe Mode khi nghi nhiễm).</p>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>🚀 Worm, Trojan, Backdoor, Spyware, Adware</h5>
+                            <p><strong>Worm (sâu Internet):</strong> virus có khả năng <strong>tự lây lan qua mạng</strong>, không cần file chủ:</p>
+                            <ul>
+                                <li><strong>Email:</strong> gửi tự động tới tất cả liên lạc trong address book.</li>
+                                <li><strong>Chatting:</strong> gửi link độc qua Yahoo Messenger, Skype.</li>
+                                <li><strong>Lỗ hổng phần mềm:</strong> lợi dụng lỗi HĐH/dịch vụ mạng để tự xâm nhập (vd: SQL Slammer 2003 lây 75.000 máy trong 10 phút).</li>
+                            </ul>
+                            <p><strong>Trojan (Ngựa thành Troa):</strong> <strong>không được xem là virus</strong> vì <strong>không có khả năng tự lây lan</strong>. Cách xâm nhập:</p>
+                            <ul>
+                                <li>Kèm theo chương trình (trò chơi, phần mềm crack, phần mềm miễn phí...).</li>
+                                <li>Ghép worm.</li>
+                            </ul>
+                            <p><strong>Một số Trojan chuyên biệt:</strong></p>
+                            <ul>
+                                <li><strong>Backdoor:</strong> sau khi cài, <strong>mở các cổng dịch vụ</strong>, cho phép hacker <strong>kết nối từ xa</strong>, nhận và thực hiện lệnh (xóa file, ăn cắp dữ liệu, dùng máy làm zombie DDoS).</li>
+                                <li><strong>Spyware (phần mềm gián điệp) và Adware (phần mềm quảng cáo bất hợp pháp):</strong> <strong>ăn cắp thông tin</strong> người dùng (mật khẩu, lịch sử duyệt web, số thẻ), <strong>tự động quảng cáo</strong> trên máy nạn nhân (popup, redirect trang).</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box purple">
+                            <h5>📌 Phân biệt Virus vs Worm vs Trojan</h5>
+                            <table class="data-table">
+                                <thead><tr><th>Loại</th><th>Tự lây lan?</th><th>Phương thức lây</th><th>Mục đích</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>Virus</strong></td><td>Có (cần file chủ)</td><td>Bám vào file, boot sector</td><td>Phá hoại, ăn cắp</td></tr>
+                                    <tr><td><strong>Worm</strong></td><td>Có (qua mạng, không cần file chủ)</td><td>Email, chat, lỗ hổng</td><td>Lây lan nhanh, ăn cắp</td></tr>
+                                    <tr><td><strong>Trojan</strong></td><td>Không (phải được cài bởi user)</td><td>Kèm crack, game lậu, free</td><td>Mở backdoor, spyware</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="info-box red">
+                            <h5>⚠️ 17 dấu hiệu nhiễm virus và lây nhiễm khác</h5>
+                            <ol>
+                                <li>Chương trình nạp lâu hơn bình thường.</li>
+                                <li>Con số và độ dài truy cập đĩa quá mức với tác vụ đơn giản.</li>
+                                <li>Thông báo lỗi liên miên.</li>
+                                <li>Bộ nhớ ít hơn thường lệ.</li>
+                                <li>Tập tin biến mất hoặc xuất hiện bí hiểm.</li>
+                                <li>Hiển thị hình ảnh lạ hoặc máy phát tiếng động lạ.</li>
+                                <li>Dung lượng đĩa giảm.</li>
+                                <li>Hệ thống không nhận ổ cứng khi khởi động từ đĩa mềm.</li>
+                                <li>Tập tin thi hành thay đổi kích thước.</li>
+                                <li>Tập tin vốn chạy ngon đột nhiên báo lỗi.</li>
+                                <li>Đèn ổ đĩa sáng khi không hoạt động (lưu ý: HĐH có thể bảo trì ổ đĩa khi hệ thống nhàn rỗi).</li>
+                                <li>Tập tin liên tục bị hỏng.</li>
+                                <li>Thông báo lỗi kỳ lạ.</li>
+                                <li>Thông báo lỗi DOS/Windows về FAT hay bảng phân chia.</li>
+                                <li>Ổ cứng không khởi động, treo trước khi vào DOS hoặc Safe Mode Windows 9x.</li>
+                                <li>Phần mở rộng/thuộc tính tập tin thay đổi không rõ nguyên do.</li>
+                                <li>Hiển thị thông báo từ phần mềm quét virus.</li>
+                            </ol>
+                            <p><strong>Đối với Spyware/Adware:</strong> máy chậm hơn (đặc biệt khi dùng dịch vụ mạng), cửa sổ trang web quảng cáo xuất hiện thỉnh thoảng.</p>
+                        </div>
+
+                        <div class="info-box green">
+                            <h5>✅ 7 nguyên tắc phòng ngừa virus</h5>
+                            <ol>
+                                <li><strong>Không sử dụng đĩa mềm</strong> chưa qua kiểm tra virus.</li>
+                                <li><strong>Không sao chép trò chơi, phần mềm bất hợp pháp</strong> trên mạng (crack, keygen).</li>
+                                <li><strong>Không đọc văn bản/bảng tính</strong> không biết nguồn gốc (đặc biệt file macro .docm, .xlsm).</li>
+                                <li><strong>Định kỳ dùng phần mềm chống virus</strong> kiểm tra toàn hệ thống.</li>
+                                <li><strong>Sao lưu thông tin quan trọng</strong> sang thiết bị lưu trữ (USB, external HDD, cloud).</li>
+                                <li>Dùng <strong>chương trình chống virus thường trú bộ nhớ</strong> (VD: Norton, Windows Defender) để cảnh báo theo thời gian thực.</li>
+                                <li>Windows nối Internet thường xuyên: <strong>cập nhật phần mềm sửa lỗi</strong> từ <code>www.microsoft.com</code>. Cài <strong>phần mềm chống spyware/adware</strong>.</li>
+                            </ol>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🛡️ 5 phần mềm diệt virus phổ biến (theo giáo trình BTMT)</h5>
+                            <table class="data-table">
+                                <thead><tr><th>Phần mềm</th><th>Tác giả</th><th>Website</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Norton AntiVirus</td><td>Symantec Corporation</td><td>www.symantec.com</td></tr>
+                                    <tr><td>McAfee VirusScan</td><td>McAfee Associates, Inc</td><td>www.mcafee.com</td></tr>
+                                    <tr><td>Command AntiVirus</td><td>Command Software Systems</td><td>www.commandcom.com</td></tr>
+                                    <tr><td>Bkav (Bách Khoa Anti-Virus)</td><td>Nguyễn Tự Quảng – ĐHBK Hà Nội</td><td>www.bkav.com.vn</td></tr>
+                                    <tr><td>D2</td><td>Trương Minh Nhật Quang – ĐH Cần Thơ</td><td>echip.com.vn</td></tr>
+                                </tbody>
+                            </table>
+                            <p><strong>Hiện nay</strong> còn có Kaspersky, Bitdefender, ESET NOD32, Windows Defender (tích hợp Win 10/11), Avast, AVG... đều tốt.</p>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>🔧 4 bước quá trình diệt virus</h5>
+                            <ol>
+                                <li><strong>Tắt máy tính</strong> (để virus không còn hoạt động trong RAM).</li>
+                                <li><strong>Dùng đĩa mềm/CD-ROM/USB đã chuẩn bị</strong> để khởi động máy (đĩa boot sạch có chứa chương trình AV).</li>
+                                <li><strong>Thực hiện chương trình diệt virus</strong> (trong đĩa) để tìm và diệt.</li>
+                                <li><strong>Tắt máy và khởi động lại từ ổ C</strong>.</li>
+                            </ol>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🆘 Trường hợp Windows không có đĩa boot thích hợp</h5>
+                            <p>Khởi động lại ở <strong>Safe Mode</strong> để quét virus.</p>
+                            <ul>
+                                <li><strong>Safe Mode:</strong> Windows <strong>hạn chế tải chương trình điều khiển và chương trình Startup</strong> → virus cũng không tải được → dễ diệt hơn.</li>
+                                <li><strong>Vào Safe Mode:</strong> ấn <strong>F8</strong> trong quá trình khởi động → màn hình Startup Option → chọn "Safe mode".</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🔄 Cập nhật phần mềm diệt virus (AV)</h5>
+                            <ul>
+                                <li><strong>Copy phiên bản mới nhất</strong> từ đĩa/USB hoặc tải từ Internet.</li>
+                                <li>Dùng chức năng <strong>Live Update</strong> (Norton) hoặc tương đương để cập nhật virus database online.</li>
+                                <li><strong>Nên cập nhật hàng ngày</strong> vì virus mới xuất hiện liên tục.</li>
+                            </ul>
+                        </div>
+
+                        <p class="quick-fact"><strong>📌 Lưu ý:</strong> Nhiều virus hiện nay có khả năng <strong>tự vệ</strong> – chặn AV mở, chặn truy cập website AV, vô hiệu hóa Windows Defender. Khi đó cần dùng <strong>bootable AV disk</strong> (Kaspersky Rescue Disk, Bitdefender Rescue CD) – boot từ CD/USB, AV chạy trước Windows → virus không tự vệ được.</p>
+
+                        <h5>Các loại mã độc (tổng hợp):</h5>
                         <table class="data-table">
                             <thead><tr><th>Loại</th><th>Đặc điểm</th><th>Cách lây lan</th></tr></thead>
                             <tbody>
@@ -3230,8 +4425,150 @@
                     <section class="sub-section" id="sec-btmt-3-4"><h4>3.4 Khắc Phục Sự Cố Máy Tính</h4>
                         <p>Sự cố máy tính có 2 nguyên nhân chính: <strong>phần mềm</strong> (bug, virus, xung đột) và <strong>phần cứng</strong> (hỏng hóc).</p>
 
+                        <div class="info-box info">
+                            <h5>📊 Khái quát sự cố máy tính</h5>
+                            <p>Sự cố máy tính <strong>đa dạng, nhiều nguyên nhân khác nhau</strong>, ngay cả khi cùng triệu chứng. VD: máy không khởi động có thể do mất điện, cháy nguồn, hỏng mainboard, hỏng HDD boot, virus MBR, BIOS sai cấu hình...</p>
+                            <p><strong>Nguyên nhân phần mềm:</strong></p>
+                            <ul>
+                                <li>Bug phần mềm ứng dụng / HĐH.</li>
+                                <li>Tranh chấp tài nguyên (vd: 2 phần mềm cùng chiếm cổng COM).</li>
+                                <li>Không tương thích ứng dụng – HĐH – phần cứng.</li>
+                                <li>Virus phá hỏng phần mềm, hoặc chính virus gây lỗi.</li>
+                            </ul>
+                            <p><strong>Nguyên nhân phần cứng:</strong> hỏng hóc linh kiện (cháy RAM, bad sector HDD, vỡ condenser mainboard...).</p>
+                            <p><strong>Mục tiêu khắc phục:</strong></p>
+                            <ul>
+                                <li>Đưa máy tính/phần mềm trở lại hoạt động bình thường.</li>
+                                <li>Khôi phục, bảo toàn dữ liệu quan trọng.</li>
+                            </ul>
+                        </div>
+
                         <div class="info-box warning">
-                            <h5>📋 Nguyên tắc chung khi khắc phục</h5>
+                            <h5>📋 2 nguyên tắc chung khi khắc phục sự cố (theo giáo trình BTMT)</h5>
+                            <p><strong>Nguyên tắc 1 – Tiếp cận vấn đề có hệ thống:</strong></p>
+                            <ul>
+                                <li>Tiếp cận vấn đề <strong>có hệ thống</strong>, xem xét kỹ lưỡng.</li>
+                                <li><strong>Cô lập vấn đề:</strong> tháo lần lượt từng chương trình, bộ phận, thay thế thiết bị tốt... cho đến khi xác định nguyên nhân.</li>
+                                <li><strong>Không bỏ qua những chuyện hiển nhiên</strong> (cắm dây, bật nguồn chưa?).</li>
+                                <li><strong>Kiểm tra thứ đơn giản trước</strong> (công tắc nguồn, dây cắm, cáp màn hình).</li>
+                                <li>Đừng phụ thuộc quá vào sự suy diễn.</li>
+                            </ul>
+                            <p><strong>Nguyên tắc 2 – Nghiên cứu và bình tĩnh:</strong></p>
+                            <ul>
+                                <li>Nghiên cứu, sử dụng tài liệu, Internet, học hỏi người khác.</li>
+                                <li><strong>Đặt ra mức ưu tiên:</strong> ưu tiên bảo toàn dữ liệu hay ưu tiên đưa máy tính vào hoạt động?</li>
+                                <li><strong>Bình tĩnh, không hấp tấp.</strong></li>
+                                <li>Lập kế hoạch, đánh dấu quá trình làm việc và ghi chép kinh nghiệm.</li>
+                                <li><strong>Hỏi ý kiến người sử dụng</strong> trước khi dùng biện pháp mạnh (định dạng lại đĩa cứng, cài lại HĐH...).</li>
+                            </ul>
+                        </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 Safe Mode giống "chế độ an toàn" của điện thoại</div>
+                            <p>Khi điện thoại bạn bị treo do cài app lạ, bạn khởi động lại ở <strong>"Safe Mode"</strong> – chỉ tải các app hệ thống, không tải app bên thứ 3 → dễ gỡ app gây lỗi ra.</p>
+                            <p>Windows cũng có Safe Mode: chỉ tải <strong>VGA chuẩn</strong>, <strong>Microsoft mouse driver</strong>, <strong>không kết nối mạng</strong>, <strong>driver tối thiểu</strong>. Khi Windows bị treo do driver lỗi (vd: cài driver GPU sai), vào Safe Mode để gỡ driver → máy khởi động lại bình thường.</p>
+                            <p><strong>Ví dụ thực tế:</strong> Bạn cài driver màn hình mới → khởi động lại → màn hình đen. Ấn <strong>F8</strong> khi khởi động → Safe Mode → gỡ driver → khởi động lại → cài driver đúng.</p>
+                        </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 Stop message (BSOD) giống "báo động đỏ" của nhà máy</div>
+                            <p>Khi nhà máy có sự cố nguy hiểm (cháy, nổ), hệ thống <strong>báo động đỏ</strong> dừng toàn bộ dây chuyền, hiển thị <strong>vị trí lỗi</strong> để kỹ sư xử lý.</p>
+                            <p>Windows cũng vậy – khi lỗi <strong>vượt tầm kiểm soát</strong> (driver lỗi nghiêm trọng, RAM hỏng, virus kernel), Windows <strong>dừng toàn bộ</strong> và hiển thị màn hình xanh (BSOD – Blue Screen of Death) với <strong>mã lỗi</strong> để người dùng tìm nguyên nhân.</p>
+                            <p><strong>Ví dụ thực tế:</strong> <code>STOP 0x0000001E KMODE_EXCEPTION_NOT_HANDLED</code> thường do driver lỗi, RAM lỗi hoặc phần mềm diệt virus xung đột. Cách xử lý: ghi mã lỗi → tra Google → uninstall driver mới cài / thay RAM / đổi AV.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🚀 Các chế độ khởi động Safe Mode (theo giáo trình BTMT)</h5>
+                            <p>Khi Windows không khởi động được Normal Mode → thử Safe Mode để sửa lỗi. Safe Mode dùng thiết lập mặc định:</p>
+                            <ul>
+                                <li>Màn hình <strong>VGA</strong>.</li>
+                                <li><strong>Microsoft mouse driver</strong>.</li>
+                                <li><strong>Không kết nối mạng</strong>.</li>
+                                <li>Chỉ tải <strong>driver tối thiểu cần thiết</strong>.</li>
+                            </ul>
+                            <p><strong>Ví dụ:</strong> máy không khởi động sau khi cài phần mềm mới → Safe Mode để thay đổi tham số hoặc gỡ bỏ phần mềm.</p>
+                            <p><strong>Các chế độ khởi động khác:</strong></p>
+                            <ul>
+                                <li><strong>Safe Mode with Networking:</strong> Safe Mode + kết nối mạng (dùng khi cần tải driver/tool từ Internet).</li>
+                                <li><strong>Safe Mode with Command Prompt:</strong> Safe Mode + cửa sổ lệnh DOS (dùng khi GUI không chạy được).</li>
+                                <li><strong>Enable Boot Logging:</strong> khởi động và ghi lại driver tải được/không được vào file (Windows 2000: <code>%windir%\ntbtlog.txt</code>) – dùng để chẩn đoán driver nào gây lỗi.</li>
+                                <li><strong>Last Known Good Configuration:</strong> khởi động dùng thông tin registry và Windows lưu lại ở <strong>lần shutdown cuối cùng</strong> (lần gần nhất máy chạy ngon).</li>
+                                <li><strong>Normal Mode:</strong> khởi động bình thường.</li>
+                            </ul>
+                            <p><strong>Vào chế độ:</strong> trong quá trình khởi động, <strong>sau POST, ấn F8</strong> → màn hình Startup Options → chọn.</p>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>🛑 Stop message (BSOD) – 3 phần thông tin</h5>
+                            <p>Khi lỗi vượt tầm kiểm soát, Windows dừng và báo:</p>
+                            <ul>
+                                <li><strong>fatal error</strong> (Win 9x/ME)</li>
+                                <li><strong>stop error</strong> (Win 2000/XP/NT...)</li>
+                            </ul>
+                            <p><strong>Stop message gồm 3 phần:</strong></p>
+                            <ol>
+                                <li><strong>Thông tin lỗi:</strong> thông điệp chứa mã lỗi:
+                                    <div class="formula">
+                                        *** STOP &lt;mã lỗi&gt; [(tham số 1, tham số 2, tham số 3, tham số 4)] &lt;tên lỗi&gt; ***
+                                    </div>
+                                </li>
+                                <li><strong>Gợi ý cho người sử dụng:</strong> cách khắc phục chung (restart, uninstall driver mới, check disk...).</li>
+                                <li><strong>Thông tin cổng debug:</strong> thông tin cho lập trình viên/debugger (port, địa chỉ, kết quả dump).</li>
+                            </ol>
+                        </div>
+
+                        <div class="info-box red">
+                            <h5>📋 Ví dụ Stop message trong giáo trình</h5>
+                            <div class="formula">
+                                *** STOP: 0x0000001E (0xC0000005, 0xFDE38AF9, 0x00000001, 0x7E8B0EB4)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KMODE_EXCEPTION_NOT_HANDLED ***
+                            </div>
+                            <p><strong>Giải thích:</strong></p>
+                            <ul>
+                                <li><code>0x0000001E</code> = mã lỗi chính (KMODE_EXCEPTION_NOT_HANDLED).</li>
+                                <li><code>0xC0000005</code> = tham số 1 (Access Violation – vi phạm truy cập bộ nhớ).</li>
+                                <li><code>0xFDE38AF9</code> = tham số 2 (địa chỉ lệnh gây lỗi – thường là driver).</li>
+                                <li><code>0x00000001</code> = tham số 3 (tham số exception 1).</li>
+                                <li><code>0x7E8B0EB4</code> = tham số 4 (tham số exception 2).</li>
+                            </ul>
+                            <p><strong>Nguyên nhân thường gặp:</strong> driver lỗi, RAM hỏng, AV xung đột, phần mềm diệt virus cũ, virus kernel-mode.</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🔊 BIOS Beep Code – Tiếng bíp báo lỗi</h5>
+                            <p>Trong quá trình khởi động BIOS, tùy trạng thái máy tính mà BIOS phát ra các <strong>tiếng bíp khác nhau</strong>. Sử dụng <strong>bảng BIOS Beep Code</strong> trong tài liệu kèm mainboard để xác định lỗi phần cứng.</p>
+                            <p><strong>Một số Beep Code phổ biến (AMI BIOS):</strong></p>
+                            <ul>
+                                <li><strong>1 bíp ngắn:</strong> Hệ thống bình thường (POST OK).</li>
+                                <li><strong>1 bíp dài:</strong> Lỗi refresh DRAM.</li>
+                                <li><strong>2 bíp ngắn:</strong> Lỗi parity (RAM).</li>
+                                <li><strong>3 bíp ngắn:</strong> Lỗi 64KB đầu RAM.</li>
+                                <li><strong>4 bíp ngắn:</strong> Timer không hoạt động.</li>
+                                <li><strong>5 bíp ngắn:</strong> Lỗi CPU.</li>
+                                <li><strong>6 bíp ngắn:</strong> Lỗi bàn phím.</li>
+                                <li><strong>1 dài + 3 ngắn:</strong> Lỗi card màn hình.</li>
+                                <li><strong>1 dài + 2 ngắn:</strong> Lỗi card màn hình / DRAM.</li>
+                                <li><strong>Liên tục:</strong> Lỗi RAM hoặc nguồn.</li>
+                            </ul>
+                            <p><strong>Ý nghĩa:</strong> Khi máy không hiển thị được (màn hình đen), tiếng bíp là <strong>cách duy nhất</strong> BIOS báo lỗi. Cứ vào bảng Beep Code của mainboard để biết RAM hay CPU hay card màn hình hỏng.</p>
+                        </div>
+
+                        <div class="info-box purple">
+                            <h5>📌 Quy trình 5 bước khắc phục sự cố</h5>
+                            <ol>
+                                <li><strong>Quan sát triệu chứng:</strong> màn hình đen / bíp code / BSOD / treo / chậm? Ghi chép lại chính xác.</li>
+                                <li><strong>Kiểm tra đơn giản trước:</strong> dây cắm, công tắc nguồn, cáp màn hình, RAM lỏng.</li>
+                                <li><strong>Cô lập vấn đề:</strong> tháo từng linh kiện (RAM, GPU, HDD), thay linh kiện tốt để xác định linh kiện nào hỏng.</li>
+                                <li><strong>Nghiên cứu nguyên nhân:</strong> tra Google với mã lỗi, đọc tài liệu, hỏi người có kinh nghiệm.</li>
+                                <li><strong>Áp dụng biện pháp:</strong> từ nhẹ đến nặng – khởi động lại → Safe Mode gỡ driver → System Restore → repair Windows → cài lại Windows → thay phần cứng.</li>
+                            </ol>
+                            <p><strong>Quy tắc vàng:</strong> Luôn <strong>backup dữ liệu trước</strong> khi dùng biện pháp mạnh (format, cài lại). <strong>Hỏi ý người dùng</strong> trước khi xóa dữ liệu.</p>
+                        </div>
+
+                        <p class="quick-fact"><strong>📌 Lưu ý:</strong> Khi gặp BSOD, ghi lại <strong>mã STOP</strong> (vd: <code>0x0000001E</code>) và <strong>tên lỗi</strong> (vd: <code>KMODE_EXCEPTION_NOT_HANDLED</code>) → tra Microsoft Knowledge Base (<code>support.microsoft.com</code>) để tìm nguyên nhân và cách khắc phục chi tiết.</p>
+
+                        <div class="info-box warning">
+                            <h5>📋 Nguyên tắc chung khi khắc phục (tóm tắt)</h5>
                             <ul>
                                 <li>Tiếp cận vấn đề có hệ thống, xem xét kỹ tình huống</li>
                                 <li>Cô lập vấn đề, tháo từng bộ phận, thay thiết bị tốt để xác định nguyên nhân</li>
@@ -3244,7 +4581,7 @@
                             </ul>
                         </div>
 
-                        <h5>Các chế độ khởi động Windows:</h5>
+                        <h5>Các chế độ khởi động Windows (tổng hợp):</h5>
                         <table class="data-table">
                             <thead><tr><th>Chế độ</th><th>Mô tả</th></tr></thead>
                             <tbody>
@@ -3258,7 +4595,7 @@
                         </table>
                         <p>Vào chế độ: Ấn <strong>F8</strong> trong quá trình khởi động (sau POST).</p>
 
-                        <h5>Stop Message (Blue Screen of Death - BSOD):</h5>
+                        <h5>Stop Message (Blue Screen of Death - BSOD) – tổng kết:</h5>
                         <p>Khi lỗi vượt ngoài tầm kiểm soát, Windows dừng và báo lỗi Stop error. Gồm 3 phần:</p>
                         <ul>
                             <li><strong>Thông tin lỗi:</strong> Mã lỗi (stop error) + tham số</li>
