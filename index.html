@@ -314,14 +314,18 @@
 
                     <!-- 1.2 Số nguyên -->
                     <section class="sub-section" id="sec-ktmt-1-2"><h4>1.2 Biểu Diễn Số Nguyên</h4>
+                        <p>Máy tính chỉ hiểu 0 và 1. Vậy làm sao nó phân biệt số dương và số âm? Có 2 cách biểu diễn số nguyên:</p>
+
                         <div class="content-grid two-col">
                             <div>
-                                <h5>Số không dấu</h5>
+                                <h5>Số KHÔNG dấu (unsigned)</h5>
+                                <p>Tất cả bit đều dùng để biểu diễn giá trị → chỉ biểu diễn được số dương.</p>
                                 <table class="data-table">
                                     <thead>
                                         <tr><th>Số bit</th><th>Khoảng giá trị</th><th>Tên</th></tr>
                                     </thead>
                                     <tbody>
+                                        <tr><td>n bit</td><td>0 .. 2ⁿ−1</td><td>—</td></tr>
                                         <tr><td>8 bit</td><td>0 đến 255</td><td>Byte</td></tr>
                                         <tr><td>16 bit</td><td>0 đến 65.535</td><td>Word</td></tr>
                                         <tr><td>32 bit</td><td>0 đến 4.294.967.295</td><td>DWord</td></tr>
@@ -329,95 +333,190 @@
                                 </table>
                             </div>
                             <div>
-                                <h5>Số có dấu</h5>
+                                <h5>Số CÓ dấu (signed)</h5>
+                                <p><strong>Bit cao nhất (MSB) làm bit dấu:</strong> 0 = dương, 1 = âm.</p>
                                 <table class="data-table">
                                     <thead>
                                         <tr><th>Số bit</th><th>Khoảng giá trị</th><th>Tên</th></tr>
                                     </thead>
                                     <tbody>
-                                        <tr><td>8 bit</td><td>-128 đến 127</td><td>Short int</td></tr>
-                                        <tr><td>16 bit</td><td>-32.768 đến 32.767</td><td>Integer</td></tr>
-                                        <tr><td>32 bit</td><td>-2³¹ đến 2³¹-1</td><td>Long int</td></tr>
+                                        <tr><td>n bit</td><td>−2ⁿ⁻¹ .. 2ⁿ⁻¹−1</td><td>—</td></tr>
+                                        <tr><td>8 bit</td><td>−128 đến 127</td><td>Short int</td></tr>
+                                        <tr><td>16 bit</td><td>−32.768 đến 32.767</td><td>Integer</td></tr>
+                                        <tr><td>32 bit</td><td>−2³¹ đến 2³¹−1</td><td>Long int</td></tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
 
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 Giải thích cho học sinh lớp 6</div>
+                            <p>Tưởng tượng bạn có 8 ô vuông, mỗi ô chỉ ghi được số 0 hoặc 1.</p>
+                            <p>• Nếu <strong>không dấu</strong>: 8 ô sẽ biểu diễn được từ <strong>0 đến 255</strong> (vì 11111111₂ = 255).</p>
+                            <p>• Nếu <strong>có dấu</strong>: ô đầu tiên quyết định "dương hay âm". Nếu ô đầu = 0 → số dương (tới 127). Nếu ô đầu = 1 → số âm (tới −128). Tổng cộng vẫn 256 giá trị, nhưng chia đôi: một nửa dương, một nửa âm.</p>
+                            <p><strong>Ví dụ thực tế:</strong> Nhiệt kế ngoài trời có thể âm hoặc dương. Cũng 8 ô bit, nhưng nếu muốn đo cả −10°C, ta phải dùng "số có dấu".</p>
+                        </div>
+
                         <div class="info-box warning">
-                            <h5>🔢 Số bù 2 (Two's Complement)</h5>
-                            <p><strong>Cách tính số bù 2 của một số dương:</strong></p>
+                            <h5>🔢 Số bù 2 (Two's Complement) - Cách máy tính lưu số âm</h5>
+                            <p><strong>Quy tắc:</strong></p>
                             <ol>
                                 <li><strong>Bù 1:</strong> Đảo tất cả các bit (0→1, 1→0)</li>
                                 <li><strong>Bù 2:</strong> Lấy bù 1 cộng thêm 1</li>
                             </ol>
                             <div class="formula">
                                 5 = 00000101 B<br>
-                                Bù 1: 11111010 B<br>
-                                Bù 2: 11111011 B = -5
+                                Bù 1: 11111010 B (đảo bit)<br>
+                                Bù 2: 11111011 B = −5 (cộng 1)
                             </div>
                         </div>
 
-                        <div class="info-box info">
-                            <h5>🔄 Big Endian vs Little Endian</h5>
-                            <p> Khi dữ liệu lớn hơn 1 byte, thứ tự lưu byte trong bộ nhớ:</p>
-                            <ul>
-                                <li><strong>Big Endian:</strong> Byte cao nhất (MSB) lưu ở địa chỉ nhỏ nhất</li>
-                                <li><strong>Little Endian:</strong> Byte thấp nhất (LSB) lưu ở địa chỉ nhỏ nhất</li>
-                            </ul>
-                            <p>Ví dụ số 0x12345678:</p>
-                            <div class="formula">
-                                Big Endian:    12 34 56 78 (địa chỉ tăng dần)<br>
-                                Little Endian: 78 56 34 12 (địa chỉ tăng dần)
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 Tại sao phải "+1" sau khi đảo bit?</div>
+                            <p>Vì nếu chỉ đảo bit thì số 0 sẽ có 2 biểu diễn: <code>+0 = 00000000</code> và <code>−0 = 11111111</code> → máy tính sẽ confused (0 mà có 2 dạng?).</p>
+                            <p>Cộng thêm 1 để đảm bảo số 0 chỉ có MỘT biểu diễn duy nhất: <code>00000000</code>. Còn <code>11111111</code> khi +1 sẽ thành <code>00000000</code> (tràn bit bỏ đi) → cũng ra 0. Đẹp!</p>
+                            <p><strong>Cách nhớ nhanh:</strong> Đảo bit + cộng 1 = bù 2.</p>
+                        </div>
+
+                        <!-- BÙ 2 VISUALIZER -->
+                        <div class="calculator-card">
+                            <h5>🧮 Công cụ tính Bù 2 - Trực quan từng bước</h5>
+                            <div class="calc-grid two-col">
+                                <div class="calc-input">
+                                    <label>Số nguyên (có thể âm):</label>
+                                    <input type="number" id="twosInput" value="-5" placeholder="VD: -5, 42, -128">
+                                </div>
+                                <div class="calc-input">
+                                    <label>Số bit:</label>
+                                    <select id="twosBits">
+                                        <option value="4">4 bit</option>
+                                        <option value="8" selected>8 bit</option>
+                                        <option value="16">16 bit</option>
+                                    </select>
+                                </div>
                             </div>
+                            <div class="viz-container">
+                                <div class="viz-title">📱 Biểu diễn bit (xem từng bước biến đổi)</div>
+                                <div id="twosViz"></div>
+                            </div>
+                            <div class="viz-container">
+                                <div class="viz-title">📋 Giải thích từng bước</div>
+                                <div id="twosSteps"></div>
+                            </div>
+                        </div>
+
+                        <div class="try-it">
+                            <div class="try-it-title">💡 Thử ngay!</div>
+                            <p>• Nhập <code>5</code> → thấy bit dấu = 0, biểu diễn trực tiếp.</p>
+                            <p>• Nhập <code>-5</code> → thấy 3 giai đoạn: |5| → bù 1 → bù 2.</p>
+                            <p>• Nhập <code>-128</code> (8 bit) → thấy kết quả = <code>10000000</code> (giá trị âm nhỏ nhất).</p>
+                            <p>• Nhập <code>127</code> (8 bit) → thấy kết quả = <code>01111111</code> (giá trị dương lớn nhất).</p>
+                        </div>
+
+                        <div class="info-box info">
+                            <h5>🔄 Big Endian vs Little Endian - Thứ tự byte trong bộ nhớ</h5>
+                            <p> Khi dữ liệu lớn hơn 1 byte (16, 32, 64 bit), có 2 cách sắp xếp byte trong bộ nhớ:</p>
+                            <ul>
+                                <li><strong>Big Endian:</strong> Byte cao nhất (MSB) lưu ở ô nhớ có địa chỉ NHỎ nhất (bên trái)</li>
+                                <li><strong>Little Endian:</strong> Byte thấp nhất (LSB) lưu ở ô nhớ có địa chỉ NHỎ nhất (bên trái)</li>
+                            </ul>
+                            <p><strong>Ví dụ (trong giáo trình):</strong> Số <strong>7411</strong> = <code>1 1100 1111 0011</code> (binary)</p>
+                            <div class="formula">
+                                Big Endian:    MSB ... LSB (địa chỉ tăng dần) → 12 34 56 78<br>
+                                Little Endian: LSB ... MSB (địa chỉ tăng dần) → 78 56 34 12
+                            </div>
+                            <p><strong>Intel x86 dùng Little Endian</strong> (đọc ngược), <strong>Motorola dùng Big Endian</strong>.</p>
+                        </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 Endian là gì?</div>
+                            <p>"Endian" xuất phát từ truyện <em>Gulliver</em>: người Lilliput chia 2 phe cãi nhau xem nên đập trứng từ đầu to (Big-End) hay đầu nhỏ (Little-End).</p>
+                            <p>Trong máy tính cũng vậy: nên lưu byte to trước hay byte nhỏ trước? Cả 2 cách đều đúng, chỉ là quy ước khác nhau giữa các hãng.</p>
+                            <p><strong>Cách nhớ:</strong> "Big Endian" = byte BIG (to) để đầu tiên. "Little Endian" = byte LITTLE (nhỏ) để đầu tiên.</p>
                         </div>
                     </section>
 
                     <!-- 1.3 Số thực -->
                     <section class="sub-section" id="sec-ktmt-1-3"><h4>1.3 Biểu Diễn Số Thực (IEEE 754-1985)</h4>
-                        <p>Dạng tổng quát:</p>
-                        <div class="formula">X = (-1)^S × 2^(E-B) × 1.F</div>
-                        <p>Trong đó: S = bit dấu, E = số mũ, F = phần định trị, B = bias</p>
+                        <p>Số thực là số có phần thập phân (vd: 3.14, −2345.125). Máy tính dùng chuẩn <strong>IEEE 754-1985</strong> để biểu diễn.</p>
+
+                        <div class="info-box info">
+                            <h5>📐 Dạng tổng quát</h5>
+                            <div class="formula">X = (−1)^S × 2^(E−B) × 1.F</div>
+                            <p>Trong đó:</p>
+                            <ul>
+                                <li><strong>S</strong> = bit dấu (0: dương, 1: âm)</li>
+                                <li><strong>E</strong> = số mũ có dịch chuyển (biased exponent)</li>
+                                <li><strong>F</strong> = phần định trị (fraction / mantissa)</li>
+                                <li><strong>B</strong> = độ dịch chuyển (bias) = 2^(m−1) − 1, với m là độ dài bit của E</li>
+                            </ul>
+                            <p><strong>Tại sao cần B (bias)?</strong> Để E luôn dương → không phải lưu bit dấu cho E, dễ so sánh số lớn nhỏ.</p>
+                        </div>
 
                         <table class="data-table">
                             <thead>
-                                <tr><th>Loại</th><th>S (bit)</th><th>E (bit)</th><th>F (bit)</th><th>Bias</th></tr>
+                                <tr><th>Loại</th><th>Tổng bit</th><th>S (bit)</th><th>E (bit)</th><th>F (bit)</th><th>Bias B</th></tr>
                             </thead>
                             <tbody>
-                                <tr><td>Single (32 bit)</td><td>1</td><td>8</td><td>23</td><td>127</td></tr>
-                                <tr><td>Double (64 bit)</td><td>1</td><td>11</td><td>52</td><td>1023</td></tr>
-                                <tr><td>Quadruple (128 bit)</td><td>1</td><td>15</td><td>111</td><td>16383</td></tr>
+                                <tr><td>Single precision</td><td>32</td><td>1</td><td>8</td><td>23</td><td>127 = 2⁷−1</td></tr>
+                                <tr><td>Double precision</td><td>64</td><td>1</td><td>11</td><td>52</td><td>1023 = 2¹⁰−1</td></tr>
+                                <tr><td>Quadruple precision</td><td>128</td><td>1</td><td>15</td><td>111</td><td>16383 = 2¹⁴−1</td></tr>
                             </tbody>
                         </table>
 
                         <div class="info-box info">
-                            <h5>📐 Các bước chuyển đổi số thực sang IEEE 754</h5>
+                            <h5>📐 5 Bước chuyển đổi số thực sang IEEE 754 (Single)</h5>
                             <ol>
-                                <li>Đổi số thực sang nhị phân (phần nguyên và phần lẻ)</li>
-                                <li>Chuẩn hóa về dạng ±1.xxx × 2^k</li>
-                                <li>Tính E = k + B (B = bias)</li>
-                                <li>Ghi E dưới dạng nhị phân với số bit quy định</li>
-                                <li>Ghép S + E + F (phần sau dấu phẩy của định trị)</li>
+                                <li>Đổi số thực sang nhị phân (tách phần nguyên và phần lẻ)</li>
+                                <li>Chuẩn hóa về dạng ±1.xxx × 2^k (dịch dấu chấm để trước nó chỉ còn 1 chữ số 1)</li>
+                                <li>Tính E = k + B (với B = 127 cho Single)</li>
+                                <li>Ghi E dưới dạng nhị phân 8 bit; F = phần sau dấu chấm của 1.F (23 bit, thêm 0 nếu thiếu)</li>
+                                <li>Ghép S | E | F để được 32 bit hoàn chỉnh</li>
                             </ol>
-                            <div class="example">
-                                <strong>Ví dụ: X = -2345.125 (kiểu Single)</strong>
-                                <div class="formula">
-                                    B1: -2345.125 = -1001 0010 1001.001₂<br>
-                                    B2: -1.00100101001 × 2¹¹<br>
-                                    B3: E = 11 + 127 = 138 = 10001010₂<br>
-                                    B4: F = 00100101001000000000000 (23 bit)<br>
-                                    B5: S=1, E=10001010, F=00100101001000000000000<br>
-                                    → Kết quả: 1 10001010 00100101001001000000000
-                                </div>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>📌 Ví dụ CHI TIẾT (theo giáo trình): X = −2345.125 (kiểu Single)</h5>
+                            <div class="formula">
+                                <strong>B1:</strong> −2345.125 = −1001 0010 1001.001₂<br>
+                                &nbsp;&nbsp;(2345 = 100100101001₂; 0.125 = 0.001₂ vì 0.125 = 1/8 = 1/2³)<br><br>
+                                <strong>B2:</strong> −100100101001.001₂ = −1.00100101001 × 2¹¹<br>
+                                &nbsp;&nbsp;(dịch dấu chấm sang TRÁI 11 vị trí để được 1.xxx)<br><br>
+                                <strong>B3:</strong> E = 11 + 127 = 138 = 10001010₂ (8 bit)<br><br>
+                                <strong>B4:</strong> F = 00100101001001 → thêm 0 cho đủ 23 bit → 00100101001001000000000<br><br>
+                                <strong>B5:</strong> S = 1 (âm) → ghép: 1 | 10001010 | 00100101001001000000000<br><br>
+                                <strong>Kết quả:</strong> 1 10001010 00100101001001000000000
                             </div>
                         </div>
 
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 Giải thích cho học sinh lớp 6</div>
+                            <p>Số thực là số có "dấu phẩy" như 3.14 hay −2.5. Máy tính khó lưu trực tiếp dấu phẩy thập phân, nên nó "khoa học hóa" số đó.</p>
+                            <p><strong>Ví dụ:</strong> 2345.125 máy tính sẽ viết thành <code>1.00100101001 × 2¹¹</code> (giống viết 0.000123 = 1.23 × 10⁻⁴ trong khoa học).</p>
+                            <p>3 phần cần lưu:</p>
+                            <ul>
+                                <li><strong>S (dấu):</strong> 0 = dương, 1 = âm → chỉ 1 bit</li>
+                                <li><strong>E (mũ):</strong> số 11 (vì 2¹¹) → nhưng cộng thêm 127 thành 138 để luôn dương → 8 bit</li>
+                                <li><strong>F (phần lẻ):</strong> "00100101001" sau dấu phẩy → 23 bit (thêm số 0 cho đủ)</li>
+                            </ul>
+                            <p><strong>Tại sao cộng 127?</strong> Vì nếu không cộng, số mũ có thể âm (vd: 2⁻⁵) → phải có bit dấu → phức tạp. Cộng 127 để mũ luôn dương (từ 0 đến 255).</p>
+                        </div>
+
                         <div class="calculator-card">
-                            <h5>🧮 Tính IEEE 754 Single Precision</h5>
+                            <h5>🧮 Công cụ tính IEEE 754 Single Precision - Trực quan từng bước</h5>
                             <div class="calc-input">
                                 <label>Nhập số thực:</label>
-                                <input type="text" id="floatInput" value="-2345.125" placeholder="VD: -2345.125">
+                                <input type="text" id="floatInput" value="-2345.125" placeholder="VD: -2345.125, 3.14, 0.5">
                             </div>
-                            <div class="result-box ieee-result">
+                            <div class="viz-container">
+                                <div class="viz-title">📱 32 bit IEEE 754 (hover để xem vị trí bit)</div>
+                                <div id="ieeeViz"></div>
+                            </div>
+                            <div class="viz-container">
+                                <div class="viz-title">📋 Giải thích từng bước</div>
+                                <div id="ieeeSteps"></div>
+                            </div>
+                            <div class="result-box ieee-result" style="margin-top:10px;">
                                 <div class="ieee-row">
                                     <span class="badge">Sign (1bit)</span>
                                     <code id="floatSign"></code>
@@ -436,150 +535,257 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="try-it">
+                            <div class="try-it-title">💡 Thử ngay!</div>
+                            <p>• Nhập <code>-2345.125</code> → đúng như ví dụ giáo trình.</p>
+                            <p>• Nhập <code>0.5</code> → chuẩn hóa 1.0 × 2⁻¹, E = −1 + 127 = 126.</p>
+                            <p>• Nhập <code>3.14</code> → thấy F bị cắt xén (vì 0.14 là số vô hạn trong nhị phân).</p>
+                            <p>• Nhập <code>1.0</code> → E = 127 = 01111111 (toàn bit 0 trừ bit giữa).</p>
+                        </div>
                     </section>
 
                     <!-- 1.4 Mã phát hiện sửa lỗi -->
                     <section class="sub-section" id="sec-ktmt-1-4"><h4>1.4 Mã Phát Hiện & Sửa Lỗi</h4>
 
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 Tại sao cần mã phát hiện lỗi?</div>
+                            <p>Khi truyền dữ liệu qua mạng hoặc lưu vào đĩa, đôi khi 1 bit bị "đảo" do nhiễu điện từ, va chạm vật lý... VD: gửi <code>1010</code> nhưng nhận được <code>1011</code> → máy nhận hiểu sai ý.</p>
+                            <p>Giải pháp: thêm các bit "kiểm tra" vào dữ liệu. Khi nhận, máy tính lại các bit kiểm tra và so sánh → biết có lỗi hay không.</p>
+                            <p>Có 2 loại mã: <strong>EDC</strong> (Error Detecting Code - chỉ phát hiện) và <strong>ECC</strong> (Error Correcting Code - phát hiện VÀ sửa được).</p>
+                        </div>
+
                         <!-- Parity -->
                         <div class="topic-card green">
-                            <h5>🛡️ Bit Chẵn Lẻ (Parity Bit)</h5>
+                            <h5>🛡️ 1.4.1 Bit Chẵn Lẻ (Parity Bit) - Đơn giản nhất</h5>
                             <div class="content-grid two-col">
                                 <div>
-                                    <p>Thêm 1 bit vào dữ liệu để tổng số bit 1 là:</p>
+                                    <p>Thêm 1 bit vào cuối dữ liệu để <strong>tổng số bit 1</strong> là:</p>
                                     <ul>
-                                        <li><strong>Parity chẵn:</strong> Tổng bit 1 là số chẵn</li>
-                                        <li><strong>Parity lẻ:</strong> Tổng bit 1 là số lẻ</li>
+                                        <li><strong>Parity chẵn (even):</strong> Tổng bit 1 là số CHẴN</li>
+                                        <li><strong>Parity lẻ (odd):</strong> Tổng bit 1 là số LẺ</li>
                                     </ul>
+                                    <p><strong>Ví dụ (parity chẵn):</strong></p>
                                     <div class="formula">
-                                        Truyền 1001010 + 1 = 10010101<br>
-                                        (có 4 bit 1 → parity chẵn)
+                                        Truyền <code>1001010</code> (có 3 bit 1 → lẻ) → thêm 1 → <code>10010101</code> (4 bit 1 → chẵn) ✓<br>
+                                        Truyền <code>1111011</code> (có 6 bit 1 → chẵn) → thêm 0 → <code>11110110</code> (vẫn chẵn) ✓
                                     </div>
                                 </div>
                                 <div>
-                                    <p><strong>Parity theo khối:</strong></p>
+                                    <p><strong>Parity theo khối</strong> - dùng 2 loại parity cùng lúc:</p>
                                     <ul>
-                                        <li><strong>VRC (Vertical):</strong> Parity dọc mỗi cột</li>
-                                        <li><strong>LRC (Longitudinal):</strong> Parity ngang mỗi hàng</li>
+                                        <li><strong>VRC (Vertical Redundancy Check):</strong> parity theo cột (dọc)</li>
+                                        <li><strong>LRC (Longitudinal Redundancy Check):</strong> parity theo hàng (ngang)</li>
                                     </ul>
-                                    <p><strong>Ưu điểm:</strong> Đơn giản, dễ triển khai, phát hiện lỗi 1 bit</p>
-                                    <p><strong>Nhược điểm:</strong> Không sửa lỗi, không phát hiện lỗi 2 bit</p>
+                                    <p><strong>Ưu điểm:</strong> Đơn giản, dễ triển khai phần cứng, phát hiện được lỗi 1 bit.</p>
+                                    <p><strong>Nhược điểm:</strong> KHÔNG sửa được lỗi, KHÔNG phát hiện được lỗi 2 bit (vì 2 bit đảo cùng lúc → tổng bit 1 vẫn chẵn/lẻ như cũ).</p>
                                 </div>
+                            </div>
+
+                            <div class="kid-explain">
+                                <div class="kid-explain-title">🧒 Hình dung Parity</div>
+                                <p>Tưởng tượng bạn đếm số học sinh nam trong lớp. Nếu bảo "số nam phải chẵn" mà khi đếm lại thấy lẻ → chắc chắn có ai đó vắng/thêm vào. Nhưng nếu 2 bạn cùng đổi giới (1 nam→nữ + 1 nữ→nam) → tổng vẫn chẵn → không phát hiện được.</p>
                             </div>
                         </div>
 
                         <!-- CRC -->
                         <div class="topic-card blue">
-                            <h5>🔄 Mã CRC (Cyclic Redundancy Check)</h5>
-                            <p>Phát hiện lỗi nhiều bit khi đọc/ghi đĩa, truyền dữ liệu</p>
+                            <h5>🔄 1.4.2 Mã CRC (Cyclic Redundancy Check) - Phát hiện lỗi mạnh</h5>
+                            <p>Dùng phát hiện lỗi khi <strong>đọc/ghi đĩa, truyền dữ liệu</strong>. Thực hiện bằng mạch điện tử (rất nhanh). Phát hiện được nhiều loại lỗi hơn parity.</p>
 
                             <div class="info-box info">
-                                <h5>Thuật toán tính CRC</h5>
+                                <h5>📐 Thuật toán tính CRC - 6 bước</h5>
                                 <ol>
-                                    <li>Dãy m bit dữ liệu ~ đa thức M(x)</li>
-                                    <li>Chọn đa thức sinh G(x) bậc n</li>
-                                    <li>Thêm n bit 0 vào sau m bit → đa thức N(x)</li>
-                                    <li>Chia N(x) cho G(x) theo module 2 (XOR)</li>
-                                    <li>Phần dư = mã CRC (n bit)</li>
-                                    <li>Truyền: dữ liệu m bit + CRC n bit</li>
+                                    <li>Coi dãy m bit dữ liệu là 1 đa thức nhị phân <strong>M(x)</strong> (vd: <code>1011</code> ~ x³ + x + 1)</li>
+                                    <li>Chọn 1 đa thức sinh <strong>G(x) bậc n</strong> (ví dụ G(x) = x⁴ + x + 1 có 5 bit = 10011, bậc 4)</li>
+                                    <li>Thêm <strong>n bit 0</strong> vào sau dãy m bit → được dãy (m+n) bit ~ đa thức <strong>N(x)</strong></li>
+                                    <li>Chia <strong>N(x) cho G(x)</strong> theo <strong>module 2</strong> (phép XOR bit, KHÔNG phải phép trừ thường)</li>
+                                    <li><strong>Phần dư = mã CRC</strong> (n bit)</li>
+                                    <li>Dữ liệu truyền = <strong>m bit gốc + CRC n bit</strong></li>
                                 </ol>
                             </div>
 
+                            <div class="kid-explain">
+                                <div class="kid-explain-title">🧒 XOR là gì? (rất quan trọng)</div>
+                                <p>XOR (⊕) là phép "cộng trừ giống nhau đều ra 0, khác nhau ra 1":</p>
+                                <ul>
+                                    <li>0 ⊕ 0 = 0 (giống nhau)</li>
+                                    <li>1 ⊕ 1 = 0 (giống nhau)</li>
+                                    <li>0 ⊕ 1 = 1 (khác nhau)</li>
+                                    <li>1 ⊕ 0 = 1 (khác nhau)</li>
+                                </ul>
+                                <p><strong>Quy tắc nhớ:</strong> "Cùng nhau = 0, khác nhau = 1". Giống như 2 người cùng nói 1 điều thì không cãi nhau (0), khác nhau thì cãi (1).</p>
+                                <p>Trong phép chia CRC, ta dùng XOR thay cho phép trừ thường. Mỗi bước chia: lấy số bị chia XOR với số chia (nếu bit đầu = 1), hoặc bỏ qua (nếu bit đầu = 0).</p>
+                            </div>
+
+                            <div class="info-box warning">
+                                <h5>📌 Ví dụ CHI TIẾT (theo giáo trình)</h5>
+                                <p>Cho dãy <code>M = 10010110110111</code> (m = 14 bit), đa thức G(x) = x⁴ + x + 1 = <code>10011</code> (n = 4).</p>
+                                <div class="formula">
+                                    B1: M(x) = 10010110110111 (14 bit)<br>
+                                    B2: G(x) = 10011 (5 bit, bậc 4)<br>
+                                    B3: Thêm 4 bit 0 → N(x) = 100101101101110000 (18 bit)<br>
+                                    B4: Chia N(x) cho G(x) bằng XOR → phần dư = <strong>1010</strong><br>
+                                    B5: CRC = 1010<br>
+                                    B6: Dữ liệu truyền = 10010110110111 + 1010 = <strong>100101101101111010</strong>
+                                </div>
+                                <p><strong>Kiểm tra ở đầu nhận:</strong> chia dữ liệu nhận được cho G(x). Nếu phần dư = 0 → không lỗi. Nếu dư ≠ 0 → có lỗi.</p>
+                            </div>
+
                             <div class="calculator-card">
-                                <h5>🧮 Tính CRC</h5>
+                                <h5>🧮 Công cụ tính CRC - Trực quan từng bước XOR</h5>
                                 <div class="calc-grid two-col">
                                     <div class="calc-input">
-                                        <label>Dữ liệu (nhị phân):</label>
-                                        <input type="text" id="crcData" value="11010110110111" placeholder="VD: 11010110110111">
+                                        <label>Dữ liệu m bit (nhị phân):</label>
+                                        <input type="text" id="crcData" value="10010110110111" placeholder="VD: 10010110110111">
                                     </div>
                                     <div class="calc-input">
-                                        <label>Đa thức G(x) (nhị phân):</label>
-                                        <input type="text" id="crcPoly" value="10011" placeholder="VD: 10011">
+                                        <label>Đa thức G(x) (nhị phân, bậc n+1 bit):</label>
+                                        <input type="text" id="crcPoly" value="10011" placeholder="VD: 10011 = x⁴+x+1">
                                     </div>
                                 </div>
-                                <div class="result-box">
+                                <div class="viz-container">
+                                    <div class="viz-title">📱 Trực quan từng bit (xanh = data, đỏ = CRC, xám = số 0 thêm vào)</div>
+                                    <div id="crcViz"></div>
+                                </div>
+                                <div class="viz-container">
+                                    <div class="viz-title">📋 Giải thích từng bước</div>
+                                    <div id="crcSteps"></div>
+                                </div>
+                                <div class="result-box" style="margin-top:10px;">
                                     <div><span class="badge success">CRC</span> <code id="crcResult"></code></div>
                                     <div><span class="badge info">Dữ liệu truyền</span> <code id="crcTransmit" class="break-all"></code></div>
                                 </div>
                             </div>
 
-                            <p><strong>Các đa thức CRC phổ biến:</strong></p>
-                            <div class="formula">
-                                CRC-12:    x¹² + x¹¹ + x³ + x² + x + 1<br>
-                                CRC-16:    x¹⁶ + x¹⁵ + x² + 1<br>
-                                CRC-CCITT: x¹⁶ + x¹² + x⁵ + 1<br>
-                                CRC-32:    x³² + x²⁶ + x²³ + x²² + x¹⁶ + x¹² + x¹¹ + x¹⁰ + x⁸ + x⁷ + x⁵ + x⁴ + x² + x + 1
+                            <div class="try-it">
+                                <div class="try-it-title">💡 Thử ngay!</div>
+                                <p>• Nhập data = <code>10010110110111</code>, G(x) = <code>10011</code> → CRC = <code>1010</code> (đúng như giáo trình).</p>
+                                <p>• Nhập data = <code>1101010</code>, G(x) = <code>10011</code> → bài tập trong giáo trình.</p>
+                                <p>• Thử G(x) = <code>1010</code> (bậc 3) → CRC chỉ 3 bit.</p>
                             </div>
 
-                            <div class="example">
-                                <strong>Ví dụ tính CRC chi tiết:</strong>
-                                <p>Dữ liệu M = 10010110110111, G(x) = x⁴+x+1 = 10011</p>
-                                <div class="formula">
-                                    B1: Thêm 4 bit 0 → N(x) = 100101101101110000<br>
-                                    B2: Chia N(x)/G(x) theo XOR<br>
-                                    B3: Phần dư = 1010 (CRC)<br>
-                                    B4: Truyền: 10010110110111 1010
-                                </div>
+                            <p><strong>Các đa thức sinh G(x) phổ biến (chuẩn quốc tế):</strong></p>
+                            <div class="formula">
+                                <strong>CRC-12:</strong> X¹² + X¹¹ + X³ + X² + X + 1<br>
+                                <strong>CRC-16:</strong> X¹⁶ + X¹⁵ + X² + 1<br>
+                                <strong>CRC-CCITT:</strong> X¹⁶ + X¹² + X⁵ + 1<br>
+                                <strong>CRC-32:</strong> X³² + X²⁶ + X²³ + X²² + X¹⁶ + X¹² + X¹¹ + X¹⁰ + X⁸ + X⁷ + X⁵ + X⁴ + X² + X + 1
                             </div>
+                            <p class="quick-fact"><strong>📌 Lưu ý:</strong> CRC-32 dùng trong Ethernet, ZIP, RAR. CRC-CCITT dùng trong giao thức mạng X.25.</p>
                         </div>
 
                         <!-- Hamming -->
                         <div class="topic-card purple">
-                            <h5>✅ Mã Hamming (Phát hiện và SỬA lỗi)</h5>
-                            <p>Mã Hamming có khả năng phát hiện VÀ sửa lỗi 1 bit</p>
+                            <h5>✅ 1.4.3 Mã Hamming - Phát hiện VÀ SỬA được lỗi 1 bit</h5>
+                            <p>Mã Hamming là <strong>ECC (Error Correcting Code)</strong> - không chỉ phát hiện mà còn <strong>sửa được lỗi 1 bit</strong>. Rất quan trọng trong RAM ECC.</p>
 
                             <div class="info-box info">
-                                <h5>Quy tắc mã Hamming</h5>
+                                <h5>📐 Quy tắc mã Hamming</h5>
                                 <ul>
-                                    <li>m bit dữ liệu + r bit kiểm tra</li>
-                                    <li>Chọn r thỏa mãn: 2ʳ ≥ m + r + 1</li>
-                                    <li>Vị trí bit kiểm tra: 2ᵏ (vị trí 1, 2, 4, 8, 16, ...)</li>
-                                    <li>Ký hiệu: H(n, m) với n = m + r</li>
+                                    <li><strong>m bit dữ liệu</strong> (i₁, i₂, ..., iₘ) + <strong>r bit kiểm tra</strong> (C₁, C₂, ..., Cᵣ) = n bit tổng</li>
+                                    <li>Chọn r thỏa mãn: <strong>2ʳ ≥ m + r + 1</strong> ⇔ <strong>2^(r−1) ≤ m + r</strong></li>
+                                    <li><strong>Vị trí bit kiểm tra:</strong> các lũy thừa 2 (vị trí 1, 2, 4, 8, 16, ...)</li>
+                                    <li>Ký hiệu: <strong>H(n, m)</strong> với n = m + r</li>
                                 </ul>
                             </div>
 
-                            <div class="example">
-                                <p><strong>Ví dụ Hamming(7,4):</strong> 4 bit dữ liệu + 3 bit kiểm tra = 7 bit</p>
+                            <div class="kid-explain">
+                                <div class="kid-explain-title">🧒 Tại sao bit kiểm tra đặt tại vị trí lũy thừa 2?</div>
+                                <p>Vì mỗi vị trí i có thể phân tích thành tổng các lũy thừa 2 (ví dụ 5 = 4+1, 7 = 4+2+1). Mỗi bit kiểm tra Cₖ tại vị trí 2ᵏ sẽ "trông coi" tất cả các vị trí có chứa 2ᵖ trong biểu diễn nhị phân.</p>
+                                <p>Ví dụ C₁ (vị trí 1 = 2⁰) trông coi các vị trí 1, 3, 5, 7, 9, ... (các số lẻ).</p>
+                                <p>C₂ (vị trí 2 = 2¹) trông coi các vị trí 2, 3, 6, 7, 10, 11, ...</p>
+                                <p>C₃ (vị trí 4 = 2²) trông coi các vị trí 4, 5, 6, 7, 12, 13, 14, 15, ...</p>
+                            </div>
+
+                            <div class="info-box warning">
+                                <h5>📌 Ví dụ CHI TIẾT (theo giáo trình): Mã Hamming H(7,4)</h5>
+                                <p>4 bit dữ liệu (i₄i₃i₂i₁) + 3 bit kiểm tra (C₃C₂C₁) = 7 bit. Bố trí 7 vị trí (đọc từ trái = vị trí 7, sang phải = vị trí 1):</p>
                                 <table class="data-table">
                                     <thead>
                                         <tr><th>Vị trí</th><th>7</th><th>6</th><th>5</th><th>4</th><th>3</th><th>2</th><th>1</th></tr>
                                     </thead>
                                     <tbody>
-                                        <tr><td>Bit</td><td>i₄</td><td>i₃</td><td>i₂</td><td>C₃</td><td>i₁</td><td>C₂</td><td>C₁</td></tr>
-                                        <tr><td>Giá trị</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+                                        <tr><td>Nội dung</td><td>i₄</td><td>i₃</td><td>i₂</td><td>C₃</td><td>i₁</td><td>C₂</td><td>C₁</td></tr>
                                     </tbody>
                                 </table>
-                                <p>Công thức tính bit kiểm tra (cho parity chẵn):</p>
+                                <p><strong>Công thức tính bit kiểm tra (parity chẵn, dùng XOR ⊕):</strong></p>
                                 <div class="formula">
-                                    C₃ = i₂ ⊕ i₃ ⊕ i₄<br>
-                                    C₂ = i₁ ⊕ i₃ ⊕ i₄<br>
-                                    C₁ = i₁ ⊕ i₂ ⊕ i₄
+                                    C₃ = i₂ ⊕ i₃ ⊕ i₄  (các vị trí 5, 6, 7 đều có chứa 4 = 2²)<br>
+                                    C₂ = i₁ ⊕ i₃ ⊕ i₄  (các vị trí 3, 6, 7 đều có chứa 2 = 2¹)<br>
+                                    C₁ = i₁ ⊕ i₂ ⊕ i₄  (các vị trí 3, 5, 7 đều có chứa 1 = 2⁰)
                                 </div>
-                                <p>Với i₄i₃i₂i₁ = 1101 → C₃C₂C₁ = 010 → Mã truyền: 1100110</p>
+                                <p><strong>Với i₄i₃i₂i₁ = 1101</strong> (đọc từ trái sang phải):</p>
+                                <div class="formula">
+                                    C₃ = i₂ ⊕ i₃ ⊕ i₄ = 0 ⊕ 1 ⊕ 1 = 0<br>
+                                    C₂ = i₁ ⊕ i₃ ⊕ i₄ = 1 ⊕ 1 ⊕ 1 = 1<br>
+                                    C₁ = i₁ ⊕ i₂ ⊕ i₄ = 1 ⊕ 0 ⊕ 1 = 0<br>
+                                    → C₃C₂C₁ = 010<br>
+                                    → Mã truyền = i₄ i₃ i₂ C₃ i₁ C₂ C₁ = <strong>1 1 0 0 1 1 0</strong>
+                                </div>
                             </div>
 
                             <div class="info-box warning">
-                                <h5>🔧 Sửa lỗi Hamming</h5>
-                                <p>Nếu nhận được mã có lỗi, tính lại C₃C₂C₁ và XOR với C₃C₂C₁ nhận được:</p>
-                                <ul>
-                                    <li>Kết quả = 000 → không lỗi</li>
-                                    <li>Kết quả = 110 (= 6) → bit thứ 6 bị sai → sửa bit thứ 6</li>
-                                    <li>Kết quả = 101 (= 5) → bit thứ 5 bị sai → sửa bit thứ 5</li>
-                                </ul>
+                                <h5>🔧 Sửa lỗi Hamming (theo giáo trình)</h5>
+                                <p>Giả sử nhận được <code>1000110</code> (sai 1 bit so với mã đúng <code>1100110</code>).</p>
+                                <p><strong>Bước 1:</strong> Tính lại C₃C₂C₁ từ các bit dữ liệu nhận được (i₄i₃i₂i₁ = 1001):</p>
+                                <div class="formula">
+                                    C₃(mới) = i₂ ⊕ i₃ ⊕ i₄ = 0 ⊕ 0 ⊕ 1 = 1<br>
+                                    C₂(mới) = i₁ ⊕ i₃ ⊕ i₄ = 1 ⊕ 0 ⊕ 1 = 0<br>
+                                    C₁(mới) = i₁ ⊕ i₂ ⊕ i₄ = 1 ⊕ 0 ⊕ 1 = 0<br>
+                                    → C₃C₂C₁ tính lại = <strong>100</strong>
+                                </div>
+                                <p><strong>Bước 2:</strong> Lấy C₃C₂C₁ nhận được trong mã (vị trí 4, 2, 1):</p>
+                                <div class="formula">C₃C₂C₁ nhận = 0, 1, 0 = <strong>010</strong></div>
+                                <p><strong>Bước 3:</strong> XOR 2 giá trị: 100 ⊕ 010 = <strong>110</strong> = 6 (decimal)</p>
+                                <p>→ <strong>Vị trí thứ 6 bị sai!</strong> Sửa bit thứ 6 từ 0 thành 1 → mã đúng <code>1100110</code>. ✓</p>
+                                <p><strong>Nếu syndrome = 000:</strong> không có lỗi.</p>
                             </div>
 
                             <div class="calculator-card">
-                                <h5>🧮 Tính Mã Hamming</h5>
+                                <h5>🧮 Công cụ tính Mã Hamming - Trực quan từng vị trí</h5>
                                 <div class="calc-input">
-                                    <label>Dữ liệu (m bit nhị phân):</label>
+                                    <label>Dữ liệu m bit (nhị phân, đọc từ i₄ → i₁ với H(7,4) là 4 bit):</label>
                                     <input type="text" id="hammingInput" value="1101" placeholder="VD: 1101">
                                 </div>
-                                <div class="result-box">
+                                <div class="viz-container">
+                                    <div class="viz-title">📱 Bố trí bit Hamming (cam = bit kiểm tra C, xanh = bit dữ liệu i)</div>
+                                    <div id="hammingViz"></div>
+                                </div>
+                                <div class="viz-container">
+                                    <div class="viz-title">📋 Giải thích từng bước</div>
+                                    <div id="hammingSteps"></div>
+                                </div>
+                                <div class="result-box" style="margin-top:10px;">
                                     <div><span class="badge success">Mã Hamming</span> <code id="hammingResult" class="code-large"></code></div>
                                     <div><span class="badge info">Số bit dữ liệu (m)</span> <code id="hammingM"></code></div>
                                     <div><span class="badge warning">Số bit kiểm tra (r)</span> <code id="hammingR"></code></div>
                                     <div><span class="badge">Tổng số bit (n)</span> <code id="hammingN"></code></div>
                                 </div>
+                            </div>
+
+                            <div class="calculator-card">
+                                <h5>🔧 Công cụ Sửa Lỗi Hamming - Nhập mã nhận được để tìm lỗi</h5>
+                                <div class="calc-input">
+                                    <label>Mã Hamming nhận được (nhị phân):</label>
+                                    <input type="text" id="hammingErrorInput" value="1000110" placeholder="VD: 1000110 (sai 1 bit)">
+                                </div>
+                                <div class="viz-container">
+                                    <div class="viz-title">📱 Tìm và sửa lỗi (đỏ = bit lỗi, xanh = đã sửa)</div>
+                                    <div id="hammingErrorViz"></div>
+                                </div>
+                                <div class="viz-container">
+                                    <div class="viz-title">📋 Giải thích</div>
+                                    <div id="hammingErrorSteps"></div>
+                                </div>
+                            </div>
+
+                            <div class="try-it">
+                                <div class="try-it-title">💡 Thử ngay!</div>
+                                <p>• Nhập data = <code>1101</code> → mã Hamming = <code>1100110</code> (đúng như giáo trình).</p>
+                                <p>• Nhập mã nhận = <code>1000110</code> → công cụ chỉ ra bit 6 bị lỗi, sửa thành <code>1100110</code>.</p>
+                                <p>• Nhập mã nhận = <code>1100110</code> (đúng) → syndrome = 0, không có lỗi.</p>
+                                <p>• Thử nhập mã nhận = <code>1100111</code> (sai bit 1) → syndrome = 1 → sửa bit 1.</p>
                             </div>
                         </div>
                     </section>
@@ -918,25 +1124,67 @@
                     </section>
 
                     <!-- Chế độ địa chỉ -->
-                    <section class="sub-section" id="sec-ktmt-3-3"><h4>3.3 Chế Độ Địa Chỉ</h4>
-                        <p>Vi xử lý 8088 dùng địa chỉ logic dạng <strong>Segment:Offset</strong>. Địa chỉ vật lý 20 bit được tính:</p>
-                        <div class="formula">Địa chỉ vật lý = Segment × 16 + Offset = Segment × 10H + Offset</div>
+                    <section class="sub-section" id="sec-ktmt-3-3"><h4>3.3 Chế Độ Địa Chỉ & Địa Chỉ Vật Lý</h4>
+                        <p>Vi xử lý 8088 dùng địa chỉ logic dạng <strong>Segment:Offset</strong>. Địa chỉ vật lý 20 bit được tính bằng công thức quan trọng:</p>
+                        <div class="formula"><strong>Địa chỉ vật lý = Segment × 16 + Offset = Segment × 10H + Offset</strong></div>
+
+                        <div class="info-box info">
+                            <h5>📐 Tại sao cần Segment:Offset?</h5>
+                            <p>8088/8086 có <strong>20 đường dây bus địa chỉ</strong> → có thể đánh địa chỉ tới 2²⁰ = 1.048.576 byte = 1 MB bộ nhớ.</p>
+                            <p>Nhưng thanh ghi trong 8088 chỉ <strong>16 bit</strong> → chỉ truy cập được 2¹⁶ = 65.536 byte = 64 KB.</p>
+                            <p><strong>Giải pháp:</strong> chia bộ nhớ 1 MB thành các <strong>đoạn (segment) 64 KB</strong>. Dùng 2 thanh ghi: <strong>Segment</strong> (chỉ đoạn) + <strong>Offset</strong> (vị trí trong đoạn) → kết hợp được 20 bit địa chỉ vật lý.</p>
+                        </div>
+
+                        <div class="kid-explain">
+                            <div class="kid-explain-title">🧒 Hình dung Segment:Offset</div>
+                            <p>Tưởng tượng bạn muốn tìm 1 cuốn sách trong thư viện 1 triệu cuốn (1 MB). Nhưng danh mục sách của bạn chỉ ghi được số từ 0 đến 65535 (64 KB).</p>
+                            <p>Thư viện chia thành các <strong>kệ sách</strong>, mỗi kệ có 65536 cuốn. Số kệ = "Segment", vị trí trên kệ = "Offset".</p>
+                            <p><strong>Địa chỉ thật của cuốn sách</strong> = (Số kệ × 65536) + Vị trí trên kệ. Tương tự: <strong>Địa chỉ vật lý = Segment × 16 + Offset</strong>.</p>
+                            <p><strong>Tại sao × 16 mà không × 65536?</strong> Vì 8088 chọn đoạn chồng nhau mỗi 16 byte (đoạn 0: 0-65535, đoạn 1: 16-65551, đoạn 2: 32-65567, ...) → linh hoạt hơn. × 16 = dịch trái 4 bit = thêm 1 chữ số 0 hexa.</p>
+                        </div>
+
+                        <div class="info-box warning">
+                            <h5>📌 Ví dụ CHI TIẾT (theo giáo trình)</h5>
+                            <p><strong>Ví dụ 1:</strong> CS:IP = <strong>2000H:0100H</strong></p>
+                            <div class="formula">
+                                Địa chỉ vật lý = 2000H × 10H + 0100H<br>
+                                = 20000H + 0100H<br>
+                                = <strong>20100H</strong>
+                            </div>
+                            <p><strong>Ví dụ 2:</strong> DS:SI = <strong>1234H:5678H</strong></p>
+                            <div class="formula">
+                                Địa chỉ vật lý = 1234H × 10H + 5678H<br>
+                                = 12340H + 5678H<br>
+                                = <strong>179B8H</strong>
+                            </div>
+                        </div>
 
                         <div class="calculator-card">
-                            <h5>🧮 Tính địa chỉ vật lý</h5>
+                            <h5>🧮 Công cụ tính Địa Chỉ Vật Lý - Trực quan từng bước</h5>
                             <div class="calc-grid two-col">
                                 <div class="calc-input">
-                                    <label>Segment (hex):</label>
+                                    <label>Segment (hex, vd: 2000):</label>
                                     <input type="text" id="segInput" value="2000" placeholder="VD: 2000">
                                 </div>
                                 <div class="calc-input">
-                                    <label>Offset (hex):</label>
+                                    <label>Offset (hex, vd: 0100):</label>
                                     <input type="text" id="offInput" value="0100" placeholder="VD: 0100">
                                 </div>
                             </div>
-                            <div class="result-box">
+                            <div class="viz-container">
+                                <div class="viz-title">📱 Trực quan từng bước</div>
+                                <div id="physAddrViz"></div>
+                            </div>
+                            <div class="result-box" style="margin-top:10px;">
                                 <div><span class="badge success">Địa chỉ vật lý</span> <code id="physAddr"></code></div>
                             </div>
+                        </div>
+
+                        <div class="try-it">
+                            <div class="try-it-title">💡 Thử ngay!</div>
+                            <p>• Segment = <code>2000</code>, Offset = <code>0100</code> → 20100H (ví dụ giáo trình).</p>
+                            <p>• Segment = <code>1234</code>, Offset = <code>5678</code> → 179B8H (ví dụ giáo trình).</p>
+                            <p>• Segment = <code>FFFF</code>, Offset = <code>FFFF</code> → 10FFEFH (vượt 1MB, nhưng 8088 chỉ lấy 20 bit thấp = 0FFEFH).</p>
                         </div>
 
                         <h5>Các chế độ địa chỉ phổ biến:</h5>
