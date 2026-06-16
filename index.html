@@ -439,9 +439,103 @@
                     <span class="chevron">▼</span>
                 </header>
                 <div class="chapter-content">
+                    <!-- Sơ đồ tổng quát máy tính -->
+                    <section class="sub-section">
+                        <h4>2.1 Sơ Đồ Tổng Quát Máy Tính - Các Khối Chức Năng</h4>
+                        <p>Máy tính điện tử số bao giờ cũng được cấu tạo từ <strong>5 khối chức năng cơ bản</strong> kết nối với nhau qua hệ thống bus. Sơ đồ tổng quát này là nền tảng để hiểu mọi kiến trúc máy tính, từ máy tính cá nhân đến siêu máy tính.</p>
+
+                        <div class="diagram-card">
+                            <h5>📊 Sơ đồ khối chức năng tổng quát</h5>
+                            <div class="block-diagram">
+                                <div class="bd-row">
+                                    <div class="bd-block input-block">
+                                        <div class="bd-icon">⌨️</div>
+                                        <div class="bd-label">Thiết bị nhập<br><small>(Input)</small></div>
+                                        <div class="bd-sub">Bàn phím, chuột,<br>scanner, mic,...</div>
+                                    </div>
+                                    <div class="bd-arrow">→</div>
+                                    <div class="bd-block cpu-block">
+                                        <div class="bd-icon">⚙️</div>
+                                        <div class="bd-label">CPU<br><small>(Vi xử lý)</small></div>
+                                        <div class="bd-sub">
+                                            <span class="bd-mini">ALU</span>
+                                            <span class="bd-mini">CU</span>
+                                            <span class="bd-mini">Thanh ghi</span>
+                                        </div>
+                                    </div>
+                                    <div class="bd-arrow">→</div>
+                                    <div class="bd-block output-block">
+                                        <div class="bd-icon">🖥️</div>
+                                        <div class="bd-label">Thiết bị xuất<br><small>(Output)</small></div>
+                                        <div class="bd-sub">Màn hình, máy in,<br>loa,...</div>
+                                    </div>
+                                </div>
+                                <div class="bd-row bd-row-mid">
+                                    <div class="bd-bus-arrow">↕</div>
+                                    <div class="bd-block memory-block">
+                                        <div class="bd-icon">💾</div>
+                                        <div class="bd-label">Bộ nhớ<br><small>(Memory)</small></div>
+                                        <div class="bd-sub">RAM, ROM, Cache,<br>ổ cứng</div>
+                                    </div>
+                                </div>
+                                <p class="diagram-note">
+                                    <span class="badge info">Bus hệ thống</span> kết nối CPU ↔ Bộ nhớ ↔ I/O (Bus địa chỉ + Bus dữ liệu + Bus điều khiển)
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="content-grid three-col">
+                            <div class="info-box green">
+                                <h5>① Thiết bị nhập (Input)</h5>
+                                <p>Nhận dữ liệu, lệnh từ người dùng hoặc môi trường ngoài và chuyển thành tín hiệu nhị phân đưa vào CPU.</p>
+                                <p><strong>Ví dụ:</strong> Bàn phím, chuột, micro, webcam, scanner, cảm biến.</p>
+                            </div>
+                            <div class="info-box blue">
+                                <h5>② CPU (Bộ xử lý trung tâm)</h5>
+                                <p>Xử lý dữ liệu theo chương trình. Bao gồm 2 bộ phận chính:</p>
+                                <ul>
+                                    <li><strong>ALU (Arithmetic Logic Unit):</strong> Thực hiện phép tính số học (+, −, ×, ÷) và logic (AND, OR, NOT, XOR).</li>
+                                    <li><strong>CU (Control Unit):</strong> Điều phối toàn bộ hoạt động, phát tín hiệu điều khiển.</li>
+                                    <li><strong>Thanh ghi (Registers):</strong> Bộ nhớ tốc độ cao trong CPU.</li>
+                                </ul>
+                            </div>
+                            <div class="info-box purple">
+                                <h5>③ Thiết bị xuất (Output)</h5>
+                                <p>Đưa kết quả xử lý ra ngoài để người dùng quan sát hoặc lưu trữ.</p>
+                                <p><strong>Ví dụ:</strong> Màn hình, máy in, loa, projector.</p>
+                            </div>
+                            <div class="info-box orange">
+                                <h5>④ Bộ nhớ (Memory)</h5>
+                                <p>Lưu trữ dữ liệu và chương trình. Chia làm 2 loại:</p>
+                                <ul>
+                                    <li><strong>Bộ nhớ trong:</strong> ROM, RAM, Cache - tốc độ cao, CPU truy cập trực tiếp.</li>
+                                    <li><strong>Bộ nhớ ngoài:</strong> HDD, SSD, USB - dung lượng lớn, tốc độ chậm hơn.</li>
+                                </ul>
+                            </div>
+                            <div class="info-box red">
+                                <h5>⑤ Hệ thống Bus</h5>
+                                <p>Tập hợp các đường dây truyền tín hiệu giữa các khối:</p>
+                                <ul>
+                                    <li><strong>Bus địa chỉ:</strong> Truyền địa chỉ ô nhớ.</li>
+                                    <li><strong>Bus dữ liệu:</strong> Truyền dữ liệu 2 chiều.</li>
+                                    <li><strong>Bus điều khiển:</strong> Truyền tín hiệu điều khiển (Read/Write, Clock, Interrupt).</li>
+                                </ul>
+                            </div>
+                            <div class="info-box info">
+                                <h5>🔄 Nguyên lý chung</h5>
+                                <ul>
+                                    <li>Dữ liệu vào → CPU xử lý → Kết quả ra</li>
+                                    <li>CPU trao đổi dữ liệu 2 chiều với bộ nhớ</li>
+                                    <li>Mọi luồng dữ liệu đi qua bus hệ thống</li>
+                                    <li>CU điều khiển toàn bộ quá trình theo chu kỳ lệnh</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
                     <!-- Von Neumann -->
                     <section class="sub-section">
-                        <h4>2.1 Nguyên Lý Von Neumann</h4>
+                        <h4>2.2 Nguyên Lý Von Neumann</h4>
                         <p>Mô hình kiến trúc máy tính do John von Neumann đề xuất năm 1945, là nền tảng của hầu hết máy tính hiện đại.</p>
 
                         <div class="content-grid two-col">
@@ -492,7 +586,7 @@
 
                     <!-- Phân loại kiến trúc -->
                     <section class="sub-section">
-                        <h4>2.2 Phân Loại Kiến Trúc (Flynn)</h4>
+                        <h4>2.3 Phân Loại Kiến Trúc (Flynn)</h4>
                         <table class="data-table">
                             <thead>
                                 <tr><th>Kiến trúc</th><th>Tên đầy đủ</th><th>Đặc điểm</th><th>Ví dụ</th></tr>
@@ -508,7 +602,7 @@
 
                     <!-- Bus -->
                     <section class="sub-section">
-                        <h4>2.3 Bus Hệ Thống</h4>
+                        <h4>2.4 Bus Hệ Thống</h4>
                         <p>Bus là tập hợp các đường dây truyền tín hiệu giữa các thành phần trong máy tính.</p>
                         <div class="content-grid three-col">
                             <div class="info-box red">
@@ -530,7 +624,7 @@
 
                     <!-- Lịch sử -->
                     <section class="sub-section">
-                        <h4>2.4 Lịch Sử Phát Triển Máy Tính</h4>
+                        <h4>2.5 Lịch Sử Phát Triển Máy Tính</h4>
                         <table class="data-table">
                             <thead>
                                 <tr><th>Thế hệ</th><th>Thời gian</th><th>Công nghệ</th><th>Đại diện</th></tr>
@@ -1340,11 +1434,148 @@
                                 <div><span class="badge success">PSU khuyến nghị</span> <code id="psuRecommend"></code> W</div>
                             </div>
                         </div>
+
+                        <!-- BÀI TẬP: Đánh giá tương thích thiết bị cho sẵn -->
+                        <div class="info-box warning">
+                            <h5>📋 BÀI TẬP DẠNG 1: Cho sẵn thiết bị - Đánh giá tính tương thích</h5>
+                            <p>Đây là dạng câu hỏi thường gặp trong đề thi. Cho một danh sách thiết bị, sinh viên cần xác định <strong>có thể lắp thành máy tính hay không</strong> và <strong>giải thích lý do</strong>.</p>
+                        </div>
+
+                        <div class="content-grid two-col">
+                            <div class="info-box success">
+                                <h5>✅ Bài tập mẫu 1: Tương thích</h5>
+                                <p><strong>Cho sẵn:</strong></p>
+                                <ul>
+                                    <li>CPU: Intel Core i5-13400F (Socket LGA 1700, TDP 65W)</li>
+                                    <li>Mainboard: MSI PRO B760M (Socket LGA 1700, DDR4)</li>
+                                    <li>RAM: Kingston Fury 16GB DDR4-3200 (2 thanh × 8GB)</li>
+                                    <li>GPU: RTX 4060 (PCIe 4.0 x16, TDP 115W)</li>
+                                    <li>PSU: 600W 80+ Bronze</li>
+                                    <li>Case: Mid-tower ATX</li>
+                                </ul>
+                                <p><strong>Đánh giá:</strong> ✅ Có thể lắp thành công.</p>
+                                <ul>
+                                    <li>Socket LGA 1700 của CPU khớp với mainboard ✅</li>
+                                    <li>Chipset B760 hỗ trợ CPU 13th gen ✅</li>
+                                    <li>RAM DDR4 khớp khe DIMM DDR4 trên mainboard ✅</li>
+                                    <li>GPU cắm khe PCIe x16, PSU 600W đủ (115+65+30 ≈ 210W) ✅</li>
+                                    <li>Case ATX chứa được mainboard Micro-ATX ✅</li>
+                                </ul>
+                            </div>
+
+                            <div class="info-box red">
+                                <h5>❌ Bài tập mẫu 2: KHÔNG tương thích</h5>
+                                <p><strong>Cho sẵn:</strong></p>
+                                <ul>
+                                    <li>CPU: AMD Ryzen 7 5800X (Socket AM4)</li>
+                                    <li>Mainboard: ASUS Prime B660 (Socket LGA 1700)</li>
+                                    <li>RAM: Corsair 32GB DDR5-6000</li>
+                                    <li>GPU: RTX 4070 (TDP 200W)</li>
+                                    <li>PSU: 450W</li>
+                                </ul>
+                                <p><strong>Đánh giá:</strong> ❌ KHÔNG lắp được.</p>
+                                <ul>
+                                    <li>❌ CPU AMD socket AM4 ≠ Mainboard Intel socket LGA 1700</li>
+                                    <li>❌ Mainboard B660 hỗ trợ DDR4/DDR5 tùy model, nhưng chipset Intel 12th không chạy được CPU AMD</li>
+                                    <li>❌ Nếu có mainboard AM4 thì RAM DDR5 không cắm được (AM4 chỉ hỗ trợ DDR4)</li>
+                                    <li>❌ PSU 450W không đủ cho RTX 4070 (cần ≥ 650W)</li>
+                                </ul>
+                                <p><strong>Cách sửa:</strong> Đổi mainboard sang B550/X570 (AM4) + RAM DDR4-3200 + PSU 650W 80+ Gold.</p>
+                            </div>
+                        </div>
+
+                        <!-- BÀI TẬP: Xây dựng máy tính phù hợp nhu cầu -->
+                        <div class="info-box warning">
+                            <h5>📋 BÀI TẬP DẠNG 2: Xây dựng máy tính phù hợp nhu cầu cho trước</h5>
+                            <p>Dạng bài này yêu cầu <strong>tự chọn cấu hình</strong> thiết bị để xây dựng máy tính thỏa mãn một nhu cầu cụ thể (văn phòng, gaming, đồ họa, server...). Cần nêu rõ <strong>lý do chọn từng linh kiện</strong>.</p>
+                        </div>
+
+                        <div class="content-grid two-col">
+                            <div class="info-box info">
+                                <h5>🎯 Bài mẫu 1: Máy văn phòng (5-7 triệu)</h5>
+                                <p><strong>Nhu cầu:</strong> Word, Excel, lướt web, xem phim, không gaming.</p>
+                                <table class="data-table">
+                                    <thead><tr><th>Linh kiện</th><th>Chọn</th><th>Lý do</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>CPU</td><td>Intel i3-12100</td><td>4 nhân 8 luồng, đủ lực văn phòng, iGPU UHD 730</td></tr>
+                                        <tr><td>Main</td><td>H610M</td><td>Rẻ, đủ cổng, LGA 1700 khớp CPU</td></tr>
+                                        <tr><td>RAM</td><td>8GB DDR4-3200</td><td>Đủ đa tác vụ văn phòng</td></tr>
+                                        <tr><td>SSD</td><td>256GB NVMe</td><td>Nhanh, khỏi tạo RAM ảo</td></tr>
+                                        <tr><td>GPU</td><td>iGPU (onboard)</td><td>Không cần card rời</td></tr>
+                                        <tr><td>PSU</td><td>300W</td><td>Đủ dự phòng cho hệ thống ~150W</td></tr>
+                                        <tr><td>Case</td><td>Micro-ATX</td><td>Nhỏ gọn để bàn</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="info-box info">
+                                <h5>🎮 Bài mẫu 2: Máy Gaming tầm trung (20-25 triệu)</h5>
+                                <p><strong>Nhu cầu:</strong> Chơi game AAA 1080p high/2K medium, live stream nhẹ.</p>
+                                <table class="data-table">
+                                    <thead><tr><th>Linh kiện</th><th>Chọn</th><th>Lý do</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>CPU</td><td>Intel i5-13400F</td><td>10 nhân 16 luồng, giá tốt cho gaming</td></tr>
+                                        <tr><td>Main</td><td>B760M DDR4</td><td>Chipset tầm trung, đủ RGB/M.2</td></tr>
+                                        <tr><td>RAM</td><td>16GB DDR4-3600 (2×8)</td><td>Dual channel, tối ưu gaming</td></tr>
+                                        <tr><td>SSD</td><td>1TB NVMe Gen4</td><td>Game AAA cài nhiều, load nhanh</td></tr>
+                                        <tr><td>GPU</td><td>RTX 4060 8GB</td><td>DLSS 3, ray tracing, 1080p high</td></tr>
+                                        <tr><td>PSU</td><td>650W 80+ Gold</td><td>Dư công suất, ổn định, tuổi thọ cao</td></tr>
+                                        <tr><td>Case</td><td>Mid-tower có lưới</td><td>Tản nhiệt tốt, có chỗ quạt kính</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="info-box info">
+                                <h5>🎨 Bài mẫu 3: Máy đồ họa / Video editing (40+ triệu)</h5>
+                                <p><strong>Nhu cầu:</strong> Photoshop, Premiere, After Effects, 3D Blender, render.</p>
+                                <table class="data-table">
+                                    <thead><tr><th>Linh kiện</th><th>Chọn</th><th>Lý do</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>CPU</td><td>Intel i7-13700K / Ryzen 9 7900X</td><td>16-24 luồng, render nhanh</td></tr>
+                                        <tr><td>Main</td><td>Z790 / X670</td><td>VRM mạnh, overclock, PCIe 5.0</td></tr>
+                                        <tr><td>RAM</td><td>32-64GB DDR5-6000</td><td>Render cần nhiều RAM</td></tr>
+                                        <tr><td>SSD</td><td>2TB NVMe Gen4</td><td>Cache scratch, file PSD/4K to</td></tr>
+                                        <tr><td>GPU</td><td>RTX 4070 Ti 12GB</td><td>CUDA cho Premiere, render GPU</td></tr>
+                                        <tr><td>PSU</td><td>850W 80+ Platinum</td><td>Ổn định, hiệu suất cao, tản nhiệt tốt</td></tr>
+                                        <tr><td>Tản nhiệt</td><td>AIO 360mm</td><td>CPU nóng khi render dài</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="info-box info">
+                                <h5>🖥️ Bài mẫu 4: Máy trạm / Build server (60+ triệu)</h5>
+                                <p><strong>Nhu cầu:</strong> Chạy VM, Docker, compile code, train AI nhẹ, server 24/7.</p>
+                                <table class="data-table">
+                                    <thead><tr><th>Linh kiện</th><th>Chọn</th><th>Lý do</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>CPU</td><td>Ryzen 9 7950X / Xeon W</td><td>32 luồng, ECC support</td></tr>
+                                        <tr><td>Main</td><td>X670E / Server board</td><td>Nhiều M.2, ECC, IPMI</td></tr>
+                                        <tr><td>RAM</td><td>128GB DDR5 ECC</td><td>Đa VM, không lỗi bit</td></tr>
+                                        <tr><td>SSD</td><td>4TB NVMe + RAID 1</td><td>Đề phòng hỏng dữ liệu</td></tr>
+                                        <tr><td>GPU</td><td>RTX 4090 / A6000</td><td>CUDA cho AI training</td></tr>
+                                        <tr><td>PSU</td><td>1200W 80+ Titanium</td><td>Chạy 24/7 ổn định</td></tr>
+                                        <tr><td>Case</td><td>Full tower server</td><td>Nhiều ổ, tản nhiệt tốt</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="info-box success">
+                            <h5>💡 Quy trình 5 bước giải bài tập "xây máy phù hợp nhu cầu"</h5>
+                            <ol>
+                                <li><strong>Bước 1 - Xác định nhu cầu:</strong> Văn phòng / Gaming / Đồ họa / Server? Ngân sách bao nhiêu?</li>
+                                <li><strong>Bước 2 - Chọn CPU trước:</strong> CPU quyết định nền tảng (socket, loại RAM hỗ trợ).</li>
+                                <li><strong>Bước 3 - Chọn Mainboard:</strong> Socket khớp CPU, chipset đủ tính năng, form factor phù hợp case.</li>
+                                <li><strong>Bước 4 - Chọn RAM + Storage + GPU:</strong> Phù hợp nhu cầu (gaming → GPU mạnh, đồ họa → RAM lớn, server → SSD nhanh + ECC).</li>
+                                <li><strong>Bước 5 - Tính PSU:</strong> Tổng TDP × 1.5 (dự phòng), chọn PSU có chứng nhận 80+ phù hợp ngân sách.</li>
+                            </ol>
+                            <p><strong>Lưu ý:</strong> Trình bày rõ <em>tên linh kiện</em> + <em>thông số</em> + <em>lý do chọn</em> để được điểm tối đa.</p>
+                        </div>
                     </section>
 
                     <!-- Quy trình lắp ráp -->
                     <section class="sub-section">
-                        <h4>2.2 Quy Trình Lắp Ráp Máy Tính</h4>
+                        <h4>2.3 Quy Trình Lắp Ráp Máy Tính</h4>
 
                         <div class="steps-list">
                             <div class="step-item">
@@ -1433,7 +1664,7 @@
 
                     <!-- Lưu ý -->
                     <section class="sub-section">
-                        <h4>2.3 Lưu Ý Quan Trọng Khi Lắp Ráp</h4>
+                        <h4>2.4 Lưu Ý Quan Trọng Khi Lắp Ráp</h4>
                         <div class="content-grid two-col">
                             <div class="info-box red">
                                 <h5>❌ KHÔNG được làm</h5>
