@@ -1258,6 +1258,40 @@ function setupSidebar() {
 }
 
 // ============================================
+// QR DONATE WIDGET
+// ============================================
+function setupQRDonate() {
+    const qrDonate = document.getElementById('qrDonate');
+    const qrCard = document.getElementById('qrCard');
+    const qrClose = document.getElementById('qrClose');
+    const qrMini = document.getElementById('qrMini');
+
+    if (!qrDonate || !qrCard || !qrClose || !qrMini) return;
+
+    // Load saved state from localStorage
+    try {
+        const saved = localStorage.getItem('qr-donate-collapsed');
+        if (saved === 'true') {
+            qrDonate.classList.add('collapsed');
+        }
+    } catch (e) {
+        // localStorage might not be available
+    }
+
+    // Close button → collapse to mini
+    qrClose.addEventListener('click', () => {
+        qrDonate.classList.add('collapsed');
+        try { localStorage.setItem('qr-donate-collapsed', 'true'); } catch (e) {}
+    });
+
+    // Mini button → expand to full card
+    qrMini.addEventListener('click', () => {
+        qrDonate.classList.remove('collapsed');
+        try { localStorage.setItem('qr-donate-collapsed', 'false'); } catch (e) {}
+    });
+}
+
+// ============================================
 // INITIALIZATION
 // ============================================
 
@@ -1268,6 +1302,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupBackToTop();
     setupCalculators();
     setupSidebar();
+    setupQRDonate();
     
     // Initial calculations
     updateDecConversion();
